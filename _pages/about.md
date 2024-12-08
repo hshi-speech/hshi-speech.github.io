@@ -14,10 +14,9 @@ I am a researcher at the Speech and Audio Processing Laboratory, Kyoto Universit
 
 Hobbies
 ======
-* Traveling:
-   <td>
+* <td>
     <details> 
-      <summary><span style="color: #5481E5; cursor: pointer;">The areas I traveled (travelling map)</span></summary>
+      <summary><span style="color: #5481E5; cursor: pointer;">Traveling: The areas I traveled (travelling map)</span></summary>
         <div style="margin-top:40px;"></div>
         <iframe src="https://www.google.com/maps/d/embed?mid=1lvQnC_MLw7w4fRvmKIQvQA4XoSv5ClY&hl=en&ehbc=2E312F" width="640" height="480"></iframe>
         <div style="margin-top:40px;"></div>
