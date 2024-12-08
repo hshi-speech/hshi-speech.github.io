@@ -6,8 +6,8 @@ permalink: /publication/Apsipa2022shi-resolution
 excerpt: 'Hao Shi, Yuchun Shu, Longbiao Wang, Jianwu Dang, and Tatsuya Kawahara'
 date: 2022-11-07
 venue: 'APSIPA ASC'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/apsipa-2022-shi-resolutions.txt'
-paperurl: 'https://drive.google.com/file/d/1AyC8eYq-d7fJkpAsN_zzt_DDcrSiszU9/view?usp=drive_link'
+biburl: 'https://hshi-speech.github.io/files/bib/apsipa-2022-shi-resolutions.txt'
+paperurl: 'https://hshi-speech.github.io/files/publications/apsipa-2022-shi-resolutions.pdf'
 citation: #
 ---
 
