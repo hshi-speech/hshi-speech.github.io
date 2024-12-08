@@ -26,22 +26,22 @@ Hobbies
 
 * 🎒 Collections & Interests
   * 🌍 Traveling
-    <div style="margin-top:40px;"></div>
-        <iframe src="https://www.google.com/maps/d/embed?mid=1lvQnC_MLw7w4fRvmKIQvQA4XoSv5ClY&hl=en&ehbc=2E312F" width="640" height="480"></iframe>
-    <div style="margin-top:40px;"></div>
+    <div style="margin-top:20px;"></div>
+    <iframe src="https://www.google.com/maps/d/embed?mid=1lvQnC_MLw7w4fRvmKIQvQA4XoSv5ClY&hl=en&ehbc=2E312F" width="640" height="480"></iframe>
+    <div style="margin-top:20px;"></div>
   * 🧧 O-mikuji: (御神籤, Fortune)
   * 🎲 Gacha
-    <div style="margin-top:40px;"></div>
+    <div style="margin-top:20px;"></div>
     <img src="https://raw.githubusercontent.com/hshi-speech/hshi-speech.github.io/master/hobbies/gacha/gacha_nightlight.jpeg" alt="Night Light" width="300" />
     <img src="https://raw.githubusercontent.com/hshi-speech/hshi-speech.github.io/master/hobbies/gacha/gacha_onepiece.jpeg" alt="OnePiece" width="300" />
-    <div style="margin-top:40px;"></div>
+    <div style="margin-top:20px;"></div>
 
 * 🐾 Others
   * 🐱 Pets: I have a cat: Baobao
-    <div style="margin-top:40px;"></div>
-        <img src="https://raw.githubusercontent.com/hshi-speech/hshi-speech.github.io/master/hobbies/pets/baobao1.jpeg" alt="Night Light" width="300" />
-        <img src="https://raw.githubusercontent.com/hshi-speech/hshi-speech.github.io/master/hobbies/pets/baobao2.jpeg" alt="Night Light" width="300" />
-    <div style="margin-top:40px;"></div>
+    <div style="margin-top:20px;"></div>
+    <img src="https://raw.githubusercontent.com/hshi-speech/hshi-speech.github.io/master/hobbies/pets/baobao1.jpeg" alt="Night Light" width="300" />
+    <img src="https://raw.githubusercontent.com/hshi-speech/hshi-speech.github.io/master/hobbies/pets/baobao2.jpeg" alt="Night Light" width="300" />
+    <div style="margin-top:20px;"></div>
   * 📸 Photography
 
 
