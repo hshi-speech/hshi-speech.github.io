@@ -6,8 +6,8 @@ permalink: /publication/Iscslp2022yang
 excerpt: 'Yanbing Yang, Hao Shi, Yuqin Lin, Meng Ge, Longbiao Wang, Qingzhi Hou and Jianwu Dang'
 date: 2022-12-11
 venue: 'ISCSLP'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/iscslp-2022-yang.txt'
-paperurl: 'https://drive.google.com/file/d/1E2_9UO9i83ZBlpqGKiEnMBQEC_DQgcO_/view?usp=drive_link'
+biburl: 'https://hshi-speech.github.io/files/bib/iscslp-2022-yang.txt'
+paperurl: 'https://hshi-speech.github.io/files/publications/iscslp-2022-yang.pdf'
 citation: #
 ---
 
