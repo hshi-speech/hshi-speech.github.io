@@ -6,7 +6,7 @@ permalink: /publication/WASPAA2023zhong
 excerpt: 'Zhi Zhong, Hao Shi, Masato Hirano, Kazuki Shimada, Kazuya Tateishi, Takashi Shibuya, Shusuke Takahashi, Yuki Mitsufuji'
 date: 2023-10-22
 venue: 'WASPAA'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/waspaa-2023-zhong.txt'
+biburl: 'https://hshi-speech.github.io/files/bib/waspaa-2023-zhong.txt'
 paperurl: 'https://arxiv.org/pdf/2305.06701.pdf'
 citation: #
 ---
