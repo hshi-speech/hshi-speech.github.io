@@ -6,7 +6,7 @@ permalink: /publication/Apsipa2022shi-subband
 excerpt: 'Hao Shi, Longbiao Wang, Sheng Li, Jianwu Dang, and Tatsuya Kawahara'
 date: 2022-11-07
 venue: 'APSIPA ASC'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/apsipa-2022-shi-subband.txt.txt'
+biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/apsipa-2022-shi-subband.txt'
 paperurl: 'https://drive.google.com/file/d/1W_TerijGmLXgSbIRyFdefG73EoRQfGld/view?usp=drive_link'
 citation: #
 ---
