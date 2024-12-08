@@ -9,7 +9,7 @@ redirect_from:
 
 
 {% if site.author.googlescholar %}
-  <div class="wordwrap">My CV is available for <a href="https://drive.google.com/file/d/18QTAgp_dxp2KIXHRb-GwviN1uUntKivp/view?usp=drive_link">Download</a>.</div>
+  <div class="wordwrap">My CV is available for <a href="https://hshi-speech.github.io/files/CV_hshi.pdf">Download</a>.</div>
 {% endif %}
 
 
