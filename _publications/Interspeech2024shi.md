@@ -6,8 +6,8 @@ permalink: /publication/Interspeech2024shi
 excerpt: 'Hao Shi, and Tatusya Kawahara'
 date: 2024-09-01
 venue: 'Interspeech'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/interspeech-2024-shi.txt'
-paperurl: 'https://drive.google.com/file/d/1TJqzcF57xFBPTizomlkU5oKzcSNpB42y/view?usp=drive_link'
+biburl: 'https://hshi-speech.github.io/files/bib/interspeech-2024-shi.txt'
+paperurl: 'https://hshi-speech.github.io/files/publications/interspeech-2024-shi.pdf'
 citation: #
 ---
 
