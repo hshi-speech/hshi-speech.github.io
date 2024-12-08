@@ -18,6 +18,24 @@ redirect_from:
 {% include base_path %}
 
 
+Research interests
+======
+* Automatic Speech Recognition:
+  * Noise-robust
+  * Adaptation
+  * Multi-speaker
+  * Multi-lingual
+
+* Speech Enhancement:
+  * Front-end for ASR
+  * Systems ensemble
+  * Probabilistic (generative) model
+  * Multi-model
+
+* Speech Separation:
+  * Target speaker extraction
+  * Blind source separation
+
 
 Education
 ======
