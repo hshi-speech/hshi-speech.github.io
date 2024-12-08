@@ -6,8 +6,8 @@ permalink: /publication/Icassp2023shi
 excerpt: 'Hao Shi, Masato Mimura, Longbiao Wang, Jianwu Dang, and Tatsuya Kawahara'
 date: 2023-06-04
 venue: 'IEEE-ICASSP'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/icassp-2023-shi-tf.txt'
-paperurl: 'https://drive.google.com/file/d/19aDgLU-3WCPcWG-egivudT2UcYLV31Dn/view?usp=drive_link'
+biburl: 'https://hshi-speech.github.io/files/bib/icassp-2023-shi-tf.txt'
+paperurl: 'https://hshi-speech.github.io/files/publications/icassp-2023-shi-tf.pdf'
 citation: #
 ---
 
