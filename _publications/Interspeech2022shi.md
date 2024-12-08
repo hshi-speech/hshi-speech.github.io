@@ -6,8 +6,8 @@ permalink: /publication/Interspeech2022shi
 excerpt: 'Hao Shi, Longbiao Wang, Sheng Li, Jianwu Dang, and Tatsuya Kawahara'
 date: 2022-09-14
 venue: 'Interspeech'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/interspeech-2022-shi.txt'
-paperurl: 'https://drive.google.com/file/d/1qEwxLdjzHBh-lof39wt0OJ0EyUZHy_f_/view?usp=drive_link'
+biburl: 'https://hshi-speech.github.io/files/bib/interspeech-2022-shi.txt'
+paperurl: 'https://hshi-speech.github.io/files/publications/interspeech-2022-shi.pdf'
 citation: #
 ---
 
