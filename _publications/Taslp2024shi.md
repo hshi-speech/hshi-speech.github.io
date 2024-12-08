@@ -7,7 +7,7 @@ excerpt: 'Hao Shi, Masato Mimura, and Tatsuya Kawahara'
 date: 2024-05-30
 venue: 'IEEE/ACM Transactions on Audio, Speech, and Language Processing'
 biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/taslp-2024-shi.txt'
-paperurl: 'https://hshi-speech.github.io/blob/master/files/publications/taslp-2024-shi.pdf'
+paperurl: 'https://hshi-speech.github.io/files/publications/taslp-2024-shi.pdf'
 citation: #
 ---
 
