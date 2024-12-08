@@ -31,13 +31,17 @@ Hobbies
     <div style="margin-top:40px;"></div>
   * 🧧 O-mikuji: (御神籤, Fortune)
   * 🎲 Gacha
+    <div style="margin-top:40px;"></div>
     <img src="https://raw.githubusercontent.com/hshi-speech/hshi-speech.github.io/master/hobbies/gacha/gacha_nightlight.jpeg" alt="Night Light" width="300" />
     <img src="https://raw.githubusercontent.com/hshi-speech/hshi-speech.github.io/master/hobbies/gacha/gacha_onepiece.jpeg" alt="OnePiece" width="300" />
+    <div style="margin-top:40px;"></div>
 
 * 🐾 Others
   * 🐱 Pets: I have a cat: Baobao
+    <div style="margin-top:40px;"></div>
         <img src="https://raw.githubusercontent.com/hshi-speech/hshi-speech.github.io/master/hobbies/pets/baobao1.jpeg" alt="Night Light" width="300" />
         <img src="https://raw.githubusercontent.com/hshi-speech/hshi-speech.github.io/master/hobbies/pets/baobao2.jpeg" alt="Night Light" width="300" />
+    <div style="margin-top:40px;"></div>
   * 📸 Photography
 
 
