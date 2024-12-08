@@ -3,7 +3,7 @@ title: "Singing Voice Extraction with Attention-Based Spectrograms Fusion"
 collection: publications
 category: conferences
 permalink: /publication/Interspeech2020shi
-excerpt: 'Hao Shi, Longbiao Wang, Sheng Li, Chenchen Ding, Meng Ge, Nan Li, Jianwu Dang, and Hiroshi Seki.'
+excerpt: 'Hao Shi, Longbiao Wang, Sheng Li, Chenchen Ding, Meng Ge, Nan Li, Jianwu Dang, and Hiroshi Seki'
 date: 2020-10-25
 venue: 'Interspeech'
 biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/interspeech-2020-shi.txt'
