@@ -53,29 +53,60 @@ Hobbies
 </td>
 
 <td>
-    Photography: Beginner, <a href='https://photos.google.com/share/AF1QipN_CclRNxpDIzwmw42gQstv4OKbid3q29VY9e8XBYhysxeSlJay8CFYzMMWWQzYDA?key=WkdYdm5DM1ljS1RlYzN5RlRrcndtQndUaG1PU2pB'>some samples</a>
+    <details> 
+      <summary><span style="color: #5481E5; cursor: pointer;">Photography: Beginner</span></summary>
+        <div style="margin-top:40px;"></div>
+        <a href='https://photos.google.com/share/AF1QipN_CclRNxpDIzwmw42gQstv4OKbid3q29VY9e8XBYhysxeSlJay8CFYzMMWWQzYDA?key=WkdYdm5DM1ljS1RlYzN5RlRrcndtQndUaG1PU2pB'>some samples</a>
+        <div style="margin-top:40px;"></div>
+    </details> 
 </td>
 
 <td>
-    Piano: Sonata, impromptu chords
+    <details> 
+      <summary><span style="color: #5481E5; cursor: pointer;">Piano: Sonata, impromptu chords</span></summary>
+        <div style="margin-top:40px;"></div>
+        Nothing now, some samples will be public soon
+        <div style="margin-top:40px;"></div>
+    </details> 
 </td>
 
 
 
 <td>
-    Basketball: Small Forward (SF), Point Guard (PG)
+    <details> 
+      <summary><span style="color: #5481E5; cursor: pointer;">Basketball: Small Forward (SF), Point Guard (PG)</span></summary>
+        <div style="margin-top:40px;"></div>
+        
+        <div style="margin-top:40px;"></div>
+    </details> 
 </td>
 
 <td>
-    Ski: Snowboard
+    <details> 
+      <summary><span style="color: #5481E5; cursor: pointer;">Ski: Snowboard</span></summary>
+        <div style="margin-top:40px;"></div>
+        The ski resort I went to
+        <div style="margin-top:40px;"></div>
+    </details> 
 </td>
 
 <td>
-    Music: Nakajima Miyuki (中島みゆき) / Rock (Band: New Pants, Won Fu) / Folk (The Landlord's Cat)
+    <details> 
+      <summary><span style="color: #5481E5; cursor: pointer;">Music</span></summary>
+        <div style="margin-top:40px;"></div>
+        Nakajima Miyuki (中島みゆき) / Rock (Band: New Pants, Won Fu) / Folk (The Landlord's Cat)
+        <div style="margin-top:40px;"></div>
+    </details> 
 </td>
 
 <td>
-    Singing: Chinese (mainly), English and Japanese songs
+    <details> 
+      <summary><span style="color: #5481E5; cursor: pointer;">Singing: Chinese (mainly), English and Japanese songs</span></summary>
+        <div style="margin-top:40px;"></div>
+         Nothing now, some samples will be public soon
+        <div style="margin-top:40px;"></div>
+    </details> 
+    
 </td>
 
 
