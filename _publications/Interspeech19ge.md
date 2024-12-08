@@ -1,14 +1,14 @@
 ---
-title: "Paper Title Number 1"
+title: "Environment-Dependent Attention-Driven Recurrent Convolutional Neural Network for Robust Speech Enhancement"
 collection: publications
-category: manuscripts
-permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
-venue: 'Journal 1'
+category: conference
+permalink: /publication/Interspeech19ge
+excerpt: ' environment-dependent, attention, convolutional network, recurrent network, speech enhancement'
+date: 2019-09-15
+venue: 'Conference 1'
 slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 paperurl: 'http://academicpages.github.io/files/paper1.pdf'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+citation: 'Meng Ge, Longbiao Wang, Nan Li, Hao Shi, Jianwu Dang, and Xiangang Li, "Environment-Dependent Attention-Driven Recurrent Convolutional Neural Network for Robust Speech Enhancement," in Proc. of Interspeech 2019, 3153-3157'
 ---
 
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+Speech enhancement aims to keep the real speech signal and reduce noise for building robust communication systems. Under the success of DNN, significant progress has been made. Nevertheless, accuracy of the speech enhancement system is not satisfactory due to insufficient consideration of varied environmental and contextual information in complex cases. To address these problems, this research proposes an end-to-end environment-dependent attention-driven approach. The local frequency-temporal pattern via convolutional neural network is fully employed without pooling operation. It then integrates an attention mechanism into bidirectional long short-term memory to acquire the weighted dynamic context between consecutive frames. Furthermore, dynamic environment estimation and phase correction further improve the generalization ability. Extensive experimental results on REVERB challenge demonstrated that the proposed approach outperformed existing methods, improving PESQ from 2.56 to 2.87 and SRMR from 4.95 to 5.50 compared with conventional DNN.
