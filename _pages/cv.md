@@ -70,6 +70,13 @@ Honors
   * awarded by Japan Science and Technology Agency (JST)
 
 
+Language skill
+======
+Chinese (native)
+English (fluent)
+
+
+
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
