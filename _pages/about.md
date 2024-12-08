@@ -27,7 +27,7 @@ Hobbies
 * 🎒 Collections & Interests
   * 🌍 Traveling
     <div style="margin-top:20px;"></div>
-    <iframe src="https://www.google.com/maps/d/embed?mid=1lvQnC_MLw7w4fRvmKIQvQA4XoSv5ClY&hl=en&ehbc=2E312F" width="640" height="480"></iframe>
+    <iframe src="https://www.google.com/maps/d/embed?mid=1lvQnC_MLw7w4fRvmKIQvQA4XoSv5ClY&hl=en&ehbc=2E312F" width="300" height="300"></iframe>
     <div style="margin-top:20px;"></div>
   * 🧧 O-mikuji: (御神籤, Fortune)
   * 🎲 Gacha
