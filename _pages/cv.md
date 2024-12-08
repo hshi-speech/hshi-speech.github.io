@@ -12,7 +12,11 @@ redirect_from:
   <div class="wordwrap">My CV is available for <a href="https://drive.google.com/file/d/18QTAgp_dxp2KIXHRb-GwviN1uUntKivp/view?usp=drive_link">Download</a>.</div>
 {% endif %}
 
+
+<br>
+
 {% include base_path %}
+
 
 
 Education
