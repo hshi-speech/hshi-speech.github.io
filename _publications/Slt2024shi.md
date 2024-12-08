@@ -6,7 +6,7 @@ permalink: /publication/Slt2024shi
 excerpt: 'Hao Shi, Yuan Gao, Zhaoheng Ni, and Tatusya Kawahara'
 date: 2024-12-02
 venue: 'IEEE-SLT'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/slt-2024-shi.txt'
+biburl: 'https://hshi-speech.github.io/files/bib/slt-2024-shi.txt'
 paperurl: 'https://arxiv.org/pdf/2409.00815'
 citation: #
 ---
