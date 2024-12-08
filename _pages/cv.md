@@ -31,20 +31,27 @@ Education
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* 2024.10 - Present: Researcher
+  * Kyoto University
+  * Speech signal processing
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* 2024.04 - 2024.09: Research Fellow
+  * Kyoto University
+  * Speech signal processing
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* 2023.08 - 2023.09: Research Intern
+  * NTT
+  * Speech signal processing
+  * Mentor: Naoyuki Kamo, Shoko Araki, Tomohiro Nakatani, Marc Delcroix
+
+* 2023.01 - 2023.03: Research Intern
+  * Sony
+  * Speech signal processing
+  * Mentor: Kazuki Shimada, Shusuke Takahashi
+
+* 2021.08 - 2022.01: Research Assistant
+  * Tianjin University
+  * Speech signal processing
   
 Skills
 ======
