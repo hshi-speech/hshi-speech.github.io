@@ -9,24 +9,25 @@ redirect_from:
 
 I am a researcher at the Speech and Audio Processing Laboratory, Kyoto University, Japan. I hold a Ph.D. degree from Kyoto University and a Master’s degree from the College of Intelligence and Computing, Tianjin University. My research primarily focuses on speech enhancement and noise-robust automatic speech recognition.
 
-News
-======
-
-
 
 
 
 Hobbies
 ======
+* Traveling:
+   <td>
+    <details> 
+      <summary><span style="color: #5481E5; cursor: pointer;">The areas I traveled (travelling map)</span></summary>
+        <div style="margin-top:40px;"></div>
+        <iframe src="https://www.google.com/maps/d/embed?mid=1lvQnC_MLw7w4fRvmKIQvQA4XoSv5ClY&hl=en&ehbc=2E312F" width="640" height="480"></iframe>
+        <div style="margin-top:40px;"></div>
+    </details>  
+  </td>
 
 
 
 
 
-Selected Publications
-======
-
-2222
 
 
 <div id="hidden-container" style="display: none;">
