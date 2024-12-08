@@ -6,8 +6,8 @@ permalink: /publication/Iconip2021qiang
 excerpt: 'Luya Qiang, Hao Shi, Meng Ge, Haoran Yin, Nan Li, Longbiao Wang, Sheng Li, and Jianwu Dang'
 date: 2021-12-08
 venue: 'ICONIP'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/iconip-2021-qiang.txt'
-paperurl: 'https://drive.google.com/file/d/1X1geP9cEwWn9dp-5ZPXv7eo5JmQXPQSE/view?usp=drive_link'
+biburl: 'https://hshi-speech.github.io/files/bib/iconip-2021-qiang.txt'
+paperurl: 'https://hshi-speech.github.io/files/publications/iconip-2021-qiang.pdf'
 citation: #
 ---
 
