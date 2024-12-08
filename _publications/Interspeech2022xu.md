@@ -6,8 +6,8 @@ permalink: /publication/Interspeech2022xu
 excerpt: 'Qiang Xu, Tongtong Song, Longbiao Wang, Hao Shi, Yuqin Lin, Yongjie Lv, Meng Ge, Qiang Yu, and Jianwu Dang'
 date: 2022-09-14
 venue: 'Interspeech'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/interspeech-2022-xu.txt'
-paperurl: 'https://drive.google.com/file/d/1IJVE2T8SQgKl9mGboSb-udRo4WHAXvgS/view?usp=drive_link'
+biburl: 'https://hshi-speech.github.io/files/bib/interspeech-2022-xu.txt'
+paperurl: 'https://hshi-speech.github.io/files/publications/interspeech-2022-xu.pdf'
 citation: #
 ---
 
