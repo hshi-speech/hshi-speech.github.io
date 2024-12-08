@@ -6,8 +6,8 @@ permalink: /publication/Interspeech2024gao
 excerpt: 'Yuan Gao, Hao Shi, Chenhui Chu, and Tatsuya Kawahara'
 date: 2024-09-01
 venue: 'Interspeech'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/interspeech-2024-gao.txt'
-paperurl: 'https://drive.google.com/file/d/1atWBcMsC4IdSj817UgnvZXBEin1omy05/view?usp=drive_link'
+biburl: 'https://hshi-speech.github.io/files/bib/interspeech-2024-gao.txt'
+paperurl: 'https://hshi-speech.github.io/files/publications/interspeech-2024-gao.pdf'
 citation: #
 ---
 
