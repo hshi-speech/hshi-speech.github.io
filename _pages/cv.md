@@ -77,12 +77,12 @@ Publications
 
 Reviewer
 ======
-IEEE/ACM Trans. ASLP 
-Speech Communication 
-IEEE-ICASSP 
-INTERSPEECH 
-APSIPA ASC 
-IEEE-SLT 
+IEEE/ACM Trans. ASLP / 
+Speech Communication / 
+IEEE-ICASSP / 
+INTERSPEECH / 
+APSIPA ASC / 
+IEEE-SLT / 
 WASPAA
 
 
