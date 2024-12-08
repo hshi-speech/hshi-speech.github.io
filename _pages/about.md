@@ -14,19 +14,69 @@ I am a researcher at the Speech and Audio Processing Laboratory, Kyoto Universit
 
 Hobbies
 ======
-* <td>
+<td>
     <details> 
       <summary><span style="color: #5481E5; cursor: pointer;">Traveling: The areas I traveled (travelling map)</span></summary>
         <div style="margin-top:40px;"></div>
         <iframe src="https://www.google.com/maps/d/embed?mid=1lvQnC_MLw7w4fRvmKIQvQA4XoSv5ClY&hl=en&ehbc=2E312F" width="640" height="480"></iframe>
         <div style="margin-top:40px;"></div>
     </details>  
-  </td>
+</td>
+
+<td>
+    <details> 
+      <summary><span style="color: #5481E5; cursor: pointer;">Gacha: Some collections</span></summary>
+        <div style="margin-top:40px;"></div>
+        <img src="https://raw.githubusercontent.com/hshi-speech/hshi-speech.github.io/main/hobbies/gacha/gacha_nightlight.jpeg" alt="Night Light" width="300" />
+        <img src="https://raw.githubusercontent.com/hshi-speech/hshi-speech.github.io/main/hobbies/gacha/gacha_onepiece.jpeg" alt="OnePiece" width="300" />
+        <div style="margin-top:40px;"></div>
+    </details>  
+</td>
+
+<td>
+    <details> 
+      <summary><span style="color: #5481E5; cursor: pointer;">Pets: A cat's daddy: Baobao (living in China)</span></summary>
+        <div style="margin-top:40px;"></div>
+        <img src="https://raw.githubusercontent.com/hshi-speech/hshi-speech.github.io/main/hobbies/pets/baobao1.jpeg" alt="Night Light" width="300" />
+        <img src="https://raw.githubusercontent.com/hshi-speech/hshi-speech.github.io/main/hobbies/pets/baobao2.jpeg" alt="Night Light" width="300" />
+        <div style="margin-top:40px;"></div>
+    </details>  
+</td>
+
+<td>
+    <details> 
+      <summary><span style="color: #5481E5; cursor: pointer;">O-mikuji: (御神籤, Fortune) The latest news</span></summary>
+        <div style="margin-top:40px;"></div>
+        Nothing now, will be updated a few days later
+        <div style="margin-top:40px;"></div>
+    </details>  
+</td>
+
+<td>
+    Photography: Beginner, <a href='https://photos.google.com/share/AF1QipN_CclRNxpDIzwmw42gQstv4OKbid3q29VY9e8XBYhysxeSlJay8CFYzMMWWQzYDA?key=WkdYdm5DM1ljS1RlYzN5RlRrcndtQndUaG1PU2pB'>some samples</a>
+</td>
+
+<td>
+    Piano: Sonata, impromptu chords
+</td>
 
 
 
+<td>
+    Basketball: Small Forward (SF), Point Guard (PG)
+</td>
 
+<td>
+    Ski: Snowboard
+</td>
 
+<td>
+    Music: Nakajima Miyuki (中島みゆき) / Rock (Band: New Pants, Won Fu) / Folk (The Landlord's Cat)
+</td>
+
+<td>
+    Singing: Chinese (mainly), English and Japanese songs
+</td>
 
 
 <div id="hidden-container" style="display: none;">
