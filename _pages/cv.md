@@ -84,9 +84,8 @@ Honors
 
 Language skill
 ======
-Chinese (native)
-English (fluent)
-
+* Chinese (native)
+* English (fluent)
 
 
 Publications
