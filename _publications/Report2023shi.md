@@ -6,7 +6,7 @@ permalink: /publication/Report2023shi
 excerpt: 'Hao Shi, and Tatsuya Kawahara'
 date: 2023-12-30
 venue: 'SIG Technical Reports'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/report-2023-shi.txt'
+biburl: 'https://hshi-speech.github.io/files/bib/report-2023-shi.txt'
 paperurl: 'https://arxiv.org/pdf/2402.18275.pdf'
 citation: #
 ---
