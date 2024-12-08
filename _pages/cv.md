@@ -7,7 +7,13 @@ redirect_from:
   - /resume
 ---
 
+
+{% if site.author.googlescholar %}
+  <div class="wordwrap">My CV is Available for <a href="https://drive.google.com/file/d/18QTAgp_dxp2KIXHRb-GwviN1uUntKivp/view?usp=drive_link">Download</a>.</div>
+{% endif %}
+
 {% include base_path %}
+
 
 Education
 ======
