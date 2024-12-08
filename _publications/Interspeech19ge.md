@@ -6,8 +6,8 @@ permalink: /publication/Interspeech19ge
 excerpt: 'Meng Ge, Longbiao Wang, Nan Li, Hao Shi, Jianwu Dang, and Xiangang Li'
 date: 2019-09-15
 venue: 'Interspeech'
-biburl: 'https://hshi_speech.github.io/tree/master/files/bib/interspeech-2019-ge.txt'
-paperurl: 'https://github.com/hshi-speech/hshi_speech.github.io/blob/master/files/publications/interspeech-2019-ge.pdf'
+biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/interspeech-2019-ge.txt'
+paperurl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/publications/interspeech-2019-ge.pdf'
 citation: 'Meng Ge, Longbiao Wang, Nan Li, Hao Shi, Jianwu Dang, and Xiangang Li, "Environment-Dependent Attention-Driven Recurrent Convolutional Neural Network for Robust Speech Enhancement," in Proc. of Interspeech 2019, 3153-3157.'
 ---
 
