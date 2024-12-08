@@ -6,7 +6,7 @@ permalink: /publication/Icasspw2024shi
 excerpt: 'Hao Shi, Naoyuki Kamo, Marc Delcroix, Tomohiro Nakatani, and Shoko Araki'
 date: 2024-04-14
 venue: 'IEEE-ICASSPW'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/hscma-2024-shi'
+biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/hscma-2024-shi.txt'
 paperurl: 'https://drive.google.com/file/d/1wkUTkySNpssKDZCmFrWxzbpZfYKydpC3/view?usp=drive_link'
 citation: #
 ---
