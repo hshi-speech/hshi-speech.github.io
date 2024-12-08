@@ -26,11 +26,9 @@ Hobbies
 Selected Publications
 ======
 
-1111
+2222
 
-<style>
-  #clustrmaps {
-    display: none; /* 隐藏插件内容 */
-  }
-</style>
-<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=n&d=mWphCyX22pe_P6KJ9gE87HPH3R3G0Mw9GPb6-s3jzU4&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
+
+<div id="hidden-container" style="display: none;">
+  <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=n&d=mWphCyX22pe_P6KJ9gE87HPH3R3G0Mw9GPb6-s3jzU4&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
+</div>
