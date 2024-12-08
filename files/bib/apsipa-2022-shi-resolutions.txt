@@ -1,0 +1,9 @@
+@INPROCEEDINGS{9980180,
+  author={Shi, Hao and Shu, Yuchun and Wang, Longbiao and Dang, Jianwu and Kawahara, Tatsuya},
+  booktitle={2022 Asia-Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC)}, 
+  title={Fusing Multiple Bandwidth Spectrograms for Improving Speech Enhancement}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={1938-1943},
+  doi={10.23919/APSIPAASC55919.2022.9980180}}

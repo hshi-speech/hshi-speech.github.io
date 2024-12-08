@@ -1,0 +1,17 @@
+@InProceedings{10.1007/978-3-030-92307-5_25,
+author="Yin, Haoran
+and Shi, Hao
+and Wang, Longbiao
+and Qiang, Luya
+and Li, Sheng
+and Ge, Meng
+and Zhang, Gaoyan
+and Dang, Jianwu",
+title="Simultaneous Progressive Filtering-Based Monaural Speech Enhancement",
+booktitle="Neural Information Processing",
+year="2021",
+publisher="Springer International Publishing",
+address="Cham",
+pages="213--221",
+}
+

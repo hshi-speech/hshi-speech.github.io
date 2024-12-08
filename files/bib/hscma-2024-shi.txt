@@ -1,0 +1,10 @@
+@INPROCEEDINGS{10627051,
+  author={Shi, Hao and Kamo, Naoyuki and Delcroix, Marc and Nakatani, Tomohiro and Araki, Shoko},
+  booktitle={2024 IEEE International Conference on Acoustics, Speech, and Signal Processing Workshops (ICASSPW)}, 
+  title={Ensemble Inference for Diffusion Model-Based Speech Enhancement}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={735-739},
+  doi={10.1109/ICASSPW62465.2024.10627051}
+}

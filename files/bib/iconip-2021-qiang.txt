@@ -1,0 +1,17 @@
+@InProceedings{10.1007/978-3-030-92307-5_7,
+author="Qiang, Luya
+and Shi, Hao
+and Ge, Meng
+and Yin, Haoran
+and Li, Nan
+and Wang, Longbiao
+and Li, Sheng
+and Dang, Jianwu",
+title="Speech Dereverberation Based on Scale-Aware Mean Square Error Loss",
+booktitle="Neural Information Processing",
+year="2021",
+publisher="Springer International Publishing",
+address="Cham",
+pages="55--63",
+}
+

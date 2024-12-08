@@ -1,0 +1,8 @@
+@inproceedings{ge19_interspeech,
+  author={Meng Ge and Longbiao Wang and Nan Li and Hao Shi and Jianwu Dang and Xiangang Li},
+  title={{Environment-Dependent Attention-Driven Recurrent Convolutional Neural Network for Robust Speech Enhancement}},
+  year=2019,
+  booktitle={Proc. Interspeech 2019},
+  pages={3153--3157},
+  doi={10.21437/Interspeech.2019-1477}
+}

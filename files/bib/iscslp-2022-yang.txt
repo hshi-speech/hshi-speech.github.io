@@ -1,0 +1,9 @@
+@INPROCEEDINGS{10038197,
+  author={Yang, Yanbing and Shi, Hao and Lin, Yuqin and Ge, Meng and Wang, Longbiao and Hou, Qingzhi and Dang, Jianwu},
+  booktitle={2022 13th International Symposium on Chinese Spoken Language Processing (ISCSLP)}, 
+  title={Adaptive Attention Network with Domain Adversarial Training for Multi-Accent Speech Recognition}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={6-10},
+  doi={10.1109/ISCSLP57327.2022.10038197}}

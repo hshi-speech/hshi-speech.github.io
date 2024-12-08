@@ -1,0 +1,8 @@
+@inproceedings{song22e_interspeech,
+  author={Tongtong Song and Qiang Xu and Meng Ge and Longbiao Wang and Hao Shi and Yongjie Lv and Yuqin Lin and Jianwu Dang},
+  title={{Language-specific Characteristic Assistance for Code-switching Speech Recognition}},
+  year=2022,
+  booktitle={Proc. Interspeech 2022},
+  pages={3924--3928},
+  doi={10.21437/Interspeech.2022-11426}
+}

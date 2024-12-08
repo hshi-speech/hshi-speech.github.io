@@ -1,0 +1,8 @@
+@inproceedings{xu22i_interspeech,
+  author={Qiang Xu and Tongtong Song and Longbiao Wang and Hao Shi and Yuqin Lin and Yongjie Lv and Meng Ge and Qiang Yu and Jianwu Dang},
+  title={{Self-Distillation Based on High-level Information Supervision for Compressing End-to-End ASR Model}},
+  year=2022,
+  booktitle={Proc. Interspeech 2022},
+  pages={1716--1720},
+  doi={10.21437/Interspeech.2022-11423}
+}

@@ -1,0 +1,8 @@
+@inproceedings{shi24b_interspeech,
+  title     = {Dual-path Adaptation of Pretrained Feature Extraction Module for Robust Automatic Speech Recognition},
+  author    = {Hao Shi and Tatsuya Kawahara},
+  year      = {2024},
+  booktitle = {Interspeech 2024},
+  pages     = {2850--2854},
+  doi       = {10.21437/Interspeech.2024-270},
+}

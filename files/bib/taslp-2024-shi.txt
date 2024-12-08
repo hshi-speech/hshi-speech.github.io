@@ -1,0 +1,10 @@
+@ARTICLE{10542371,
+  author={Shi, Hao and Mimura, Masato and Kawahara, Tatsuya},
+  journal={IEEE/ACM Transactions on Audio, Speech, and Language Processing}, 
+  title={Waveform-Domain Speech Enhancement Using Spectrogram Encoding for Robust Speech Recognition}, 
+  year={2024},
+  volume={32},
+  number={},
+  pages={3049-3060},
+  keywords={Feature extraction;Spectrogram;Noise measurement;Decoding;Encoding;Robustness;Transformers;Speech enhancement;robust automatic speech recognition (ASR);time-frequency hybrid model;spectral information refining},
+  doi={10.1109/TASLP.2024.3407511}}

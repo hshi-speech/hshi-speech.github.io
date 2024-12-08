@@ -1,0 +1,9 @@
+@INPROCEEDINGS{shi_slt2024,
+  author={Shi, Hao and Gao, Yuan and Ni, Zhaoheng and Kawahara, Tatsuya},
+  booktitle={2024 SLT}, 
+  title={Serialized Speech Information Guidance with Overlapped Encoding Separation for Multi-Speaker Automatic Speech Recognition}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={xx-xx},
+}

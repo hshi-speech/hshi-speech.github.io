@@ -1,0 +1,8 @@
+@inproceedings{shi20c_interspeech,
+  author={Hao Shi and Longbiao Wang and Sheng Li and Chenchen Ding and Meng Ge and Nan Li and Jianwu Dang and Hiroshi Seki},
+  title={{Singing Voice Extraction with Attention-Based Spectrograms Fusion}},
+  year=2020,
+  booktitle={Proc. Interspeech 2020},
+  pages={2412--2416},
+  doi={10.21437/Interspeech.2020-1043}
+}

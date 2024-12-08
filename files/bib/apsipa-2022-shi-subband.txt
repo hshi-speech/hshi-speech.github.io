@@ -1,0 +1,9 @@
+@INPROCEEDINGS{9979930,
+  author={Shi, Hao and Wang, Longbiao and Li, Sheng and Dang, Jianwu and Kawahara, Tatsuya},
+  booktitle={2022 Asia-Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC)}, 
+  title={Subband-based Spectrogram Fusion for Speech Enhancement by Combining Mapping and Masking Approaches}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={286-292},
+  doi={10.23919/APSIPAASC55919.2022.9979930}}

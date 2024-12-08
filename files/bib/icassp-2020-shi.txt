@@ -1,0 +1,10 @@
+@INPROCEEDINGS{9054661,
+  author={Shi, Hao and Wang, Longbiao and Ge, Meng and Li, Sheng and Dang, Jianwu},
+  booktitle={ICASSP 2020 - 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+  title={Spectrograms Fusion with Minimum Difference Masks Estimation for Monaural Speech Dereverberation}, 
+  year={2020},
+  volume={},
+  number={},
+  pages={7544-7548},
+  doi={10.1109/ICASSP40776.2020.9054661}
+}

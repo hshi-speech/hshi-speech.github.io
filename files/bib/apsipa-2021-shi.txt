@@ -1,0 +1,9 @@
+@INPROCEEDINGS{9689650,
+  author={Shi, Hao and Wang, Longbiao and Li, Sheng and Fan, Cunhang and Dang, Jianwu and Kawahara, Tatsuya},
+  booktitle={2021 Asia-Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC)}, 
+  title={Spectrograms Fusion-based End-to-end Robust Automatic Speech Recognition}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={438-442},
+  doi={}}

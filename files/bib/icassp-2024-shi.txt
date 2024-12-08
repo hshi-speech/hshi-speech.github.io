@@ -1,0 +1,9 @@
+@INPROCEEDINGS{10448429,
+  author={Shi, Hao and Shimada, Kazuki and Hirano, Masato and Shibuya, Takashi and Koyama, Yuichiro and Zhong, Zhi and Takahashi, Shusuke and Kawahara, Tatsuya and Mitsufuji, Yuki},
+  booktitle={ICASSP 2024 - 2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+  title={Diffusion-Based Speech Enhancement with Joint Generative and Predictive Decoders}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={12951-12955},
+  doi={10.1109/ICASSP48485.2024.10448429}}

@@ -1,0 +1,9 @@
+@INPROCEEDINGS{10248171,
+  author={Zhong, Zhi and Shi, Hao and Hirano, Masato and Shimada, Kazuki and Tateishi, Kazuya and Shibuya, Takashi and Takahashi, Shusuke and Mitsufuji, Yuki},
+  booktitle={2023 IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA)}, 
+  title={Extending Audio Masked Autoencoders toward Audio Restoration}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-5},
+  doi={10.1109/WASPAA58266.2023.10248171}}

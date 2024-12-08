@@ -1,0 +1,6 @@
+@article{shi2024investigation,
+  title={Exploration of Adapter for Noise Robust Automatic Speech Recognition},
+  author={Shi, Hao and Kawahara, Tatsuya},
+  journal={arXiv preprint arXiv:2402.18275},
+  year={2024}
+}

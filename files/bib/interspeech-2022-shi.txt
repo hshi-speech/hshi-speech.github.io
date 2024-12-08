@@ -1,0 +1,8 @@
+@inproceedings{shi22e_interspeech,
+  author={Hao Shi and Longbiao Wang and Sheng Li and Jianwu Dang and Tatsuya Kawahara},
+  title={{Monaural Speech Enhancement Based on Spectrogram Decomposition for Convolutional Neural Network-sensitive Feature Extraction}},
+  year=2022,
+  booktitle={Proc. Interspeech 2022},
+  pages={221--225},
+  doi={10.21437/Interspeech.2022-11268}
+}
