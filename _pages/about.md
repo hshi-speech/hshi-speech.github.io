@@ -38,7 +38,7 @@ Hobbies
 
 * 🐾 Others
   * 📸 Photography
-  * 🐱 Pets: I have a cat: Baobao
+  * 🐱 Pets: I have a cat
     <div style="margin-top:20px;"></div>
     <img src="https://raw.githubusercontent.com/hshi-speech/hshi-speech.github.io/master/hobbies/pets/baobao1.jpeg" alt="Night Light" width="300" />
     <img src="https://raw.githubusercontent.com/hshi-speech/hshi-speech.github.io/master/hobbies/pets/baobao2.jpeg" alt="Night Light" width="300" />
