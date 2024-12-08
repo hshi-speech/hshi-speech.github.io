@@ -6,8 +6,8 @@ permalink: /publication/Interspeech2022song
 excerpt: 'Tongtong Song, Qiang Xu, Meng Ge, Longbiao Wang, Hao Shi, Yongjie Lv, Yuqin Lin, and Jianwu Dang'
 date: 2022-09-14
 venue: 'Interspeech'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/interspeech-2022-song.txt'
-paperurl: 'https://drive.google.com/file/d/1olNUR_lamxskLCc3DB1YECHDmdJRNQl2/view?usp=drive_link'
+biburl: 'https://hshi-speech.github.io/files/bib/interspeech-2022-song.txt'
+paperurl: 'https://hshi-speech.github.io/files/publications/interspeech-2022-song.pdf'
 citation: #
 ---
 
