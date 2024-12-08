@@ -98,13 +98,13 @@ Publications
 
 Reviewer
 ======
-○ IEEE/ACM Trans. ASLP 
-○ Speech Communication 
-○ IEEE-ICASSP 
-○ INTERSPEECH 
-○ APSIPA ASC 
-○ IEEE-SLT 
-○ WASPAA
+  * IEEE/ACM Trans. ASLP 
+  * Speech Communication 
+  * IEEE-ICASSP 
+  * INTERSPEECH 
+  * APSIPA ASC 
+  * IEEE-SLT 
+  * WASPAA
 
 
 
