@@ -17,9 +17,17 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* 2021 - 2024, Ph.D. in Informatics, Kyoto University
+  * Robust Automatic Speech Recognition
+  * Supervisor: <a href="http://sap.ist.i.kyoto-u.ac.jp/members/kawahara/" target="_blank">Tatsuya Kawahara</a>
+
+* 2018 - 2021, M.Phil. in Computer Science, Tianjin University
+  * Speech Enhancement
+  * Supervisor: <a href="http://cic.tju.edu.cn/faculty/wanglongbiao/wang.html" target="_blank">Longbiao Wang</a>
+
+* 2014 - 2018, B.Sc. in Computer Science, Southwest Jiaotong University
+  * Supervisor: <a href="https://faculty.swjtu.edu.cn/dizhixiong/zh_CN/zhym/129018/list/index.htm" target="_blank">Zhixiong Di </a>
+
 
 Work experience
 ======
