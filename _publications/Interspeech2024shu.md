@@ -6,8 +6,8 @@ permalink: /publication/Interspeech2024shu
 excerpt: 'Yuchun Shu, Bo Hu, Yifeng He, Hao Shi, Longbiao Wang, and Jianwu Dang'
 date: 2024-09-01
 venue: 'Interspeech'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/interspeech-2024-shu.txt'
-paperurl: 'https://drive.google.com/file/d/1c8mJPRNJQRtNwxv60eICIh3V6nUBh4_E/view?usp=drive_link'
+biburl: 'https://hshi-speech.github.io/files/bib/interspeech-2024-shu.txt'
+paperurl: 'https://hshi-speech.github.io/files/publications/interspeech-2024-shu.pdf'
 citation: #
 ---
 
