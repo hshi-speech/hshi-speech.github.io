@@ -7,7 +7,7 @@ excerpt: 'Tongtong Song, Qiang Xu, Meng Ge, Longbiao Wang, Hao Shi, Yongjie Lv, 
 date: 2022-09-14
 venue: 'Interspeech'
 biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/interspeech-2022-song.txt'
-paperurl: 'https://drive.google.com/file/d/1UtgrYvwoP-GUWPgBCZEnn88qbcoINb7z/view?usp=drive_link'
+paperurl: 'https://drive.google.com/file/d/1olNUR_lamxskLCc3DB1YECHDmdJRNQl2/view?usp=drive_link'
 citation: #
 ---
 
