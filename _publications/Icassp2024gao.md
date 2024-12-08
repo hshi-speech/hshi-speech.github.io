@@ -6,8 +6,8 @@ permalink: /publication/Icassp2024gao
 excerpt: 'Yuan Gao, Hao Shi, Chenhui Chu, Tatsuya Kawahara'
 date: 2024-04-14
 venue: 'IEEE-ICASSP'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/icassp-2024-gao.txt'
-paperurl: 'https://drive.google.com/file/d/1RD4qCsl2nhDNLLpbhucSZq16KncLaLpX/view?usp=drive_link'
+biburl: 'https://hshi-speech.github.io/files/bib/icassp-2024-gao.txt'
+paperurl: 'https://hshi-speech.github.io/files/publications/icassp-2024-gao.pdf'
 citation: #
 ---
 
