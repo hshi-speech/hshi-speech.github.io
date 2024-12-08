@@ -6,8 +6,8 @@ permalink: /publication/Icassp2024shi
 excerpt: 'Hao Shi, Kazuki Shimada, Masato Hirano, Takashi Shibuya, Yuichiro Koyama, Zhi Zhong, Shusuke Takahashi, Tatsuya Kawahara, and Yuki Mitsufuji'
 date: 2024-04-14
 venue: 'IEEE-ICASSP'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/icassp-2024-shi.txt'
-paperurl: 'https://drive.google.com/file/d/14FWzu4bmH8HqhXHFkhasEcOxdrEYEja6/view?usp=drive_link'
+biburl: 'https://hshi-speech.github.io/files/bib/icassp-2024-shi.txt'
+paperurl: 'https://hshi-speech.github.io/files/publications/icassp-2024-shi.pdf'
 citation: #
 ---
 
