@@ -1,7 +1,7 @@
 ---
 title: "Environment-Dependent Attention-Driven Recurrent Convolutional Neural Network for Robust Speech Enhancement"
 collection: publications
-category: conference
+category: conferences
 permalink: /publication/Interspeech19ge
 excerpt: ' environment-dependent, attention, convolutional network, recurrent network, speech enhancement'
 date: 2019-09-15
