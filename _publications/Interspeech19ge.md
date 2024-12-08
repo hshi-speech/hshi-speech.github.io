@@ -3,11 +3,11 @@ title: "Environment-Dependent Attention-Driven Recurrent Convolutional Neural Ne
 collection: publications
 category: conferences
 permalink: /publication/Interspeech19ge
-excerpt: ' environment-dependent, attention, convolutional network, recurrent network, speech enhancement'
+excerpt: 'Meng Ge, Longbiao Wang, Nan Li, Hao Shi, Jianwu Dang, and Xiangang Li'
 date: 2019-09-15
-venue: 'Conference 1'
-slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
-paperurl: 'http://academicpages.github.io/files/paper1.pdf'
+venue: 'Interspeech 2019'
+slidesurl: 'https://hshi_speech.github.io/files/bib/interspeech-2019-ge.txt'
+paperurl: 'https://hshi_speech.github.io/files/publications/interspeech-2019-ge.pdf'
 citation: 'Meng Ge, Longbiao Wang, Nan Li, Hao Shi, Jianwu Dang, and Xiangang Li, "Environment-Dependent Attention-Driven Recurrent Convolutional Neural Network for Robust Speech Enhancement," in Proc. of Interspeech 2019, 3153-3157'
 ---
 
