@@ -98,8 +98,11 @@ Publications
 
 Reviewer
 ======
+* Jounral
   * IEEE/ACM Trans. ASLP 
-  * Speech Communication 
+  * Speech Communication
+
+* Conferences or Workshops
   * IEEE-ICASSP 
   * INTERSPEECH 
   * APSIPA ASC 
