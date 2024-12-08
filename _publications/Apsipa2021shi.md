@@ -6,8 +6,8 @@ permalink: /publication/Apsipa2021shi
 excerpt: 'Hao Shi, Longbiao Wang, Sheng Li, Cunhang Fan, Jianwu Dang, and Tatsuya Kawahara'
 date: 2021-12-14
 venue: 'APSIPA ASC'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/apsipa-2021-shi.txt'
-paperurl: 'https://drive.google.com/file/d/10kLfDgsSy93rDGx8Ceu0J3SQsjxbn0uQ/view?usp=drive_link'
+biburl: 'https://hshi-speech.github.io/files/bib/apsipa-2021-shi.txt'
+paperurl: 'https://hshi-speech.github.io/files/publications/apsipa-2021-shi.pdf'
 citation: #
 ---
 
