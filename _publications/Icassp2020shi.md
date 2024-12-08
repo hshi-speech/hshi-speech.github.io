@@ -6,8 +6,8 @@ permalink: /publication/Icassp2020shi
 excerpt: 'Hao Shi, Longbiao Wang, Meng Ge, Sheng Li, and Jianwu Dang'
 date: 2020-05-04
 venue: 'IEEE-ICASSP'
-biburl: 'https://raw.githubusercontent.com/hshi-speech/hshi_speech.github.io/master/files/bib/icassp-2020-shi.txt'
-paperurl: 'https://drive.google.com/file/d/1iiPmd-oXNnVe5rS49t5W78ZbrHlWyFUR/view?usp=drive_link'
+biburl: 'https://hshi-speech.github.io/files/bib/icassp-2020-shi.txt'
+paperurl: 'https://hshi-speech.github.io/files/publications/icassp-2020-shi.pdf'
 citation: #
 ---
 
