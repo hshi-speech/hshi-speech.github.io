@@ -7,7 +7,7 @@ excerpt: 'Jiahui Zhao, Hao Shi, Tianrui Wang, Hexin Liu, Zhaoheng Ni, Lingxuan Y
 date: 2025-04-07
 venue: 'IEEE-ICASSP'
 biburl: 'https://hshi-speech.github.io/files/bib/icassp-2025-zhao.txt'
-paperurl: 'https://hshi-speech.github.io/files/publications/icassp-2025-zhao.pdf'
+paperurl: 'https://arxiv.org/pdf/2412.16507'
 citation: #
 ---
 
