@@ -1,0 +1,6 @@
+@article{zhao2024adapting,
+  title={Adapting Whisper for Code-Switching through Encoding Refining and Language-Aware Decoding},
+  author={Zhao, Jiahui and Shi, Hao and Cui, Chenrui and Wang, Tianrui and Liu, Hexin and Ni, Zhaoheng and Ye, Lingxuan and Wang, Longbiao},
+  journal={arXiv preprint arXiv:2412.16507},
+  year={2024}
+}
