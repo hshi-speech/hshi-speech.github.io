@@ -1,9 +1,11 @@
-@INPROCEEDINGS{shi_slt2024,
+@INPROCEEDINGS{10832330,
   author={Shi, Hao and Gao, Yuan and Ni, Zhaoheng and Kawahara, Tatsuya},
-  booktitle={IEEE Spoken Language Technology Workshop (SLT)}, 
+  booktitle={2024 IEEE Spoken Language Technology Workshop (SLT)}, 
   title={Serialized Speech Information Guidance with Overlapped Encoding Separation for Multi-Speaker Automatic Speech Recognition}, 
   year={2024},
   volume={},
   number={},
-  pages={198--204},
+  pages={193-199},
+  keywords={Training;Particle separators;Conferences;Encoding;Decoding;Noise measurement;Data mining;Streams;Automatic speech recognition;Automatic speech recognition;multi-speaker;overlapped encoding separation;serialized output training},
+  doi={10.1109/SLT61566.2024.10832330}
 }
