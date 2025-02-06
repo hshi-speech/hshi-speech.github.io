@@ -13,8 +13,8 @@ My journey in academia has been driven by a deep curiosity about how technology 
 
 Currently, I work as a researcher at Kyoto University, where I continue to contribute to cutting-edge projects in these fields.
 My expertise includes:
-Speech Enhancement: Designing models that improve audio quality in noisy settings.
-ASR: Developing systems that accurately transcribe speech, even in challenging acoustic environments.
+Speech Enhancement, designing models that improve audio quality in noisy settings;
+Automatic Speech Recognition, developing systems that accurately transcribe speech, even in challenging acoustic environments.
 
 Beyond research, I’m enthusiastic about collaborating with others, sharing knowledge, and exploring how AI can create practical and meaningful solutions. 
 When I’m not working, you might find me enjoying a good cup of coffee or heading outdoors for some adventure, like hiking in the warmer months or skiing during winter.
