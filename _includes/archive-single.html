@@ -31,9 +31,9 @@
     </h3>
 
 
-    <span></span>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</span>
-    <span>{{ post.excerpt }}</span>
-    <span><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.biburl }}" target="_blank">Download BibTeX</a></span>
+    Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}<br>
+    {{ post.excerpt }}<br>
+    <a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.biburl }}" target="_blank">Download BibTeX</a>
 
 
   </article>
