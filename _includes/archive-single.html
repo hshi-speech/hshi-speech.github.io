@@ -32,7 +32,7 @@
 
 
     Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}
-    <i>{{ post.excerpt | markdownify }}</i>
+    {{ post.excerpt | markdownify }}
     <a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.biburl }}" target="_blank">Download BibTeX</a>
 
 
