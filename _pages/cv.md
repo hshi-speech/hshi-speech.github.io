@@ -15,6 +15,8 @@ redirect_from:
 
 <br>
 
+<hr>
+
 {% include base_path %}
 
 
@@ -37,6 +39,9 @@ Research interests
   * Blind source separation
 
 
+<hr>
+
+
 Education
 ======
 * 2021 - 2024, Ph.D. in Informatics, Kyoto University
@@ -50,6 +55,8 @@ Education
 * 2014 - 2018, B.Sc. in Computer Science, Southwest Jiaotong University
   * Supervisor: <a href="https://faculty.swjtu.edu.cn/dizhixiong/zh_CN/zhym/129018/list/index.htm" target="_blank">Zhixiong Di </a>
 
+
+<hr>
 
 Work experience
 ======
@@ -76,11 +83,15 @@ Work experience
   * Speech signal processing
 
 
+<hr>
+
 Honors
 ======
 * 2022.04 - 2024.03: Fellowship
   * awarded by Japan Science and Technology Agency (JST)
 
+
+<hr>
 
 Language skill
 ======
@@ -88,13 +99,15 @@ Language skill
 * English (fluent)
 
 
+<hr>
+
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-
+<hr>
 
 Reviewer
 ======
