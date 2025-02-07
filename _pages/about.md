@@ -21,6 +21,7 @@ When I’m not working, you might find me enjoying a good cup of coffee or headi
 
 Feel free to browse my website to learn more about my projects, publications, and interests. I look forward to connecting with you!
 
+<hr>
 
 Hobbies
 ======
