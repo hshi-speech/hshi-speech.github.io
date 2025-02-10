@@ -7,7 +7,7 @@ excerpt: 'Zhongjian Cui, Chenrui Cui, Tianrui Wang, Mengnan He, Hao Shi, Meng Ge
 date: 2025-04-06
 venue: 'IEEE-ICASSP'
 biburl: 'https://hshi-speech.github.io/files/bib/icassp-2025-cui.txt'
-paperurl: 'https://hshi-speech.github.io/files/publications/icassp-2025-cui.pdf'
+paperurl: 'https://arxiv.org/pdf/2501.02452'
 citation: #
 ---
 
