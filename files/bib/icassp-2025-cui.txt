@@ -1,0 +1,6 @@
+@article{cui2025reducinggappretrainedspeech,
+      title={Reducing the Gap Between Pretrained Speech Enhancement and Recognition Models Using a Real Speech-Trained Bridging Module}, 
+      author={Zhongjian Cui and Chenrui Cui and Tianrui Wang and Mengnan He and Hao Shi and Meng Ge and Caixia Gong and Longbiao Wang and Jianwu Dang},
+      year={2025},
+      journal={arXiv preprint arXiv:2501.02452},
+}
