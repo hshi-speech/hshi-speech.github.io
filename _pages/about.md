@@ -1,11 +1,4 @@
----
-permalink: /
-title: "About Me"
-author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
----
+
 
 Hello!
 I’m a passionate researcher with a strong focus on human-computer interaction (speech signal processing and natural language processing).
