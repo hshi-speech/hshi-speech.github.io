@@ -1,0 +1,7 @@
+@article{song2022monolingual,
+  author       = {Tongtong Song and Qiang Xu and Haoyu Lu and Longbiao Wang and Hao Shi and Yuqin Lin and Yanbing Yang and Jianwu Dang},
+  title        = {Monolingual Recognizers Fusion for Code-switching Speech Recognition},
+  journal      = {arXiv preprint arXiv:2211.01046},
+  year         = {2022},
+  note         = {Available: https://arxiv.org/abs/2211.01046}
+}
