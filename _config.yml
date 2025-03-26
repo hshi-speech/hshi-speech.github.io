@@ -24,11 +24,11 @@ author:
   avatar           : "me-large.png"
   name             : "Hao Shi"
   pronouns         : "he/him"  
-  bio              : "Researcher"
-  location         : "Kyoto, Japan"
-  employer         : "Kyoto University"
+  bio              : "Research Scientist"
+  location         : "Tokyo, Japan"
+  employer         : "SB Intuitions"
   uri              : # URL
-  email            : "shi@sap.ist.i.kyoto-u.ac.jp" 
+  email            : "hshi@ieee.org" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
