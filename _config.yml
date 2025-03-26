@@ -25,7 +25,7 @@ author:
   name             : "Hao Shi"
   pronouns         : "he/him"  
   bio              : "Research Scientist"
-  location         : "Tokyo, Japan"
+  location         : ""
   employer         : "SB Intuitions"
   uri              : # URL
   email            : "hshi@ieee.org" 
@@ -34,7 +34,7 @@ author:
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?user=DclFbLwAAAAJ"
   impactstory      : # URL
-  orcid            : "https://orcid.org/0000-0003-3373-2147"
+  orcid            : # "https://orcid.org/0000-0003-3373-2147"
   semantic         : # URL
   pubmed           : # URL
   researchgate     : "https://www.researchgate.net/profile/Hao-Shi-28"
