@@ -8,7 +8,8 @@ redirect_from:
 ---
 
 Hello!
-I’m a research scientist of SB intuitions. 
+This website is currently not updating anymore!
+
 Please visit [my new personal website](https://sites.google.com/view/hshi-speech)!
 
 
