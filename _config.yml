@@ -25,7 +25,7 @@ author:
   name             : "Hao Shi"
   pronouns         : "he/him"  
   bio              : "Research Scientist"
-  location         : ""
+  location         : # ""
   employer         : "SB Intuitions"
   uri              : # URL
   email            : "hshi@ieee.org" 
