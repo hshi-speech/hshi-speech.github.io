@@ -1,0 +1,7 @@
+@article{gao2025bridgingspeechemotionrecognition,
+  title={Bridging Speech Emotion Recognition and Personality: Dataset and Temporal Interaction Condition Network}, 
+  author={Yuan Gao and Hao Shi and Yahui Fu and Chenhui Chu and Tatsuya Kawahara},
+  journal      = {arXiv preprint arXiv:2505.13978},
+  year         = {2025},
+  note         = {Available: https://arxiv.org/abs/2505.13978}
+}
