@@ -1,0 +1,7 @@
+@article{shi2025combiningdeterministicenhancedconditions,
+  title={Combining Deterministic Enhanced Conditions with Dual-Streaming Encoding for Diffusion-Based Speech Enhancement}, 
+  author={Hao Shi and Xugang Lu and Kazuki Shimada and Tatsuya Kawahara},
+  journal      = {arXiv preprint arXiv:2505.13983},
+  year         = {2025},
+  note         = {Available: https://arxiv.org/abs/2505.13983}
+}
