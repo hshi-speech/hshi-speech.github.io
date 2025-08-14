@@ -1,0 +1,9 @@
+@INPROCEEDINGS{asru_2025_shi,
+  author={Hao Shi and Yusuke Fujita and Tomoya Mizumoto and Lianbo Liu and Atsushi Kojima and Yui Sudo},
+  booktitle={2025 ASRU}, 
+  title={Serialized Output Prompting for Large Language Model-based Multi-Talker Speech Recognition}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={xx-xx},
+}
