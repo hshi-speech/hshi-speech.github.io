@@ -1,0 +1,9 @@
+@INPROCEEDINGS{asru_2025_mizumoto,
+  author={Tomoya Mizumoto and Yusuke Fujita and Hao Shi and Lianbo Liu and Atsushi Kojima and Yui Sudo},
+  booktitle={2025 ASRU}, 
+  title={Evaluating Japanese Dialect Robustness across Speech and Text-based Large Language Models'}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={xx-xx},
+}
