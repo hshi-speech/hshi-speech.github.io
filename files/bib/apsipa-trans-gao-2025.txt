@@ -1,0 +1,12 @@
+@article{SIP-20250025,
+url = {http://dx.doi.org/10.1561/116.20250025},
+year = {2025},
+volume = {14},
+journal = {APSIPA Transactions on Signal and Information Processing},
+title = {Multi-attribute Learning for Multi-level Emotion Recognition from Speech},
+doi = {10.1561/116.20250025},
+issn = {},
+number = {2},
+pages = {1--29},
+author = {Yuan Gao and Hao Shi and Chenhui Chu and Tatsuya Kawahara}
+}
