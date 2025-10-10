@@ -1,0 +1,10 @@
+@ARTICLE{11197936,
+  author={Shi, Hao and Lu, Xugang and Shimada, Kazuki and Kawahara, Tatsuya},
+  journal={IEEE Transactions on Audio, Speech and Language Processing}, 
+  title={Combining Deterministic Enhanced Conditions with Dual-Streaming Encoding for Diffusion-Based Speech Enhancement}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-13},
+  keywords={Noise measurement;Diffusion models;Speech enhancement;Feature extraction;Spectrogram;Noise;Decoding;Diffusion processes;Time-frequency analysis;Storms;Diffusion model;deterministic method;probabilistic method;ensemble;Brownian motion trajectory},
+  doi={10.1109/TASLPRO.2025.3619824}}
