@@ -1,0 +1,10 @@
+@INPROCEEDINGS{11249141,
+  author={Kojima, Atsushi and Fujita, Yusuke and Shi, Hao and Mizumoto, Tomoya and Zhao, Mengjie and Sudo, Yui},
+  booktitle={2025 Asia Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC)}, 
+  title={Conversation Context-Aware Direct Preference Optimization for Style-Controlled Speech Synthesis}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={573-578},
+  keywords={Training;Emotion recognition;Accuracy;Vocoders;Oral communication;Predictive models;Rendering (computer graphics);Text to speech;Optimization;Context modeling},
+  doi={10.1109/APSIPAASC65261.2025.11249141}}
