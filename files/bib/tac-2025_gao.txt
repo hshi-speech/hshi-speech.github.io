@@ -1,0 +1,10 @@
+@ARTICLE{11270007,
+  author={Gao, Yuan and Shi, Hao and Fu, Yahui and Chu, Chenhui and Kawahara, Tatsuya},
+  journal={IEEE Transactions on Affective Computing}, 
+  title={Bridging Speech Emotion Recognition and Personality: Dataset and Temporal Interaction Condition Network}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-12},
+  keywords={Annotations;Feature extraction;Emotion recognition;Multitasking;Oral communication;Correlation;Acoustics;Robustness;Correlation coefficient;Affective computing;Speech emotion recognition;Big Five personality traits;human computer interaction},
+  doi={10.1109/TAFFC.2025.3637088}}
