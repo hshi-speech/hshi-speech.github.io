@@ -1,6 +1,10 @@
-@article{zhao2024adapting,
-  title={Adapting Whisper for Code-Switching through Encoding Refining and Language-Aware Decoding},
+@INPROCEEDINGS{10889634,
   author={Zhao, Jiahui and Shi, Hao and Cui, Chenrui and Wang, Tianrui and Liu, Hexin and Ni, Zhaoheng and Ye, Lingxuan and Wang, Longbiao},
-  journal={arXiv preprint arXiv:2412.16507},
-  year={2024}
-}
+  booktitle={ICASSP 2025 - 2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+  title={Adapting Whisper for Code-Switching through Encoding Refining and Language-Aware Decoding}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-5},
+  keywords={Adaptation models;Fuses;Refining;Speech enhancement;Signal processing;Encoding;Decoding;Multilingual;Long short term memory;Faces;speech recognition;code-switching;encoding refining;adaptation},
+  doi={10.1109/ICASSP49660.2025.10889634}}
