@@ -1,6 +1,10 @@
-@article{cui2025reducinggappretrainedspeech,
-      title={Reducing the Gap Between Pretrained Speech Enhancement and Recognition Models Using a Real Speech-Trained Bridging Module}, 
-      author={Zhongjian Cui and Chenrui Cui and Tianrui Wang and Mengnan He and Hao Shi and Meng Ge and Caixia Gong and Longbiao Wang and Jianwu Dang},
-      year={2025},
-      journal={arXiv preprint arXiv:2501.02452},
-}
+@INPROCEEDINGS{10889737,
+  author={Cui, Zhongjian and Cui, Chenrui and Wang, Tianrui and He, Mengnan and Shi, Hao and Ge, Meng and Gong, Caixia and Wang, Longbiao and Dang, Jianwu},
+  booktitle={ICASSP 2025 - 2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+  title={Reducing the Gap Between Pretrained Speech Enhancement and Recognition Models Using a Real Speech-Trained Bridging Module}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-5},
+  keywords={Training;Refining;Speech recognition;Speech enhancement;Multitasking;Vectors;Robustness;Noise robustness;Noise measurement;Optimization;Noise-robust automatic speech recognition;distortion;observation adding},
+  doi={10.1109/ICASSP49660.2025.10889737}}
