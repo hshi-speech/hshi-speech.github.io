@@ -1,9 +1,10 @@
-@INPROCEEDINGS{asru_2025_shi,
-  author={Hao Shi and Yusuke Fujita and Tomoya Mizumoto and Lianbo Liu and Atsushi Kojima and Yui Sudo},
-  booktitle={2025 ASRU}, 
+@INPROCEEDINGS{11434801,
+  author={Shi, Hao and Fujita, Yusuke and Mizumoto, Tomoya and Liu, Lianbo and Kojima, Atsushi and Sudo, Yui},
+  booktitle={2025 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU)}, 
   title={Serialized Output Prompting for Large Language Model-based Multi-Talker Speech Recognition}, 
   year={2025},
   volume={},
   number={},
-  pages={xx-xx},
-}
+  pages={1-8},
+  keywords={Training;Adaptation models;Particle separators;Large language models;System performance;Performance gain;Information retrieval;Encoding;Decoding;Automatic speech recognition;automatic speech recognition;large language model;multi-talker;prompt},
+  doi={10.1109/ASRU65441.2025.11434801}}
