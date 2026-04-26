@@ -1,9 +1,10 @@
-@INPROCEEDINGS{asru_2025_mizumoto,
-  author={Tomoya Mizumoto and Yusuke Fujita and Hao Shi and Lianbo Liu and Atsushi Kojima and Yui Sudo},
-  booktitle={2025 ASRU}, 
-  title={Evaluating Japanese Dialect Robustness across Speech and Text-based Large Language Models'}, 
+@INPROCEEDINGS{11434668,
+  author={Mizumoto, Tomoya and Fujita, Yusuke and Shi, Hao and Liu, Lianbo and Kojima, Atsushi and Sudo, Yui},
+  booktitle={2025 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU)}, 
+  title={Evaluating Japanese Dialect Robustness Across Speech and Text-based Large Language Models}, 
   year={2025},
   volume={},
   number={},
-  pages={xx-xx},
-}
+  pages={1-7},
+  keywords={Training;Measurement;Translation;Large language models;Conferences;Buildings;Inclusive language;Speech enhancement;Robustness;Standards;large language model;speech language model;speech translation;dialect},
+  doi={10.1109/ASRU65441.2025.11434668}}
