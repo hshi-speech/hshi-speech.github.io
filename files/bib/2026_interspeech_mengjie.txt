@@ -1,0 +1,10 @@
+@misc{zhao2026speechworthyalignmentjapanese,
+  title         = {Speech-Worthy Alignment for Japanese SpeechLLMs via Direct Preference Optimization},
+  author        = {Zhao, Mengjie and Liu, Lianbo and Fujita, Yusuke and Shi, Hao and Gao, Yuan and Koshkin, Roman and Sudo, Yui},
+  year          = {2026},
+  eprint        = {2603.12565},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.SD},
+  doi           = {10.48550/arXiv.2603.12565},
+  url           = {https://arxiv.org/abs/2603.12565}
+}
