@@ -1,0 +1,10 @@
+@misc{shi2026distillingllmsemanticpriors,
+  title         = {Distilling LLM Semantic Priors into Encoder-Only Multi-Talker ASR with Talker-Count Routing},
+  author        = {Shi, Hao and Fujita, Yusuke and Koshkin, Roman and Zhao, Mengjie and Gao, Yuan and Liu, Lianbo and Sudo, Yui},
+  year          = {2026},
+  eprint        = {2603.10587},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.SD},
+  doi           = {10.48550/arXiv.2603.10587},
+  url           = {https://arxiv.org/abs/2603.10587}
+}
