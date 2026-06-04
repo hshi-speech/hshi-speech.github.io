@@ -1,0 +1,10 @@
+@misc{li2026trainingfreeintelligibilityguidedobservationaddition,
+  title         = {Training-Free Intelligibility-Guided Observation Addition for Noisy ASR},
+  author        = {Li, Haoyang and Liu, Changsong and Rao, Wei and Shi, Hao and Sakti, Sakriani and Chng, Eng Siong},
+  year          = {2026},
+  eprint        = {2602.20967},
+  archivePrefix = {arXiv},
+  primaryClass  = {eess.AS},
+  doi           = {10.48550/arXiv.2602.20967},
+  url           = {https://arxiv.org/abs/2602.20967}
+}
