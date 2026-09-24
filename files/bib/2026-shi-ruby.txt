@@ -1,0 +1,7 @@
+@article{shi2026rubyasr,
+  title   = {Ruby-ASR: Evidence-Preserving Supervision for Joint Orthographic and Lexical-Reading Recognition},
+  author  = {Shi, Hao and Liu, Yun and Yang, Xuehao and Liu, Jun and Hua, Chuanbo and Chen, Xuanjun and Liu, Lianbo and Zhu, Shiao and Su, Zixiong},
+  journal = {arXiv preprint arXiv:2609.27289},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2609.27289}
+}
