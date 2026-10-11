@@ -1,0 +1,10 @@
+@ARTICLE{11731498,
+  author={Shi, Hao and Gao, Yuan and Lu, Xugang and Kawahara, Tatsuya},
+  journal={IEEE Transactions on Audio, Speech and Language Processing}, 
+  title={Beyond Acoustic Prefixes: Persistent Access to Serialized Acoustic Memory for LLM-Based Multi-Talker Speech Recognition}, 
+  year={2026},
+  volume={},
+  number={},
+  pages={1-15},
+  keywords={Modeling;Large language models;Memory;Decoding;Speech;Training;LoRa;Automatic speech recognition;Head;Noise measurement;Automatic speech recognition;multi-talker speech recognition;large language models;serialized output training;serialized acoustic memory;acoustic access;cross-attention},
+  doi={10.1109/TASLPRO.2026.3742215}}
