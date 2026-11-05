@@ -15,13 +15,13 @@
     <h3 class="entry-title">{{ p.title }}</h3>
     <p class="authors">{{ p.authors | replace: "Hao Shi", "<strong>Hao Shi</strong>" }}</p>
     <p class="venue"><em>{{ p.venue }}</em>, {{ p.year }}{% if p.type == 'preprint' %} · Preprint{% endif %}</p>
-    {%- if p.summary %}<p class="summary">{{ p.summary }}</p>{% endif %}
     <p class="links">{% include link-row.html links=p.links %}<button class="expand" type="button" data-toggle="panel-{{ p.id }}" aria-expanded="false" aria-controls="panel-{{ p.id }}">Expand</button></p>
   </div>
   <div class="panel" id="panel-{{ p.id }}">
     {%- if p.figure %}
     <figure class="plate"><img src="{{ p.figure | relative_url }}" alt="Figure from the paper: {{ p.title | escape }}" loading="lazy" decoding="async"></figure>
     {%- endif %}
+    {%- if p.summary %}<p class="panel-lead">{{ p.summary }}</p>{% endif %}
     {%- if p.details %}
     <dl class="notes">
       {%- for d in p.details %}

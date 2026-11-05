@@ -1,0 +1,68 @@
+{%- comment -%} Contextual navigation. Desktop: sticky sidebar. Mobile: collapsible bar. Param: kind. {%- endcomment -%}
+{%- assign pubs = site.data.publications -%}
+<nav class="subnav" aria-label="Sections on this page">
+  <details class="subnav-box" open>
+    <summary>On this page</summary>
+    <div class="subnav-body">
+      {%- if include.kind == "research" %}
+      {%- for t in site.data.research.themes %}
+      <details class="nav-group"{% if forloop.first %} open{% endif %}>
+        <summary>{{ t.short }}</summary>
+        <ul>
+          <li><a href="#{{ t.id }}">Overview</a></li>
+          <li><a href="#{{ t.id }}-motivation">Motivation</a></li>
+          <li><a href="#{{ t.id }}-questions">Research Questions</a></li>
+          <li><a href="#{{ t.id }}-approach">Approach</a></li>
+          <li><a href="#{{ t.id }}-contributions">Contributions</a></li>
+          {%- if t.ongoing %}
+          <li><a href="#{{ t.id }}-ongoing">Ongoing Work</a></li>
+          {%- endif %}
+          <li><a href="#{{ t.id }}-publications">Publications</a></li>
+        </ul>
+      </details>
+      {%- endfor %}
+      {%- elsif include.kind == "publications" %}
+      <details class="nav-group" open>
+        <summary>By topic</summary>
+        <ul>
+          <li><a href="{{ '/publications/' | relative_url }}" data-theme="all" aria-current="true">All <span class="count">{{ pubs.size }}</span></a></li>
+          {%- for t in site.data.research.themes %}
+          {%- assign tp = pubs | where_exp: "p", "p.themes contains t.id" %}
+          <li><a href="?theme={{ t.id }}" data-theme="{{ t.id }}">{{ t.short }} <span class="count">{{ tp.size }}</span></a></li>
+          {%- endfor %}
+          {%- assign op = pubs | where_exp: "p", "p.themes contains 'other'" %}
+          <li><a href="?theme=other" data-theme="other">Other <span class="count">{{ op.size }}</span></a></li>
+        </ul>
+      </details>
+      <details class="nav-group" open>
+        <summary>By year</summary>
+        <ul>
+          {%- assign years = pubs | group_by: "year" %}
+          {%- for y in years %}
+          <li><a href="#y{{ y.name }}">{{ y.name }} <span class="count">{{ y.items.size }}</span></a></li>
+          {%- endfor %}
+        </ul>
+      </details>
+      {%- elsif include.kind == "projects" %}
+      {%- for g in site.data.projects %}
+      <details class="nav-group" open>
+        <summary>{{ g.group }}</summary>
+        <ul>
+          {%- for p in g.items %}
+          <li><a href="#{{ p.id }}">{{ p.title }}</a></li>
+          {%- endfor %}
+        </ul>
+      </details>
+      {%- endfor %}
+      {%- elsif include.kind == "profile" %}
+      <ul>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#service">Academic Service</a></li>
+        <li><a href="#honors">Honors</a></li>
+        <li><a href="#other">Other</a></li>
+      </ul>
+      {%- endif %}
+    </div>
+  </details>
+</nav>

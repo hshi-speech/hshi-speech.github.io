@@ -10,7 +10,7 @@ description: "Hao Shi is a Research Scientist at Shanda Group Corp, working on s
     <p>I am a Research Scientist at Shanda Group Corp, working on speech and language AI.</p>
     <p>My research studies reliable speech intelligence in complex acoustic scenes, spanning robust speech processing, multi-talker speech understanding, and speech language models. I am particularly interested in how speech models can exploit increasingly powerful learned priors while remaining faithful to the underlying acoustic evidence.</p>
     <p class="links hero-links">
-      <a href="mailto:hshi@ieee.org">Email</a><a href="{{ '/files/CV_hshi.pdf' | relative_url }}">CV</a><a href="{{ '/files/short_bio.txt' | relative_url }}">Bio</a><a href="https://scholar.google.com/citations?user=DclFbLwAAAAJ">Scholar</a><a href="https://github.com/hshi-speech">GitHub</a><a href="https://www.linkedin.com/in/hao-shi-29300b1b2/">LinkedIn</a>
+      <a href="{{ '/files/CV_hshi.pdf' | relative_url }}">CV</a><a href="{{ '/files/short_bio.txt' | relative_url }}">Short bio</a><a href="https://scholar.google.com/citations?user=DclFbLwAAAAJ">Scholar</a><a href="https://github.com/hshi-speech">GitHub</a>
     </p>
   </div>
   <picture class="portrait">
@@ -20,9 +20,9 @@ description: "Hao Shi is a Research Scientist at Shanda Group Corp, working on s
 </section>
 
 <section>
-  <h2>News</h2>
+  <div class="section-head"><h2>News</h2>{% if site.data.news.size > 5 %}<a href="{{ '/news/' | relative_url }}">All news</a>{% endif %}</div>
   <ul class="news">
-    {%- for n in site.data.news %}
+    {%- for n in site.data.news limit: 5 %}
     <li><time>{{ n.date }}</time><span>{{ n.text }}</span></li>
     {%- endfor %}
   </ul>
@@ -52,6 +52,16 @@ description: "Hao Shi is a Research Scientist at Shanda Group Corp, working on s
     {% include paper.html p=p %}
     {%- endfor %}
   </div>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <dl class="notes">
+    <dt>Email</dt>
+    <dd><a href="mailto:hshi@ieee.org">hshi@ieee.org</a></dd>
+    <dt>Profiles</dt>
+    <dd class="links"><a href="https://scholar.google.com/citations?user=DclFbLwAAAAJ">Google Scholar</a><a href="https://github.com/hshi-speech">GitHub</a><a href="https://huggingface.co/hshispeech">Hugging Face</a><a href="https://www.linkedin.com/in/hao-shi-29300b1b2/">LinkedIn</a><a href="https://www.researchgate.net/profile/Hao-Shi-28">ResearchGate</a></dd>
+  </dl>
 </section>
 
 <div hidden>

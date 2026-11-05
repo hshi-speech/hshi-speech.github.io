@@ -4,12 +4,15 @@ title: Projects
 permalink: /projects/
 description: "Open-source code and models by Hao Shi for multi-talker ASR, Japanese ASR, and text-to-speech."
 ---
+<div class="with-subnav">
+{% include subnav.html kind="projects" %}
+<div class="page-main">
 <header class="page-head">
   <h1>Projects</h1>
   <p class="lede">Open-source code and models, grouped by topic. More on <a href="https://github.com/hshi-speech">GitHub</a>.</p>
 </header>
 {%- for g in site.data.projects %}
-<section>
+<section id="{{ g.group | slugify }}">
   <h2>{{ g.group }}</h2>
   <div class="entries">
     {%- for p in g.items %}
@@ -18,3 +21,5 @@ description: "Open-source code and models by Hao Shi for multi-talker ASR, Japan
   </div>
 </section>
 {%- endfor %}
+</div>
+</div>

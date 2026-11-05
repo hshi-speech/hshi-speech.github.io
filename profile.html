@@ -5,12 +5,15 @@ permalink: /profile/
 description: "Experience, education, academic service, and honors of Hao Shi."
 ---
 {%- assign pr = site.data.profile %}
+<div class="with-subnav">
+{% include subnav.html kind="profile" %}
+<div class="page-main">
 <header class="page-head">
   <h1>Profile</h1>
   <p class="lede"><a href="{{ '/files/CV_hshi.pdf' | relative_url }}">Download CV (PDF)</a> · <a href="{{ '/files/short_bio.txt' | relative_url }}">Short bio</a></p>
 </header>
 
-<section>
+<section id="experience">
   <h2>Experience</h2>
   <dl class="timeline">
     {%- for e in pr.experience %}
@@ -20,7 +23,7 @@ description: "Experience, education, academic service, and honors of Hao Shi."
   </dl>
 </section>
 
-<section>
+<section id="education">
   <h2>Education</h2>
   <dl class="timeline">
     {%- for e in pr.education %}
@@ -30,7 +33,7 @@ description: "Experience, education, academic service, and honors of Hao Shi."
   </dl>
 </section>
 
-<section>
+<section id="service">
   <h2>Academic Service</h2>
   <dl class="timeline">
     {%- for s in pr.service %}
@@ -40,7 +43,7 @@ description: "Experience, education, academic service, and honors of Hao Shi."
   </dl>
 </section>
 
-<section>
+<section id="honors">
   <h2>Honors</h2>
   <dl class="timeline">
     {%- for h in pr.honors %}
@@ -50,10 +53,12 @@ description: "Experience, education, academic service, and honors of Hao Shi."
   </dl>
 </section>
 
-<section>
+<section id="other">
   <h2>Other</h2>
   <dl class="timeline">
     <dt>Languages</dt><dd>{{ pr.languages }}</dd>
     <dt>Hobbies</dt><dd>{{ pr.hobbies }}</dd>
   </dl>
 </section>
+</div>
+</div>

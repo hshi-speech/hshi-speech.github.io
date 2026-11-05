@@ -2,22 +2,18 @@
 layout: default
 title: Publications
 permalink: /publications/
-description: "Complete publication archive of Hao Shi, by year, with figures, abstracts, and BibTeX."
+description: "Complete publication archive of Hao Shi, by year and research topic, with figures, abstracts, and BibTeX."
 ---
 {%- assign pubs = site.data.publications %}
+<div class="with-subnav">
+{% include subnav.html kind="publications" %}
+<div class="page-main">
 <header class="page-head">
   <h1>Publications</h1>
   <p class="lede">{{ pubs.size }} papers on speech enhancement, robust and multi-talker ASR, and speech language models. Also on <a href="https://scholar.google.com/citations?user=DclFbLwAAAAJ">Google Scholar</a>.</p>
 </header>
 
 <form class="filters" id="filters" role="search" onsubmit="return false" hidden>
-  <div class="chips" role="group" aria-label="Filter by theme">
-    <button type="button" data-theme="all" aria-pressed="true">All</button>
-    <button type="button" data-theme="robust" aria-pressed="false">Robust Speech</button>
-    <button type="button" data-theme="attribution" aria-pressed="false">Multi-Talker</button>
-    <button type="button" data-theme="grounded" aria-pressed="false">Speech LLMs</button>
-    <button type="button" data-theme="other" aria-pressed="false">Other</button>
-  </div>
   <div class="filter-row">
     <label><input type="checkbox" id="f-first"> First author</label>
     <label><input type="checkbox" id="f-journal"> Journals</label>
@@ -29,7 +25,7 @@ description: "Complete publication archive of Hao Shi, by year, with figures, ab
 <div id="archive">
   {%- assign years = pubs | group_by: "year" %}
   {%- for y in years %}
-  <details class="year" data-year="{{ y.name }}"{% if forloop.index <= 2 %} open{% endif %}>
+  <details class="year" id="y{{ y.name }}"{% if forloop.index <= 2 %} open{% endif %}>
     <summary><span class="year-label">{{ y.name }}</span> <span class="year-count">{{ y.items.size }} paper{% if y.items.size > 1 %}s{% endif %}</span></summary>
     <div class="entries">
       {%- for p in y.items %}
@@ -40,3 +36,5 @@ description: "Complete publication archive of Hao Shi, by year, with figures, ab
   {%- endfor %}
 </div>
 <p class="empty" id="f-empty" hidden>No papers match these filters.</p>
+</div>
+</div>

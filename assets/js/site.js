@@ -1,6 +1,9 @@
 (function () {
   'use strict';
 
+  var mobile = window.matchMedia('(max-width: 820px)');
+  var box = document.querySelector('.subnav-box');
+
   // Expansion: open a paper or project panel in place, without leaving the page.
   function setPanel(id, open) {
     var panel = document.getElementById(id);
@@ -18,24 +21,100 @@
     setPanel(id, !document.getElementById(id).classList.contains('open'));
   });
 
-  // Deep links such as /publications/#taslp-2024-shi open the year and the paper.
+  // Deep links open whatever hides their target: a year, a research section, or a paper panel.
   function openHash() {
     if (!location.hash) return;
     var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-    if (!el || !el.classList.contains('entry')) return;
-    var year = el.closest('details.year');
-    if (year) year.open = true;
-    setPanel('panel-' + el.id, true);
+    if (!el) return;
+    for (var d = el; d; d = d.parentElement) if (d.tagName === 'DETAILS') d.open = true;
+    if (el.classList.contains('entry')) setPanel('panel-' + el.id, true);
     el.scrollIntoView();
   }
   window.addEventListener('hashchange', openHash);
   openHash();
 
+  // Contextual navigation: a sidebar on desktop, a collapsible bar on mobile.
+  if (box) {
+    var syncBox = function () { box.open = !mobile.matches; };
+    syncBox();
+    mobile.addEventListener('change', syncBox);
+
+    box.addEventListener('click', function (e) {
+      var a = e.target.closest('a');
+      if (!a) return;
+      if (mobile.matches) box.open = false;
+      if (a.hash) {
+        pinned = a;
+        setTimeout(function () { openHash(); update(); }, 0);
+      }
+    });
+
+    // Highlight the section being read.
+    var spy = Array.prototype.slice.call(box.querySelectorAll('a[href^="#"]')).map(function (a) {
+      return { link: a, target: document.getElementById(a.hash.slice(1)) };
+    }).filter(function (s) { return s.target; });
+    var current = null;
+    var pinned = null; // a clicked link stays current until the reader scrolls, even near the page end
+    var update = function () {
+      var edge = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) + 24;
+      var shown = spy.filter(function (s) { return s.target.getClientRects().length; });
+      var next = null;
+      if (pinned) {
+        next = shown.filter(function (s) { return s.link === pinned; })[0] || null;
+      } else if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+        next = shown[shown.length - 1] || null;
+      } else {
+        shown.forEach(function (s) {
+          if (s.target.getBoundingClientRect().top <= edge) next = s;
+        });
+        next = next || shown[0] || null;
+      }
+      if (next === current) return;
+      if (current) current.link.classList.remove('is-current');
+      current = next;
+      if (!current) return;
+      current.link.classList.add('is-current');
+      var group = current.link.closest('.nav-group');
+      if (group) group.open = true;
+    };
+    var queued = false;
+    var queue = function () {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function () { queued = false; update(); });
+    };
+    ['wheel', 'touchmove', 'keydown'].forEach(function (type) {
+      window.addEventListener(type, function () { pinned = null; }, { passive: true });
+    });
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    document.addEventListener('toggle', queue, true);
+    update();
+  }
+
+  // Research: open or close every section at once.
+  var partsToggle = document.getElementById('parts-toggle');
+  if (partsToggle) {
+    var parts = Array.prototype.slice.call(document.querySelectorAll('details.part'));
+    var syncParts = function () {
+      var allOpen = parts.every(function (p) { return p.open; });
+      partsToggle.textContent = allOpen ? 'Collapse all sections' : 'Expand all sections';
+    };
+    partsToggle.hidden = false;
+    partsToggle.addEventListener('click', function () {
+      var open = partsToggle.textContent.indexOf('Expand') === 0;
+      parts.forEach(function (p) { p.open = open; });
+      syncParts();
+    });
+    parts.forEach(function (p) { p.addEventListener('toggle', syncParts); });
+    syncParts();
+  }
+
   // Publications filters.
   var form = document.getElementById('filters');
   if (!form) return;
   form.hidden = false;
-  var chips = form.querySelectorAll('[data-theme]');
+  var topics = document.querySelectorAll('.subnav [data-theme]');
   var first = document.getElementById('f-first');
   var journal = document.getElementById('f-journal');
   var text = document.getElementById('f-text');
@@ -63,6 +142,9 @@
       y.hidden = n === 0;
       y.open = active ? n > 0 : defaultOpen[i];
       y.querySelector('.year-count').textContent = n + (n === 1 ? ' paper' : ' papers');
+      var link = document.querySelector('.subnav a[href="#' + y.id + '"]');
+      link.querySelector('.count').textContent = n;
+      link.parentElement.hidden = n === 0;
       total += n;
     });
     count.textContent = total + (total === 1 ? ' paper' : ' papers');
@@ -71,7 +153,10 @@
   }
   function selectTheme(name) {
     theme = name;
-    chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.dataset.theme === name)); });
+    topics.forEach(function (t) {
+      if (t.dataset.theme === name) t.setAttribute('aria-current', 'true');
+      else t.removeAttribute('aria-current');
+    });
     apply();
   }
   function syncToggle() {
@@ -79,7 +164,14 @@
     var allOpen = shown.every(function (y) { return y.open; });
     toggle.textContent = allOpen ? 'Collapse all years' : 'Expand all years';
   }
-  chips.forEach(function (c) { c.addEventListener('click', function () { selectTheme(c.dataset.theme); }); });
+  topics.forEach(function (t) {
+    t.addEventListener('click', function (e) {
+      e.preventDefault();
+      selectTheme(t.dataset.theme);
+      history.replaceState(null, '', t.dataset.theme === 'all' ? location.pathname : '?theme=' + t.dataset.theme);
+      document.querySelector('.filters').scrollIntoView();
+    });
+  });
   [first, journal].forEach(function (el) { el.addEventListener('change', apply); });
   text.addEventListener('input', apply);
   toggle.addEventListener('click', function () {
@@ -90,6 +182,6 @@
   years.forEach(function (y) { y.addEventListener('toggle', syncToggle); });
 
   var fromUrl = new URLSearchParams(location.search).get('theme');
-  if (fromUrl && form.querySelector('[data-theme="' + fromUrl + '"]')) selectTheme(fromUrl);
+  if (fromUrl && document.querySelector('.subnav [data-theme="' + fromUrl + '"]')) selectTheme(fromUrl);
   else syncToggle();
 })();

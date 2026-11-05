@@ -1,0 +1,12 @@
+---
+layout: default
+title: News
+permalink: /news/
+description: "News and updates from Hao Shi."
+---
+<header class="page-head"><h1>News</h1></header>
+<ul class="news">
+  {%- for n in site.data.news %}
+  <li><time>{{ n.date }}</time><span>{{ n.text }}</span></li>
+  {%- endfor %}
+</ul>
