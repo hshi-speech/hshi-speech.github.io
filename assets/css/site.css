@@ -5,6 +5,7 @@
   --line: #dfe2e6;
   --accent: #1f4e79;
   --accent-soft: #eef3f8;
+  --band: #eff2f6;
   --highlight: #fbf6e6;
   --plate: #ffffff;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Noto Serif CJK SC", "Songti SC", Georgia, serif;
@@ -18,6 +19,7 @@
     --line: #333a44;
     --accent: #8db8e0;
     --accent-soft: #1f2a36;
+    --band: #1c2128;
     --highlight: #26241c;
   }
 }
@@ -39,9 +41,18 @@ img { max-width: 100%; height: auto; display: block; }
 p { margin: 0 0 .8em; }
 h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.25; }
 h1 { font-size: 2.3rem; margin: 0 0 .15em; }
-h2 { font-size: 1.45rem; margin: 0 0 .7em; }
+h2 { font-size: 1.6rem; margin: 0; }
 h3 { font-size: 1.05rem; margin: 0; }
-section { margin: 0 0 3rem; }
+
+/* Page modules: full-width alternating bands, each opened by a strong heading rule. */
+main > section { padding: 48px 0 52px; }
+main > section:nth-of-type(even) {
+  background: var(--band);
+  box-shadow: 0 0 0 100vmax var(--band); clip-path: inset(0 -100vmax);
+}
+main > section > h2, .section-head {
+  padding-bottom: 10px; margin-bottom: 18px; border-bottom: 2px solid var(--accent);
+}
 .muted { color: var(--muted); }
 .skip { position: absolute; left: -999px; }
 .skip:focus { left: 8px; top: 8px; background: var(--paper); padding: 4px 8px; }
@@ -49,7 +60,7 @@ section { margin: 0 0 3rem; }
 /* Masthead */
 .masthead {
   display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
-  gap: 4px 24px; padding: 16px 0 10px; margin-bottom: 40px; border-bottom: 1px solid var(--line);
+  gap: 4px 24px; padding: 16px 0 10px; border-bottom: 1px solid var(--line);
   position: sticky; top: 0; z-index: 10; background: var(--paper);
   /* Extend the background to the viewport edges without causing horizontal scroll. */
   box-shadow: 0 0 0 100vmax var(--paper); clip-path: inset(0 -100vmax);
@@ -70,28 +81,29 @@ section { margin: 0 0 3rem; }
 .hero-links { margin-top: 1.2em; }
 
 .section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.section-head h2 { padding: 0; margin: 0; border: 0; }
 .section-head a { font-size: .92rem; white-space: nowrap; }
 
 .news { list-style: none; margin: 0; padding: 0; }
 .news li { display: grid; grid-template-columns: 76px 1fr; gap: 12px; padding: 3px 0; }
+.news li:first-child { padding-top: 0; }
 .news time { color: var(--muted); font-variant-numeric: tabular-nums; }
 
 .themes { list-style: none; margin: 0; padding: 0; }
-.themes li { display: grid; grid-template-columns: 44px 1fr; gap: 8px; padding: 12px 0; border-top: 1px solid var(--line); }
-.themes li:last-child { border-bottom: 1px solid var(--line); }
+.themes li { display: grid; grid-template-columns: 44px 1fr; gap: 8px; padding: 12px 0; }
+.themes li + li { border-top: 1px solid var(--line); }
 .themes p { margin: 0; }
 .themes .num, .theme .num { font: 600 1.15rem var(--serif); color: var(--accent); }
 .stage { color: var(--muted); font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; }
 
 /* Page header */
-.page-head { margin-bottom: 2.4rem; }
+.page-head { padding: 44px 0 36px; }
+.page-head p:last-child { margin-bottom: 0; }
+.page-head + section { padding-top: 8px; }
 .lede { font-size: 1.08rem; }
 .arc { display: flex; flex-wrap: wrap; gap: 4px 10px; color: var(--muted); font-size: .95rem; margin-top: 1rem; }
 
 /* Research */
-.theme { padding-top: 1.6rem; border-top: 1px solid var(--line); }
-.theme h2 { margin-bottom: .3em; }
-.theme h2 + .entries { margin-top: .4rem; }
 .theme .stage { margin-bottom: .3em; }
 .theme .stage .num { font-size: .95rem; margin-right: 4px; }
 .tagline { margin-bottom: .3em; }
@@ -152,7 +164,7 @@ section { margin: 0 0 3rem; }
 .citation { margin: 12px 0 0; color: var(--muted); font-size: .85rem; }
 
 /* Publications archive */
-.filters { margin-bottom: 1.4rem; }
+.filters { margin-bottom: 1.6rem; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chips button {
   font: inherit; font-size: .9rem; color: var(--ink); background: none; cursor: pointer;
@@ -168,15 +180,18 @@ section { margin: 0 0 3rem; }
 }
 .filter-status { display: flex; justify-content: space-between; margin: 10px 0 0; color: var(--muted); font-size: .9rem; }
 .textbtn { font: inherit; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; }
-.year { border-top: 1px solid var(--line); }
-.year:last-of-type { border-bottom: 1px solid var(--line); }
-.year > summary { display: flex; align-items: baseline; gap: 12px; padding: 12px 0; cursor: pointer; list-style: none; }
+#archive { padding-bottom: 48px; }
+.year { margin-bottom: 10px; }
+.year > summary {
+  display: flex; align-items: baseline; gap: 12px; padding: 8px 12px; margin: 0 -12px;
+  background: var(--band); border-left: 3px solid var(--accent); cursor: pointer; list-style: none;
+}
 .year > summary::-webkit-details-marker { display: none; }
 .year > summary::before { content: "▸"; color: var(--muted); font-size: 1.1rem; width: 14px; }
 .year[open] > summary::before { content: "▾"; }
 .year-label { font: 600 1.35rem var(--serif); }
 .year-count { color: var(--muted); font-size: .9rem; }
-.year .entries { padding-bottom: 12px; }
+.year .entries { padding: 6px 0 22px; }
 .empty { color: var(--muted); padding: 24px 0; }
 
 /* Profile */
@@ -186,14 +201,16 @@ section { margin: 0 0 3rem; }
 
 .colophon {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 20px;
-  margin-top: 64px; padding: 16px 0 28px; border-top: 1px solid var(--line);
+  padding: 16px 0 28px; border-top: 1px solid var(--line);
   color: var(--muted); font-size: .85rem;
 }
 
 @media (max-width: 640px) {
   body { padding: 0 16px; }
   html { scroll-padding-top: 92px; }
-  .masthead { margin-bottom: 28px; padding: 10px 0 6px; }
+  .masthead { padding: 10px 0 6px; }
+  main > section { padding: 36px 0 40px; }
+  .page-head { padding: 32px 0 28px; }
   .masthead nav { flex-wrap: nowrap; justify-content: space-between; width: 100%; gap: 10px; }
   .masthead nav a { font-size: .88rem; }
   h1 { font-size: 1.9rem; }
