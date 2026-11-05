@@ -1,104 +1,110 @@
-# Same row + Expand pattern as publications. Fields: id, title, role, summary, figure, panel_figure, links, details.
-- group: "Code & Models"
+# Projects grouped by research topic; theme matches an id in research.yml.
+# Same row + Expand pattern as publications.
+# Item fields: id, title, role, summary, figure, panel_figure, links, details.
+
+- theme: robust
+  group: Robust Speech Processing
   items:
-    - id: ruby-asr
-      title: "Ruby-ASR"
-      role: "Japanese ASR with reading-aware output"
-      summary: "One model, two complementary outputs: actual-pronunciation kana morae and transcripts with inline bracket furigana."
-      figure: /assets/figures/2026-shi-ruby.webp
-      links:
-        code: https://github.com/hshi-speech/Ruby-ASR-1.7B
-        models: https://huggingface.co/hshispeech/Ruby-ASR-1.7B
-        paper: /publications/#2026-shi-ruby
-      details:
-        - label: Background
-          text: "Built on Qwen3-ASR-1.7B. A written form can correspond to different lexical readings in speech, and that distinction is lost under purely orthographic supervision."
-        - label: Release
-          text: "The main model stays byte-compatible with stock Qwen3-ASR, so ruby transcription runs on unmodified vLLM and the official qwen-asr toolkit. Mora reading uses the auxiliary CTC branch through the small ruby_asr package."
-    - id: iroha-tts
-      title: "Iroha-TTS"
-      role: "Iroha Studio · Open model"
-      summary: "Expressive Japanese TTS for character dialogue: clone a voice, choose an emotion, adjust its intensity, and explore different takes on the same line."
-      figure: /assets/figures/iroha-tts.webp
-      panel_figure: /assets/figures/iroha-tts-emotions.webp
-      links:
-        models: https://huggingface.co/IrohaStudio/Iroha-TTS
-        demo: https://huggingface.co/spaces/cyacya8023/Iroha-TTS
-        blog: https://irohastudios.github.io/blog/irohattsv1/en/
-      details:
-        - label: Background
-          text: "Built on Fish Audio S2-Pro with supervised fine-tuning and reinforcement learning. Weights are released for research and non-commercial use under the Fish Audio Research License."
-        - label: Features
-          text: "Emotion tags with adjustable intensity, mood changes within one generation, voice cloning from a short reference recording, non-verbal sounds such as laughter and sighs, whispering, and kana annotations that specify the reading of names and heteronyms."
-        - label: Results
-          text: "As reported on the model card: 85.6% emotion accuracy (emo2vec large) against 17.9% for the original Fish S2 Pro, and a subjective Japanese MOS of 3.85 against 3.47."
-    - id: multi-talker-llm
-      title: "Multi-Talker ASR with LLMs"
-      role: "Research code"
-      summary: "LLM-based multi-talker ASR with serialized output training on mixture speech."
-      figure: /assets/figures/asru-2025-shi.webp
-      links:
-        code: https://github.com/hshi-speech/Multi-talker-ASR-with-LLMs
-        paper: /publications/#asru-2025-shi
-      details:
-        - label: Background
-          text: "Implements the systems of the ASRU 2025 and SLT 2024 papers: an audio mixture of overlapping speakers is encoded by a WavLM front-end, with an optional separator splitting encoder features into per-speaker streams supervised by serialized CTC."
-    - id: repair-diffusion
-      title: "Repair-Diffusion"
-      role: "Research code"
-      summary: "Network of the proposed Repair-Diffusion model for speech enhancement."
-      figure: /assets/figures/trans2025_shi.webp
-      links:
-        code: https://github.com/hshi-speech/Repair-Diffusion
-        paper: /publications/#trans2025_shi
-      details:
-        - label: Background
-          text: "Combines deterministic and diffusion models for speech enhancement. All settings are written directly in the file to present the network structure intuitively; the remaining files follow the SGMSE+ repository."
-    - id: sarashina-tts
-      title: "Sarashina2.2-TTS"
-      role: "Co-author · SB Intuitions"
-      summary: "Japanese-centric LLM-based TTS tackling kanji polyphony, released with the Joyo Kanji Yomi Benchmark."
-      figure: /assets/figures/report-2026-liu.webp
-      links:
-        code: https://github.com/sbintuitions/sarashina2.2-tts
-        benchmark: https://github.com/sbintuitions/JoyoKanji-Yomi-Benchmark
-        paper: /publications/#report-2026-liu
-      details:
-        - label: Background
-          text: "Trained on approximately 361k hours of Japanese and English speech, with targeted data covering all 2,136 Joyo kanji. The benchmark covers their 4,378 readings and is scored with Kana-CER, which compares synthesized speech to reference readings in kana space."
-- group: "Community"
+  - id: repair-diffusion
+    title: Repair-Diffusion
+    role: Research code
+    summary: Network of the proposed Repair-Diffusion model for speech enhancement.
+    figure: /assets/figures/trans2025_shi.webp
+    links:
+      code: https://github.com/hshi-speech/Repair-Diffusion
+      paper: /publications/#trans2025_shi
+    details:
+    - label: Background
+      text: Combines deterministic and diffusion models for speech enhancement. All settings are written directly in the file to present the network structure intuitively; the remaining files follow the SGMSE+ repository.
+  - id: reverb-toolkit
+    title: Dereverberation Toolkit for the REVERB Challenge
+    role: Toolkit
+    summary: Deep learning-based monaural speech dereverberation models with PESQ and SRMR results on the REVERB Challenge dataset.
+    links:
+      code: https://github.com/hshi-speech/Dereverberation-toolkit-for-REVERB-challenge
+  - id: ra-sed
+    title: Research and Analysis of Speech Enhancement or Dereverberation
+    role: Study notes
+    summary: Materials on speech enhancement and dereverberation, written for my own understanding and for newcomers to the field.
+    links:
+      code: https://github.com/hshi-speech/Research-and-Analysis-of-Speech-Enhancement-or-Dereverberation
+- theme: attribution
+  group: Multi-Talker & Speaker Grounding
   items:
-    - id: icassp-2027
-      title: "Speaker Grounding in Speech LLMs"
-      role: "Special Session Organizer · ICASSP 2027"
-      summary: "Recognition, attribution, and understanding in multi-talker scenes: how speech LLMs can reliably bind spoken content to the intended speaker."
-      links:
-        website: https://hshi-speech.github.io/ICASSP-2027-Special-Session/
-      details:
-        - label: Background
-          text: "In meetings and multi-party dialogue, failures go beyond transcription errors: a system may produce fluent output while mixing content across speakers, missing a weak target speaker, or hallucinating who said what."
-        - label: Questions
-          text: "How speaker-specific evidence should be represented at the speech-LLM interface; how it should be used for recognition, attribution, target-speaker instruction following, and multi-speaker understanding; and how speaker-content binding should be evaluated beyond WER and DER."
-    - id: icassp-2026
-      title: "Automatic Song Aesthetics Evaluation Challenge"
-      role: "Challenge Organizer · ICASSP 2026"
-      summary: "A competition fostering automatic models that predict human aesthetic ratings of generated songs."
-      links:
-        website: https://aslp-lab.github.io/Automatic-Song-Aesthetics-Evaluation-Challenge/
-      details:
-        - label: Tracks
-          text: "Track 1: Overall Musicality Score Prediction. Track 2: Fine-Grained Aesthetic Dimension Prediction."
-- group: "Learning Resources"
+  - id: multi-talker-llm
+    title: Multi-Talker ASR with LLMs
+    role: Research code
+    summary: LLM-based multi-talker ASR with serialized output training on mixture speech.
+    figure: /assets/figures/asru-2025-shi.webp
+    links:
+      code: https://github.com/hshi-speech/Multi-talker-ASR-with-LLMs
+      paper: /publications/#asru-2025-shi
+    details:
+    - label: Background
+      text: 'Implements the systems of the ASRU 2025 and SLT 2024 papers: an audio mixture of overlapping speakers is encoded by a WavLM front-end, with an optional separator splitting encoder features into per-speaker streams supervised by serialized CTC.'
+  - id: icassp-2027
+    title: Speaker Grounding in Speech LLMs
+    role: Special Session Organizer · ICASSP 2027
+    summary: 'Recognition, attribution, and understanding in multi-talker scenes: how speech LLMs can reliably bind spoken content to the intended speaker.'
+    links:
+      website: https://hshi-speech.github.io/ICASSP-2027-Special-Session/
+    details:
+    - label: Background
+      text: 'In meetings and multi-party dialogue, failures go beyond transcription errors: a system may produce fluent output while mixing content across speakers, missing a weak target speaker, or hallucinating who said what.'
+    - label: Questions
+      text: How speaker-specific evidence should be represented at the speech-LLM interface; how it should be used for recognition, attribution, target-speaker instruction following, and multi-speaker understanding; and how speaker-content binding should be evaluated beyond WER and DER.
+- theme: grounded
+  group: Speech LLMs & Generation
   items:
-    - id: ra-sed
-      title: "Research and Analysis of Speech Enhancement or Dereverberation"
-      role: "Study notes"
-      summary: "Materials on speech enhancement and dereverberation, written for my own understanding and for newcomers to the field."
-      links:
-        code: https://github.com/hshi-speech/Research-and-Analysis-of-Speech-Enhancement-or-Dereverberation
-    - id: reverb-toolkit
-      title: "Dereverberation Toolkit for the REVERB Challenge"
-      role: "Toolkit"
-      summary: "Deep learning-based monaural speech dereverberation models with PESQ and SRMR results on the REVERB Challenge dataset."
-      links:
-        code: https://github.com/hshi-speech/Dereverberation-toolkit-for-REVERB-challenge
+  - id: ruby-asr
+    title: Ruby-ASR
+    role: Japanese ASR with reading-aware output
+    summary: 'One model, two complementary outputs: actual-pronunciation kana morae and transcripts with inline bracket furigana.'
+    figure: /assets/figures/2026-shi-ruby.webp
+    links:
+      code: https://github.com/hshi-speech/Ruby-ASR-1.7B
+      models: https://huggingface.co/hshispeech/Ruby-ASR-1.7B
+      paper: /publications/#2026-shi-ruby
+    details:
+    - label: Background
+      text: Built on Qwen3-ASR-1.7B. A written form can correspond to different lexical readings in speech, and that distinction is lost under purely orthographic supervision.
+    - label: Release
+      text: The main model stays byte-compatible with stock Qwen3-ASR, so ruby transcription runs on unmodified vLLM and the official qwen-asr toolkit. Mora reading uses the auxiliary CTC branch through the small ruby_asr package.
+  - id: iroha-tts
+    title: Iroha-TTS
+    role: Iroha Studio · Open model
+    summary: 'Expressive Japanese TTS for character dialogue: clone a voice, choose an emotion, adjust its intensity, and explore different takes on the same line.'
+    figure: /assets/figures/iroha-tts.webp
+    panel_figure: /assets/figures/iroha-tts-emotions.webp
+    links:
+      models: https://huggingface.co/IrohaStudio/Iroha-TTS
+      demo: https://huggingface.co/spaces/cyacya8023/Iroha-TTS
+      blog: https://irohastudios.github.io/blog/irohattsv1/en/
+    details:
+    - label: Background
+      text: Built on Fish Audio S2-Pro with supervised fine-tuning and reinforcement learning. Weights are released for research and non-commercial use under the Fish Audio Research License.
+    - label: Features
+      text: Emotion tags with adjustable intensity, mood changes within one generation, voice cloning from a short reference recording, non-verbal sounds such as laughter and sighs, whispering, and kana annotations that specify the reading of names and heteronyms.
+    - label: Results
+      text: 'As reported on the model card: 85.6% emotion accuracy (emo2vec large) against 17.9% for the original Fish S2 Pro, and a subjective Japanese MOS of 3.85 against 3.47.'
+  - id: sarashina-tts
+    title: Sarashina2.2-TTS
+    role: Co-author · SB Intuitions
+    summary: Japanese-centric LLM-based TTS tackling kanji polyphony, released with the Joyo Kanji Yomi Benchmark.
+    figure: /assets/figures/report-2026-liu.webp
+    links:
+      code: https://github.com/sbintuitions/sarashina2.2-tts
+      benchmark: https://github.com/sbintuitions/JoyoKanji-Yomi-Benchmark
+      paper: /publications/#report-2026-liu
+    details:
+    - label: Background
+      text: Trained on approximately 361k hours of Japanese and English speech, with targeted data covering all 2,136 Joyo kanji. The benchmark covers their 4,378 readings and is scored with Kana-CER, which compares synthesized speech to reference readings in kana space.
+  - id: icassp-2026
+    title: Automatic Song Aesthetics Evaluation Challenge
+    role: Challenge Organizer · ICASSP 2026
+    summary: A competition fostering automatic models that predict human aesthetic ratings of generated songs.
+    links:
+      website: https://aslp-lab.github.io/Automatic-Song-Aesthetics-Evaluation-Challenge/
+    details:
+    - label: Tracks
+      text: 'Track 1: Overall Musicality Score Prediction. Track 2: Fine-Grained Aesthetic Dimension Prediction.'

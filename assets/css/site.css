@@ -91,6 +91,7 @@ section { margin: 0 0 3rem; }
 /* Research */
 .theme { padding-top: 1.6rem; border-top: 1px solid var(--line); }
 .theme h2 { margin-bottom: .3em; }
+.theme h2 + .entries { margin-top: .4rem; }
 .theme .stage { margin-bottom: .3em; }
 .theme .stage .num { font-size: .95rem; margin-right: 4px; }
 .tagline { margin-bottom: .3em; }
