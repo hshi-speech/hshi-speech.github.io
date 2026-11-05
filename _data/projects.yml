@@ -34,6 +34,7 @@
     title: Kana Whisper
     role: Co-author · SB Intuitions
     summary: A fine-tuned Whisper large-v3-turbo that transcribes Japanese speech directly into katakana sequences.
+    figure: /assets/figures/kana-whisper.webp
     links:
       models: https://huggingface.co/sbintuitions/kana-whisper
       benchmark: https://github.com/sbintuitions/JoyoKanji-Yomi-Benchmark
