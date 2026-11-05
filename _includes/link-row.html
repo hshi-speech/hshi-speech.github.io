@@ -1,4 +1,4 @@
-{%- assign link_labels = "pdf:PDF|arxiv:arXiv|doi:DOI|code:Code|models:Models|benchmark:Benchmark|demo:Demo|website:Website|paper:Paper|bibtex:BibTeX" | split: "|" -%}
+{%- assign link_labels = "pdf:PDF|arxiv:arXiv|doi:DOI|code:Code|models:Models|benchmark:Benchmark|demo:Demo|blog:Blog|website:Website|paper:Paper|bibtex:BibTeX" | split: "|" -%}
 {%- assign link_set = include.links -%}
 {%- for pair in link_labels -%}
   {%- assign kv = pair | split: ":" -%}

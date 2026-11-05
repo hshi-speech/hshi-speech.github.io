@@ -13,6 +13,9 @@
   </div>
   {%- if p.details %}
   <div class="panel" id="panel-{{ p.id }}">
+    {%- if p.panel_figure %}
+    <figure class="plate"><img src="{{ p.panel_figure | relative_url }}" alt="Illustration for {{ p.title | escape }}" loading="lazy" decoding="async"></figure>
+    {%- endif %}
     <dl class="notes">
       {%- for d in p.details %}
       <dt>{{ d.label }}</dt>
