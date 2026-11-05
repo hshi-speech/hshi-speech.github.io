@@ -2,27 +2,19 @@
 layout: default
 title: Projects
 permalink: /projects/
-description: "Open-source releases, community organizing, and learning resources by Hao Shi, grouped by research topic."
+description: "Open-source code and models by Hao Shi for multi-talker ASR, Japanese ASR, and text-to-speech."
 ---
 <header class="page-head">
   <h1>Projects</h1>
-  <p class="lede">Open-source releases, community work, and learning resources, grouped by research topic. More on <a href="https://github.com/hshi-speech">GitHub</a>.</p>
-  <p class="arc">
-    {%- for g in site.data.projects %}
-    <a href="#{{ g.theme }}">{{ g.group }}</a>{% unless forloop.last %}<span aria-hidden="true">·</span>{% endunless %}
-    {%- endfor %}
-  </p>
+  <p class="lede">Open-source code and models, grouped by topic. More on <a href="https://github.com/hshi-speech">GitHub</a>.</p>
 </header>
 {%- for g in site.data.projects %}
-{%- assign t = site.data.research.themes | where: "id", g.theme | first %}
-<section id="{{ g.theme }}" class="theme">
-  <p class="stage"><span class="num">{{ t.number }}</span> {{ t.stage }}</p>
+<section>
   <h2>{{ g.group }}</h2>
   <div class="entries">
     {%- for p in g.items %}
     {% include project.html p=p %}
     {%- endfor %}
   </div>
-  <p class="more"><a href="{{ '/research/' | relative_url }}#{{ g.theme }}">Research on this topic</a></p>
 </section>
 {%- endfor %}

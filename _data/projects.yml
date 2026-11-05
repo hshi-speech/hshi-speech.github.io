@@ -1,35 +1,7 @@
-# Projects grouped by research topic; theme matches an id in research.yml.
-# Same row + Expand pattern as publications.
+# Projects grouped by topic. Same row + Expand pattern as publications.
 # Item fields: id, title, role, summary, figure, panel_figure, links, details.
 
-- theme: robust
-  group: Robust Speech Processing
-  items:
-  - id: repair-diffusion
-    title: Repair-Diffusion
-    role: Research code
-    summary: Network of the proposed Repair-Diffusion model for speech enhancement.
-    figure: /assets/figures/trans2025_shi.webp
-    links:
-      code: https://github.com/hshi-speech/Repair-Diffusion
-      paper: /publications/#trans2025_shi
-    details:
-    - label: Background
-      text: Combines deterministic and diffusion models for speech enhancement. All settings are written directly in the file to present the network structure intuitively; the remaining files follow the SGMSE+ repository.
-  - id: reverb-toolkit
-    title: Dereverberation Toolkit for the REVERB Challenge
-    role: Toolkit
-    summary: Deep learning-based monaural speech dereverberation models with PESQ and SRMR results on the REVERB Challenge dataset.
-    links:
-      code: https://github.com/hshi-speech/Dereverberation-toolkit-for-REVERB-challenge
-  - id: ra-sed
-    title: Research and Analysis of Speech Enhancement or Dereverberation
-    role: Study notes
-    summary: Materials on speech enhancement and dereverberation, written for my own understanding and for newcomers to the field.
-    links:
-      code: https://github.com/hshi-speech/Research-and-Analysis-of-Speech-Enhancement-or-Dereverberation
-- theme: attribution
-  group: Multi-Talker & Speaker Grounding
+- group: Multi-Talker ASR
   items:
   - id: multi-talker-llm
     title: Multi-Talker ASR with LLMs
@@ -42,19 +14,7 @@
     details:
     - label: Background
       text: 'Implements the systems of the ASRU 2025 and SLT 2024 papers: an audio mixture of overlapping speakers is encoded by a WavLM front-end, with an optional separator splitting encoder features into per-speaker streams supervised by serialized CTC.'
-  - id: icassp-2027
-    title: Speaker Grounding in Speech LLMs
-    role: Special Session Organizer · ICASSP 2027
-    summary: 'Recognition, attribution, and understanding in multi-talker scenes: how speech LLMs can reliably bind spoken content to the intended speaker.'
-    links:
-      website: https://hshi-speech.github.io/ICASSP-2027-Special-Session/
-    details:
-    - label: Background
-      text: 'In meetings and multi-party dialogue, failures go beyond transcription errors: a system may produce fluent output while mixing content across speakers, missing a weak target speaker, or hallucinating who said what.'
-    - label: Questions
-      text: How speaker-specific evidence should be represented at the speech-LLM interface; how it should be used for recognition, attribution, target-speaker instruction following, and multi-speaker understanding; and how speaker-content binding should be evaluated beyond WER and DER.
-- theme: grounded
-  group: Speech LLMs & Generation
+- group: Japanese ASR
   items:
   - id: ruby-asr
     title: Ruby-ASR
@@ -70,6 +30,19 @@
       text: Built on Qwen3-ASR-1.7B. A written form can correspond to different lexical readings in speech, and that distinction is lost under purely orthographic supervision.
     - label: Release
       text: The main model stays byte-compatible with stock Qwen3-ASR, so ruby transcription runs on unmodified vLLM and the official qwen-asr toolkit. Mora reading uses the auxiliary CTC branch through the small ruby_asr package.
+  - id: kana-whisper
+    title: Kana Whisper
+    role: Co-author · SB Intuitions
+    summary: A fine-tuned Whisper large-v3-turbo that transcribes Japanese speech directly into katakana sequences.
+    links:
+      models: https://huggingface.co/sbintuitions/kana-whisper
+      benchmark: https://github.com/sbintuitions/JoyoKanji-Yomi-Benchmark
+      paper: /publications/#report-2026-liu
+    details:
+    - label: Background
+      text: The ASR component of the Joyo Kanji Yomi Benchmark, developed as part of the Sarashina2.2-TTS project. It is the backbone of the Kana CER metric, which evaluates the kanji-level reading accuracy of Japanese TTS systems.
+- group: Text-to-Speech
+  items:
   - id: iroha-tts
     title: Iroha-TTS
     role: Iroha Studio · Open model
@@ -99,12 +72,3 @@
     details:
     - label: Background
       text: Trained on approximately 361k hours of Japanese and English speech, with targeted data covering all 2,136 Joyo kanji. The benchmark covers their 4,378 readings and is scored with Kana-CER, which compares synthesized speech to reference readings in kana space.
-  - id: icassp-2026
-    title: Automatic Song Aesthetics Evaluation Challenge
-    role: Challenge Organizer · ICASSP 2026
-    summary: A competition fostering automatic models that predict human aesthetic ratings of generated songs.
-    links:
-      website: https://aslp-lab.github.io/Automatic-Song-Aesthetics-Evaluation-Challenge/
-    details:
-    - label: Tracks
-      text: 'Track 1: Overall Musicality Score Prediction. Track 2: Fine-Grained Aesthetic Dimension Prediction.'
