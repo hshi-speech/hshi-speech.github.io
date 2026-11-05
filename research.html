@@ -17,8 +17,10 @@ description: "Research themes of Hao Shi: robust speech processing, multi-talker
 
 {%- for t in site.data.research.themes %}
 <section id="{{ t.id }}" class="theme">
-  <p class="stage"><span class="num">{{ t.number }}</span> {{ t.stage }}</p>
-  <h2>{{ t.title }}</h2>
+  <div class="section-head">
+    <p class="stage"><span class="num">{{ t.number }}</span> {{ t.stage }}</p>
+    <h2>{{ t.title }}</h2>
+  </div>
   <p class="tagline">{{ t.tagline }}</p>
   <p class="keywords">{{ t.keywords | join: " · " }}</p>
   <div class="entries">
