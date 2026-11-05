@@ -1,0 +1,32 @@
+---
+layout: default
+title: Research
+permalink: /research/
+description: "Research themes of Hao Shi: robust speech processing, multi-talker and speaker-grounded speech, and speech LLMs."
+---
+<header class="page-head">
+  <h1>Research</h1>
+  <p class="lede">{{ site.data.research.intro }}</p>
+  <p>{{ site.data.research.goal }}</p>
+  <p class="arc">
+    {%- for t in site.data.research.themes %}
+    <a href="#{{ t.id }}">{{ t.stage }}</a>{% unless forloop.last %}<span aria-hidden="true">→</span>{% endunless %}
+    {%- endfor %}
+  </p>
+</header>
+
+{%- for t in site.data.research.themes %}
+<section id="{{ t.id }}" class="theme">
+  <p class="stage"><span class="num">{{ t.number }}</span> {{ t.stage }}</p>
+  <h2>{{ t.title }}</h2>
+  <p class="tagline">{{ t.tagline }}</p>
+  <p class="keywords">{{ t.keywords | join: " · " }}</p>
+  <div class="entries">
+    {%- for id in t.papers %}
+    {%- assign p = site.data.publications | where: "id", id | first %}
+    {% include paper.html p=p %}
+    {%- endfor %}
+  </div>
+  <p class="more"><a href="{{ '/publications/' | relative_url }}?theme={{ t.id }}">All papers on this theme</a></p>
+</section>
+{%- endfor %}

@@ -1,0 +1,24 @@
+intro: "My research progresses from recovering reliable speech evidence, to understanding and attributing that evidence in complex acoustic scenes, and ultimately to grounding speech language models and generative systems in the observed speech."
+goal: "A common goal runs through this work: maintaining reliable correspondence between acoustic observations and model outputs as speech scenes and model priors become increasingly complex."
+themes:
+  - id: robust
+    number: "01"
+    stage: "Reliable Perception"
+    title: "Robust Speech Processing"
+    tagline: "Recover reliable speech evidence from noisy, reverberant, and otherwise degraded observations."
+    keywords: [Speech Enhancement, Noise-Robust ASR, Dereverberation]
+    papers: [trans2025_shi, taslp-2024-shi, interspeech-2024-shi, icassp-2024-shi]
+  - id: attribution
+    number: "02"
+    stage: "Evidence Attribution"
+    title: "Multi-Talker & Speaker-Grounded Speech"
+    tagline: "Understand what was said, who said it, and which acoustic evidence belongs to which source in overlapping speech scenes."
+    keywords: [Multi-Talker ASR, Speaker Grounding, Separation / TSE]
+    papers: [2026-taslp-shi, 2026_interspeech_shi, asru-2025-shi, slt-2024-shi]
+  - id: grounded
+    number: "03"
+    stage: "Grounded Modeling"
+    title: "Speech LLMs & Spoken Interaction"
+    tagline: "Leverage language-model and generative priors while keeping model decisions grounded in the observed speech."
+    keywords: [Speech LLMs, Grounded Generation, Speech-to-Speech]
+    papers: [2026-shi-ruby, report-2026-liu, 2026_interspeech_mengjie, asru_2025_mizumoto]

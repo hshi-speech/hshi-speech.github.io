@@ -1,0 +1,48 @@
+{%- comment -%} Params: p (publication entry), anchor (bool: emit the id used for deep links) {%- endcomment -%}
+{%- assign p = include.p -%}
+{%- assign lead = p.authors | slice: 0, 7 -%}
+<article class="entry{% if p.selected and include.anchor %} is-selected{% endif %}"{% if include.anchor %} id="{{ p.id }}"{% endif %}
+  data-themes="{{ p.themes | join: ' ' }}" data-type="{{ p.type }}" data-first="{% if lead == 'Hao Shi' %}1{% else %}0{% endif %}"
+  data-text="{{ p.title | append: ' ' | append: p.authors | append: ' ' | append: p.venue | append: ' ' | append: p.year | downcase | escape }}">
+  {%- if p.figure %}
+  <button class="thumb" type="button" data-toggle="panel-{{ p.id }}" aria-label="Expand details: {{ p.title | escape }}">
+    <img src="{{ p.figure | relative_url }}" alt="" loading="lazy" decoding="async">
+  </button>
+  {%- else %}
+  <div class="thumb thumb-empty" aria-hidden="true"><span>{{ p.venue }}</span></div>
+  {%- endif %}
+  <div class="entry-body">
+    <h3 class="entry-title">{{ p.title }}</h3>
+    <p class="authors">{{ p.authors | replace: "Hao Shi", "<strong>Hao Shi</strong>" }}</p>
+    <p class="venue"><em>{{ p.venue }}</em>, {{ p.year }}{% if p.type == 'preprint' %} · Preprint{% endif %}</p>
+    {%- if p.summary %}<p class="summary">{{ p.summary }}</p>{% endif %}
+    <p class="links">{% include link-row.html links=p.links %}<button class="expand" type="button" data-toggle="panel-{{ p.id }}" aria-expanded="false" aria-controls="panel-{{ p.id }}">Expand</button></p>
+  </div>
+  <div class="panel" id="panel-{{ p.id }}">
+    {%- if p.figure %}
+    <figure class="plate"><img src="{{ p.figure | relative_url }}" alt="Figure from the paper: {{ p.title | escape }}" loading="lazy" decoding="async"></figure>
+    {%- endif %}
+    {%- if p.details %}
+    <dl class="notes">
+      {%- for d in p.details %}
+      <dt>{{ d.label }}</dt>
+      <dd>{{ d.text }}</dd>
+      {%- endfor %}
+    </dl>
+    {%- endif %}
+    {%- if p.audio %}
+    <div class="audio">
+      <h4>Audio Examples</h4>
+      {%- for a in p.audio %}
+      <div class="audio-row"><span>{{ a.label }}</span><audio controls preload="none" src="{{ a.src | relative_url }}"></audio></div>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+    {%- if p.details %}
+    <details class="abstract"><summary>Abstract</summary><p>{{ p.abstract }}</p></details>
+    {%- else %}
+    <dl class="notes"><dt>Abstract</dt><dd>{{ p.abstract }}</dd></dl>
+    {%- endif %}
+    <p class="citation">{{ p.venue_full }}, {{ p.year }}.</p>
+  </div>
+</article>

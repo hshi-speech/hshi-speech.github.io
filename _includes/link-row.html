@@ -1,0 +1,12 @@
+{%- assign link_labels = "pdf:PDF|arxiv:arXiv|doi:DOI|code:Code|models:Models|benchmark:Benchmark|demo:Demo|website:Website|paper:Paper|bibtex:BibTeX" | split: "|" -%}
+{%- assign link_set = include.links -%}
+{%- for pair in link_labels -%}
+  {%- assign kv = pair | split: ":" -%}
+  {%- assign link_key = kv | first -%}
+  {%- assign link_label = kv | last -%}
+  {%- assign link_url = link_set[link_key] -%}
+  {%- if link_url -%}
+    {%- assign link_head = link_url | slice: 0, 1 -%}
+    <a href="{% if link_head == '/' %}{{ link_url | relative_url }}{% else %}{{ link_url }}{% endif %}">{{ link_label }}</a>
+  {%- endif -%}
+{%- endfor -%}

@@ -1,0 +1,700 @@
+# Single source of truth for all papers. Newest first; one entry per paper.
+# Required: id (also the BibTeX filename in files/bib/), title, authors, venue, venue_full, year,
+#           type (journal | conference | preprint), themes (robust | attribution | grounded | other), abstract.
+# Optional: selected, summary, figure, links (pdf, arxiv, doi, code, models, demo, bibtex), details, audio.
+# Audio example, shown in the expanded panel:
+#   audio:
+#     - label: "Noisy input"
+#       src: /assets/audio/my-paper/noisy.wav
+
+- id: 2026-taslp-shi
+  title: 'Beyond Acoustic Prefixes: Persistent Access to Serialized Acoustic Memory for LLM-Based Multi-Talker Speech Recognition'
+  authors: Hao Shi, Yuan Gao, Xugang Lu, Tatsuya Kawahara
+  venue: IEEE TASLP
+  venue_full: IEEE Transactions on Audio, Speech and Language Processing
+  year: 2026
+  type: journal
+  themes:
+  - attribution
+  - grounded
+  selected: true
+  summary: Proposes memory grounding to improve large language model-based recognition in overlapping multi-talker speech.
+  figure: /assets/figures/2026-taslp-shi.webp
+  links:
+    arxiv: https://arxiv.org/abs/2603.27205
+    doi: https://doi.org/10.1109/TASLPRO.2026.3742215
+    code: https://github.com/hshi-speech/grounded-multitalker-asr
+    bibtex: /files/bib/2026-taslp-shi.txt
+  details:
+  - label: Motivation
+    text: LLMs bring strong linguistic priors to serialized output training (SOT), yet LLM-based multi-talker ASR degrades substantially as the number of overlapping talkers grows. Acoustic evidence is exposed mainly through an initial mixture prefix, so the decoder must preserve and recover talker-relevant information indirectly throughout generation. Enriching that static prefix with CTC tokens, hybrid prompts, or continuous talker representations does not fully remove this bottleneck.
+  - label: Method
+    text: Onset-based serialization is extended from the output target to the acoustic-conditioning pathway. Talker-specific representations are kept in utterance-onset order as external acoustic memory, and LLM layers query this memory throughout generation via gated residual cross-attention, while the mixture prefix remains a complementary global path. A second adaptation stage applies low-rank updates to the retrieval pathway and selected self-attention projections.
+  - label: Results
+    text: 'Experiments on LibriMix show consistent improvements over static-prefix prompting: effective LLM-based multi-talker ASR depends not only on richer acoustic representations, but also on persistent access to evidence structured according to the serialized output.'
+  abstract: Large language models (LLMs) provide strong linguistic priors for serialized output training (SOT), yet LLM-based multi-talker ASR degrades substantially as the number of overlapping talkers increases. Conventional systems expose acoustic evidence primarily through an initial projected mixture prefix, requiring the decoder to preserve and recover talker-relevant information indirectly throughout autoregressive generation. We first examine whether this limitation can be resolved by enriching the static prefix using discrete connectionist temporal classification (CTC) tokens, hybrid token--acoustic prompts, and continuous talker-specific representations. The results suggest that acoustic content alone does not fully address the conditioning bottleneck. We therefore extend onset-based serialization from the output target to the acoustic-conditioning pathway and introduce persistent decoder-side access to SOT-aligned serialized acoustic memory. Talker-specific representations are organized in utterance-onset order and retained as external acoustic memory, while the conventional mixture prefix provides a complementary global-conditioning path. LLM layers query this memory throughout generation through gated residual cross-attention. We further introduce a second adaptation stage that jointly applies low-rank updates to the acoustic-retrieval pathway and selected LLM self-attention projections. Experiments on LibriMix show consistent improvements over static-prefix prompting. These results indicate that effective LLM-based multi-talker ASR depends not only on providing richer acoustic representations, but also on maintaining persistent access to acoustic evidence structured according to the serialized output.
+- id: tac-2025_gao
+  title: 'Bridging Speech Emotion Recognition and Personality: Dataset and Temporal Interaction Condition Network'
+  authors: Yuan Gao, Hao Shi, Yahui Fu, Chenhui Chu, Tatsuya Kawahara
+  venue: IEEE TAFFC
+  venue_full: IEEE Transactions on Affective Computing, vol. 17, no. 1, pp. 829–840
+  year: 2026
+  type: journal
+  themes:
+  - other
+  figure: /assets/figures/tac-2025_gao.webp
+  links:
+    arxiv: https://arxiv.org/abs/2505.13978
+    doi: https://doi.org/10.1109/TAFFC.2025.3637088
+    bibtex: /files/bib/tac-2025_gao.txt
+  abstract: This study investigates the interaction between personality traits and emotion expression, exploring how personality information can improve speech emotion recognition (SER). We collect the personality annotation for the IEMOCAP dataset, making it the first speech dataset that contains both emotion and personality annotations (PA-IEMOCAP), and enabling direct integration of personality traits into SER. Statistical analysis on this dataset identified significant correlations between personality traits and emotional expressions. To extract finegrained personality features, we propose a temporal interaction condition network (TICN), in which personality features are integrated with HuBERT-based acoustic features for SER. Experiments show that incorporating ground-truth personality traits significantly enhances valence recognition, improving the concordance correlation coefficient (CCC) from 0.698 to 0.785 compared to the baseline without personality information. For practical applications in dialogue systems where personality information about the user is unavailable, we develop a front-end module of automatic personality recognition. Using these automatically predicted traits as inputs to our proposed TICN model, we achieve a CCC of 0.776 for valence recognition, representing an 11.17% relative improvement over the baseline. These findings confirm the effectiveness of personality-aware SER and provide a solid foundation for further exploration in personality-aware speech processing applications.
+- id: 2026-shi-ruby
+  title: 'Ruby-ASR: Evidence-Preserving Supervision for Joint Orthographic and Lexical-Reading Recognition'
+  authors: Hao Shi, Yun Liu, Xuehao Yang, Jun Liu, Chuanbo Hua, Xuanjun Chen, Lianbo Liu, Shiao Zhu, Zixiong Su
+  venue: arXiv
+  venue_full: arXiv preprint arXiv:2609.27289
+  year: 2026
+  type: preprint
+  themes:
+  - grounded
+  selected: true
+  summary: Refines the Japanese ASR target into a span-bound sequence that binds each written span to its realized reading.
+  figure: /assets/figures/2026-shi-ruby.webp
+  links:
+    arxiv: https://arxiv.org/abs/2609.27289
+    code: https://github.com/hshi-speech/Ruby-ASR-1.7B
+    models: https://huggingface.co/hshispeech/Ruby-ASR-1.7B
+    bibtex: /files/bib/2026-shi-ruby.txt
+  details:
+  - label: Motivation
+    text: Japanese ASR is conventionally supervised by an orthographic transcript, although one written form can correspond to different lexical readings in speech. The reading distinction is absent from the supervision and cannot be recovered reliably by post-hoc, text-only grapheme-to-phoneme conversion.
+  - label: Method
+    text: 'The target is refined into a span-bound orthographic and lexical-reading sequence: each written span is locally bound to its realized reading, and both views can be recovered deterministically. Built on a Qwen3-ASR backbone under subtitle-style and verbatim-style conventions, with a mora-level CTC objective as auxiliary monotonic reading supervision.'
+  - label: Results
+    text: Across five Japanese benchmarks, refining the recognition target improves lexical-reading recovery without sacrificing readable orthographic transcription. Checkpoints and inference code are released.
+  abstract: Conventional Japanese automatic speech recognition (ASR) is supervised by an orthographic transcript, although the same written form can correspond to different lexical readings realized in speech. Such utterances receive an identical target, so their reading distinction is absent from the supervision interface and cannot be recovered reliably by post-hoc text-only grapheme-to-phoneme conversion. We present Ruby-ASR, which refines the conventional target into a span-bound orthographic--lexical-reading sequence. Unlike separate full-sentence orthographic and phonological outputs, the ruby representation locally binds each written span to its realized reading and permits deterministic recovery of both views. We instantiate the target under subtitle-style and verbatim-style transcription conventions using a Qwen3-ASR backbone; a mora-level CTC objective provides auxiliary monotonic reading supervision. The experimental results across five Japanese benchmarks show that refining the recognition target can improve lexical-reading recovery without sacrificing readable orthographic transcription. We release the checkpoints and inference code.
+- id: 2026_interspeech_shi
+  title: Distilling LLM Semantic Priors into Encoder-Only Multi-Talker ASR with Talker-Count Routing
+  authors: Hao Shi, Yusuke Fujita, Roman Koshkin, Mengjie Zhao, Yuan Gao, Lianbo Liu, Yui Sudo
+  venue: INTERSPEECH
+  venue_full: Proc. INTERSPEECH
+  year: 2026
+  type: conference
+  themes:
+  - attribution
+  - grounded
+  figure: /assets/figures/2026_interspeech_shi.webp
+  links:
+    arxiv: https://arxiv.org/abs/2603.10587
+    bibtex: /files/bib/2026_interspeech_shi.txt
+  details:
+  - label: Motivation
+    text: LLMs offer strong semantic priors for multi-talker ASR, but an autoregressive LLM decoder is computationally expensive and remains fragile under heavy overlap.
+  - label: Method
+    text: An encoder-only framework adapts an LLM to multi-talker conditioning and distills its semantic guidance into the encoder during training, keeping fast CTC-style decoding at inference. A post-encoder separator with serialized CTC produces talker-ordered transcripts, and a Talker-Count Head selects the decoding branch.
+  - label: Results
+    text: On LibriMix, the encoder-only model is comparable to LLM-based systems with two talkers and significantly better with three, at a much smaller real-time factor.
+  abstract: Large language models (LLMs) provide strong semantic priors that can improve multi-talker automatic speech recognition (MT-ASR), but using an LLM as an autoregressive decoder is computationally expensive and remains fragile under heavy overlap. In this paper, we propose an encoder-only MT-ASR framework that adapts an LLM to multi-talker conditioning and distills its semantic guidance into the encoder during training, while retaining fast CTC-style decoding at inference. Our model employs a post-encoder separator with serialized CTC to produce talker-ordered transcripts, and leverages an adapted LLM-based SOT objective as a multi-talker-aware teacher signal to explicitly regularize mixed-speech representations. To further support variable numbers of talkers, we introduce a Talker-Count Head that predicts the talker count and dynamically selects the appropriate decoding branch. Experiments on LibriMix show that the proposed encoder-only model achieves comparable performance to LLM-based systems in the two-talker condition, while delivering significant improvements in the three-talker condition with significant small RTF.
+- id: 2026_interspeech_mengjie
+  title: Speech-Worthy Alignment for Japanese SpeechLLMs via Direct Preference Optimization
+  authors: Mengjie Zhao, Lianbo Liu, Yusuke Fujita, Hao Shi, Yuan Gao, Roman Koshkin, Yui Sudo
+  venue: INTERSPEECH
+  venue_full: Proc. INTERSPEECH
+  year: 2026
+  type: conference
+  themes:
+  - grounded
+  figure: /assets/figures/2026_interspeech_mengjie.webp
+  links:
+    arxiv: https://arxiv.org/abs/2603.12565
+    bibtex: /files/bib/2026_interspeech_mengjie.txt
+  details:
+  - label: Motivation
+    text: SpeechLLMs inherit written-style output from text LLM backbones, which suits text-to-speech poorly. The mismatch is pronounced in Japanese, where spoken and written registers differ substantially.
+  - label: Method
+    text: A preference-based alignment adapts Japanese SpeechLLMs toward concise, conversational, readily synthesized text, evaluated on SpokenElyza, a new benchmark derived from ELYZA-tasks-100 with auditory verification by native experts.
+  - label: Results
+    text: Substantial improvement on SpokenElyza while largely preserving performance on the original written-style evaluation.
+  abstract: 'SpeechLLMs typically combine ASR-trained encoders with text-based LLM backbones, leading them to inherit written-style output patterns unsuitable for text-to-speech synthesis. This mismatch is particularly pronounced in Japanese, where spoken and written registers differ substantially in politeness markers, sentence-final particles, and syntactic complexity. We propose a preference-based alignment approach to adapt Japanese SpeechLLMs for speech-worthy outputs: text that is concise, conversational, and readily synthesized as natural speech. To rigorously evaluate this task, we introduce SpokenElyza, a benchmark for Japanese speech-worthiness derived from ELYZA-tasks-100 with auditory verification by native experts. Experiments show that our approach achieves substantial improvement on SpokenElyza while largely preserving performance on the original written-style evaluation. We will release SpokenElyza to support future research on Japanese spoken dialog systems.'
+- id: 2026_interspeech_haoyang
+  title: Training-Free Intelligibility-Guided Observation Addition for Noisy ASR
+  authors: Haoyang Li, Changsong Liu, Wei Rao, Hao Shi, Sakriani Sakti, Eng Siong Chng
+  venue: INTERSPEECH
+  venue_full: Proc. INTERSPEECH
+  year: 2026
+  type: conference
+  themes:
+  - robust
+  figure: /assets/figures/2026_interspeech_haoyang.webp
+  links:
+    arxiv: https://arxiv.org/abs/2602.20967
+    bibtex: /files/bib/2026_interspeech_haoyang.txt
+  abstract: Automatic speech recognition (ASR) degrades severely in noisy environments. Although speech enhancement (SE) front-ends effectively suppress background noise, they often introduce artifacts that harm recognition. Observation addition (OA) addressed this issue by fusing noisy and SE enhanced speech, improving recognition without modifying the parameters of the SE or ASR models. This paper proposes an intelligibility-guided OA method, where fusion weights are derived from intelligibility estimates obtained directly from the backend ASR. Unlike prior OA methods based on trained neural predictors, the proposed method is training-free, reducing complexity and enhances generalization. Extensive experiments across diverse SE-ASR combinations and datasets demonstrate strong robustness and improvements over existing OA baselines. Additional analyses of intelligibility-guided switching-based alternatives and frame versus utterance-level OA further validate the proposed design.
+- id: report-2026-liu
+  title: 'Sarashina2.2-TTS: Tackling Kanji Polyphony in Japanese Speech Generation via Data Scaling and Targeted Data Synthesis'
+  authors: Lianbo Liu, Shiao Zhu, Kai Washizaki, Reo Yoneyama, Haesung Jeon, Mengjie Zhao, Yusuke Fujita, Hao Shi, Nao Yoshida, Yuan Gao, Roman Koshkin, Yukiya Hono, Yui Sudo
+  venue: arXiv
+  venue_full: arXiv preprint arXiv:2606.25369
+  year: 2026
+  type: preprint
+  themes:
+  - grounded
+  figure: /assets/figures/report-2026-liu.webp
+  links:
+    arxiv: https://arxiv.org/abs/2606.25369
+    code: https://github.com/sbintuitions/sarashina2.2-tts
+    bibtex: /files/bib/report-2026-liu.txt
+  details:
+  - label: Motivation
+    text: LLM-based TTS has focused mostly on English and Chinese; Japanese remains under-explored, with challenges such as widespread context-dependent kanji polyphony.
+  - label: Method
+    text: Training is scaled to about 361k hours of balanced Japanese and English speech, with targeted augmentation covering all 2,136 Joyo kanji. The Joyo Kanji Yomi Benchmark (4,378 readings) and the Kana-CER metric measure pronunciation correctness directly.
+  - label: Results
+    text: State-of-the-art kanji-level reading accuracy, sentence-level pronunciation matching top baselines, and the highest speaker similarity in zero-shot Japanese synthesis, with stable Japanese pronunciation regardless of prompt language.
+  abstract: 'While large language model (LLM)-based text-to-speech (TTS) systems have achieved high-quality speech synthesis, most existing systems focus on English and Chinese. Japanese, however, remains under-explored, and its unique linguistic challenges, such as widespread context-dependent kanji polyphony, have yet to be adequately tackled. Here we introduce Sarashina2.2-TTS (https://github.com/sbintuitions/sarashina2.2-tts), a Japanese-centric LLM-TTS system that tackles these challenges through a dual approach: data strategy and evaluation methodology. First, we scale training to approximately 361k hours of speech, incorporating a balanced mix of Japanese and English data. Furthermore, we design a targeted data augmentation pipeline covering all 2,136 Joyo (regular-use) kanji designated by Japan''s Agency for Cultural Affairs to efficiently address kanji polyphony disambiguation. Second, we introduce the Joyo Kanji Yomi Benchmark (https://github.com/sbintuitions/JoyoKanji-Yomi-Benchmark), covering all 2,136 Joyo kanji and their 4,378 readings. Alongside this benchmark, we propose Kana-CER, a metric that compares synthesized speech against reference readings in the kana space, eliminating orthographic variations to directly measure pronunciation correctness. Experiments demonstrate that our targeted data augmentation significantly improves reading accuracy. Overall, Sarashina2.2-TTS achieves state-of-the-art kanji-level reading accuracy and matches top baselines on general sentence-level pronunciation, while delivering the highest speaker similarity in zero-shot Japanese speech synthesis. Furthermore, cross-lingual evaluation reveals that Sarashina2.2-TTS is the only system that maintains stable Japanese pronunciation regardless of the prompt language, confirming that our balanced training approach improves cross-lingual robustness.'
+- id: trans2025_shi
+  title: Combining Deterministic Enhanced Conditions With Dual-Streaming Encoding for Diffusion-Based Speech Enhancement
+  authors: Hao Shi, Xugang Lu, Kazuki Shimada, Tatsuya Kawahara
+  venue: IEEE TASLP
+  venue_full: IEEE Transactions on Audio, Speech and Language Processing, vol. 33, pp. 4253–4266
+  year: 2025
+  type: journal
+  themes:
+  - robust
+  selected: true
+  summary: Introduces a diffusion-based speech enhancement framework with deterministic enhanced conditions and dual-stream encoding.
+  figure: /assets/figures/trans2025_shi.webp
+  links:
+    arxiv: https://arxiv.org/abs/2505.13983
+    doi: https://doi.org/10.1109/TASLPRO.2025.3619824
+    code: https://github.com/hshi-speech/Repair-Diffusion
+    bibtex: /files/bib/trans2025_shi.txt
+  details:
+  - label: Motivation
+    text: Diffusion-based speech enhancement needs reliable conditions, but noisy features make poor ones. Features enhanced by deterministic models are an option, yet their distortion and information loss can affect the diffusion process.
+  - label: Method
+    text: The paper first compares deterministic-only and deterministic-noisy conditions, then proposes DERDM-SE, a dual-streaming encoding Repair-Diffusion model that uses both, with a deterministic model combining coarse- and fine-grained processing.
+  - label: Results
+    text: On CHiME-4, the proposed models leverage deterministic models effectively, achieving better enhancement scores and more stable performance than other diffusion-based SE models.
+  abstract: 'Diffusion-based speech enhancement (SE) models need to incorporate correct prior knowledge as reliable conditions to generate accurate predictions. However, providing reliable conditions using noisy features is challenging. One solution is to use features enhanced by deterministic methods as conditions. However, the information distortion and loss caused by deterministic methods might affect the diffusion process. In this paper, we first investigate the effects of using different deterministic SE models as conditions for diffusion. We validate two conditions depending on whether the noisy feature was used as part of the condition: one using only the deterministic feature (deterministic-only), and the other using both deterministic and noisy features (deterministic-noisy). Preliminary investigation found that using deterministic enhanced conditions improves hearing experiences on real data, while the choice between using deterministic-only or deterministic-noisy conditions depends on the deterministic models. Based on these findings, we propose a dual-streaming encoding Repair-Diffusion Model for SE (DERDM-SE) to more effectively utilize both conditions. Moreover, we found that fine-grained deterministic models have greater potential in objective evaluation metrics, while UNet-based deterministic models provide more stable diffusion performance. Therefore, in the DERDM-SE, we propose a deterministic model that combines coarse- and fine-grained processing. Experimental results on CHiME4 show that the proposed models effectively leverage deterministic models to achieve better SE evaluation scores, along with more stable performance compared to other diffusion-based SE models.'
+- id: apsipa-trans-gao-2025
+  title: Multi-attribute Learning for Multi-level Emotion Recognition from Speech
+  authors: Yuan Gao, Hao Shi, Chenhui Chu, Tatsuya Kawahara
+  venue: APSIPA Trans.
+  venue_full: APSIPA Transactions on Signal and Information Processing, vol. 14, no. e20, pp. 1–29
+  year: 2025
+  type: journal
+  themes:
+  - other
+  figure: /assets/figures/apsipa-trans-gao-2025.webp
+  links:
+    pdf: /files/publications/apsipa-trans-gao-2025.pdf
+    doi: https://doi.org/10.1561/116.20250025
+    bibtex: /files/bib/apsipa-trans-gao-2025.txt
+  abstract: 'In this paper, we propose a multi-level speech emotion recognition (SER) system that captures both acoustic and linguistic emotional features using only speech input. In particular, our approach utilizes an acoustic feature extractor (HuBERT) to process the input waveform, capturing acoustic emotional features while simultaneously performing automatic speech recognition (ASR) to implicitly learn linguistic information. The ASR-decoded transcriptions are then fed into a linguistic feature extractor (BERT) to explicitly encode linguistic emotional features. To combine these features, we introduce a temporal gated fusion method that dynamically modulates the contribution of each modality, addressing modality incongruity issues. Furthermore, integrating multi-attribute learning for emotion-related attributes such as gender and speaking style, further enhances SER performance. To address gradient conflicts inherent in multi-attribute learning, we propose a twostage fine-tuning framework employing adapters. Additionally, to mitigate the negative impact of ASR errors, we introduce an error correction module and a contrastive learning method to align representations learned from ground-truth text and the decoded transcriptions. Comprehensive experimental results on the IEMOCAP and MELD datasets validate that our method enhances SER ∗Corresponding author: gao.yuan.75x@st.kyoto-u.ac.jp. This work was supported by JST SPRING (JPMJSP2110), JST Moonshot R&D (JPMJPS2011). Received 08 May 2025; revised 10 June 2025; accepted 03 July 2025 ISSN 2048-7703; DOI 10.1561/116.20250025 © 2025 Y. Gao, H. Shi, C. Chu and T. Kawahara'
+- id: asru-2025-shi
+  title: Serialized Output Prompting for Large Language Model-based Multi-Talker Speech Recognition
+  authors: Hao Shi, Yusuke Fujita, Tomoya Mizumoto, Lianbo Liu, Atsushi Kojima, Yui Sudo
+  venue: IEEE ASRU
+  venue_full: Proc. IEEE ASRU
+  year: 2025
+  type: conference
+  themes:
+  - attribution
+  - grounded
+  selected: true
+  summary: Extracts serialized output prompts from mixed speech and uses them to guide an LLM for multi-talker ASR.
+  figure: /assets/figures/asru-2025-shi.webp
+  links:
+    arxiv: https://arxiv.org/abs/2509.04488
+    doi: https://doi.org/10.1109/ASRU65441.2025.11434801
+    code: https://github.com/hshi-speech/Multi-talker-ASR-with-LLMs
+    bibtex: /files/bib/asru-2025-shi.txt
+  details:
+  - label: Motivation
+    text: Existing LLM-based multi-talker ASR systems omit prompts or rely on simple task-definition prompts; designing prompts to enhance performance had not been explored.
+  - label: Method
+    text: 'A separator and serialized CTC layers after the speech encoder extract multi-talker content in a first-speaking-first-out manner. Greedy decoding of the CTC outputs yields a serialized output prompt (SOP) for the LLM, trained in three stages: SOT fine-tuning, serialized speech information extraction, and SOP-based adaptation.'
+  - label: Results
+    text: On LibriMix, the LLM-based SOT model does well with two talkers but fails to fully leverage the LLM in harder conditions such as three talkers; SOP significantly improves performance in both two- and three-talker conditions.
+  abstract: Prompts are crucial for task definition and for improving the performance of large language models (LLM)-based systems. However, existing LLM-based multi-talker (MT) automatic speech recognition (ASR) systems either omit prompts or rely on simple task-definition prompts, with no prior work exploring the design of prompts to enhance performance. In this paper, we propose extracting serialized output prompts (SOP) and explicitly guiding the LLM using structured prompts to improve system performance (SOP-MT-ASR). A Separator and serialized Connectionist Temporal Classification (CTC) layers are inserted after the speech encoder to separate and extract MT content from the mixed speech encoding in a first-speaking-first-out manner. Subsequently, the SOP, which serves as a prompt for LLMs, is obtained by decoding the serialized CTC outputs using greedy search. To train the model effectively, we design a three-stage training strategy, consisting of serialized output training (SOT) fine-tuning, serialized speech information extraction, and SOP-based adaptation. Experimental results on the LibriMix dataset show that, although the LLM-based SOT model performs well in the two-talker scenario, it fails to fully leverage LLMs under more complex conditions, such as the three-talker scenario. The proposed SOP approach significantly improved performance under both two- and three-talker conditions.
+- id: asru_2025_mizumoto
+  title: Evaluating Japanese Dialect Robustness Across Speech and Text-based Large Language Models
+  authors: Tomoya Mizumoto, Yusuke Fujita, Hao Shi, Lianbo Liu, Atsushi Kojima, Yui Sudo
+  venue: IEEE ASRU
+  venue_full: Proc. IEEE ASRU
+  year: 2025
+  type: conference
+  themes:
+  - grounded
+  figure: /assets/figures/asru_2025_mizumoto.webp
+  links:
+    arxiv: https://arxiv.org/abs/2606.25436
+    doi: https://doi.org/10.1109/ASRU65441.2025.11434668
+    bibtex: /files/bib/asru_2025_mizumoto.txt
+  details:
+  - label: Motivation
+    text: Dialectal variation remains a major challenge for spoken dialogue systems, and it is unclear how the dialect understanding of a base LLM affects speech language models.
+  - label: Method
+    text: Robustness is defined as the ratio of performance on dialectal versus standard inputs, allowing fair comparison of LLMs and SLMs using Japanese dialects as a test case.
+  - label: Results
+    text: SLM robustness correlates with that of the text-based counterpart; training with dialectal data and fine-tuning the speech encoder each improve robustness.
+  abstract: Dialogue systems based on large language models (LLMs) have advanced significantly in recent years. However, dialectal variation remains a major challenge, particularly for systems that process spoken input. LLM-based speech language models (SLMs), which integrate LLMs with speech processing components, show promise for spoken language tasks, yet their ability to comprehend dialects has not been sufficiently studied. Moreover, it remains unclear how the dialectal understanding of the base LLM affects SLM performance. This study investigates the dialectal robustness of both LLMs and SLMs using Japanese dialects as a test case. We define robustness as the ratio of performance on dialectal versus standard inputs, enabling fair comparisons. Our experiments show that SLM robustness correlates with that of their text-based counterparts. Furthermore, training with dialectal data and fine-tuning the speech encoder each improves robustness in SLMs.
+- id: apsipa-2025-kojima
+  title: Conversation Context-Aware Direct Preference Optimization for Style-Controlled Speech Synthesis
+  authors: Atsushi Kojima, Yusuke Fujita, Hao Shi, Tomoya Mizumoto, Mengjie Zhao, Yui Sudo
+  venue: APSIPA ASC
+  venue_full: Proc. APSIPA ASC, pp. 573–578
+  year: 2025
+  type: conference
+  themes:
+  - grounded
+  links:
+    doi: https://doi.org/10.1109/APSIPAASC65261.2025.11249141
+    bibtex: /files/bib/apsipa-2025-kojima.txt
+  abstract: 'Conversational text-to-speech (TTS) generates context-appropriate expressive speech by modeling dialogue context, without requiring manual paralinguistic labels such as emotion or intent. However, acoustically similar emotions (e.g., happy vs. angry) often cause inappropriate renderings. To address this, we propose a preference-based optimization approach that reinforces the model toward selecting contextually appropriate emotional expressions. Specifically, we adopt direct preference optimization (DPO) in a unit-based TTS architecture, enabling fine-grained supervision of emotional expression by comparing discrete unit sequences for more and less suitable speech samples. Our method employs a text-to-unit model predicting discrete acoustic units from phonemes and context, followed by a unit-based HiFi-GAN vocoder. Training proceeds in two stages: first, the text-to-unit model is optimized with cross-entropy (CE) loss on ground-truth units; second, DPO is applied using unit pairs reflecting appropriate versus inappropriate emotions within the same context. Experiments on the STUDIES dataset show that preference-based optimization substantially improves emotion recognition accuracy (67.14 % with CE+DPO vs. 48.45 % with CE only). These results demonstrate that our approach enables fine-grained control of emotional expression and better captures subtle distinctions in conversational speech.'
+- id: icassp-2025-cui
+  title: Reducing the Gap Between Pretrained Speech Enhancement and Recognition Models Using a Real Speech-Trained Bridging Module
+  authors: Zhongjian Cui, Chenrui Cui, Tianrui Wang, Mengnan He, Hao Shi, Meng Ge, Caixia Gong, Longbiao Wang, Jianwu Dang
+  venue: IEEE ICASSP
+  venue_full: Proc. IEEE ICASSP
+  year: 2025
+  type: conference
+  themes:
+  - robust
+  figure: /assets/figures/icassp-2025-cui.webp
+  links:
+    arxiv: https://arxiv.org/abs/2501.02452
+    doi: https://doi.org/10.1109/ICASSP49660.2025.10889737
+    bibtex: /files/bib/icassp-2025-cui.txt
+  abstract: "The information loss or distortion caused by single-channel speech enhancement (SE) harms the performance of automatic speech recognition (ASR). \nObservation addition (OA) is an effective post-processing method to improve ASR performance by balancing noisy and enhanced speech. \nDetermining the OA coefficient is crucial. \nHowever, the currently supervised OA coefficient module, called the bridging module, only utilizes simulated noisy speech for training, which has a severe mismatch with real noisy speech. \nIn this paper, we propose training strategies to train the bridging module with real noisy speech. \nFirst, DNSMOS is selected to evaluate the perceptual quality of real noisy speech with no need for the corresponding clean label to train the bridging module. \nAdditional constraints during training are introduced to enhance the robustness of the bridging module further. \nEach utterance is evaluated by the ASR back-end using various OA coefficients to obtain the word error rates (WERs). \nThe WERs are used to consist of a multidimensional vector. \nThis vector is introduced into the bridging module with multi-task learning and is used to determine the optimal OA coefficients. \nThe experimental results on the CHiME-4 dataset show that the proposed methods all had significant improvement compared with the simulated data trained bridging module, especially under real evaluation sets."
+  legacy: Icassp2025cui
+- id: icassp-2025-zhao
+  title: Adapting Whisper for Code-Switching through Encoding Refining and Language-Aware Decoding
+  authors: Jiahui Zhao, Hao Shi, Chenrui Cui, Tianrui Wang, Hexin Liu, Zhaoheng Ni, Lingxuan Ye, Longbiao Wang
+  venue: IEEE ICASSP
+  venue_full: Proc. IEEE ICASSP
+  year: 2025
+  type: conference
+  themes:
+  - other
+  figure: /assets/figures/icassp-2025-zhao.webp
+  links:
+    arxiv: https://arxiv.org/abs/2412.16507
+    doi: https://doi.org/10.1109/ICASSP49660.2025.10889634
+    bibtex: /files/bib/icassp-2025-zhao.txt
+  abstract: "Code-switching (CS) automatic speech recognition (ASR) faces challenges due to the language confusion resulting from accents, auditory similarity, and seamless language switches. \nAdaptation on the pre-trained multi-lingual model has shown promising performance for CS-ASR. \nIn this paper, we adapt Whisper, which is a large-scale multilingual pre-trained speech recognition model, to CS from both encoder and decoder parts. \nFirst, we propose an encoder refiner to enhance the encoder's capacity of intra-sentence swithching. \nSecond, we propose using two sets of language-aware adapters with different language prompt embeddings to achieve language-specific decoding information in each decoder layer. \nThen, a fusion module is added to fuse the language-aware decoding. \nThe experimental results using the SEAME dataset show that, compared with the baseline model, the proposed approach achieves a relative MER reduction of 4.1% and 7.2% on the dev_man and dev_sge test sets, respectively, surpassing state-of-the-art methods. \nThrough experiments, we found that the proposed method significantly improves the performance on non-native language in CS speech, indicating that our approach enables Whisper to better distinguish between the two languages."
+  legacy: Icassp2025zhao
+- id: taslp-2024-shi
+  title: Waveform-Domain Speech Enhancement Using Spectrogram Encoding for Robust Speech Recognition
+  authors: Hao Shi, Masato Mimura, Tatsuya Kawahara
+  venue: IEEE/ACM TASLP
+  venue_full: IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol. 32, pp. 3049–3060
+  year: 2024
+  type: journal
+  themes:
+  - robust
+  selected: true
+  summary: Presents a waveform-domain speech enhancement method with spectrogram encoding for robust speech recognition.
+  figure: /assets/figures/taslp-2024-shi.webp
+  links:
+    pdf: /files/publications/taslp-2024-shi.pdf
+    doi: https://doi.org/10.1109/TASLP.2024.3407511
+    bibtex: /files/bib/taslp-2024-shi.txt
+  details:
+  - label: Motivation
+    text: Waveform-domain speech enhancement reaches state-of-the-art results on many datasets, while spectrogram-based enhancement tends to behave more robustly and stably.
+  - label: Method
+    text: WaveSpecEnc, a waveform-spectrogram hybrid, refines the temporal feature map with spectrogram encoding in each encoder layer. WaveSpecEnc+ further passes spectrogram encoding information to both the enhancement front-end and the ASR back-end.
+  - label: Results
+    text: On CHiME-4, ASR performance on real evaluation sets improves consistently and outperforms methods including DEMUCS and Conv-TasNet. Refining in shallow encoder layers is very effective, and the effect holds even with a strong WavLM-based ASR baseline.
+  abstract: While waveform-domain speech enhancement (SE) has been extensively investigated in recent years and achieves state-of-the-art performance in many datasets, spectrogram-based SE tends to show robust and stable enhancement behavior. In this paper, we propose a waveform-spectrogram hybrid method (WaveSpecEnc) to improve the robustness of waveform-domain SE. WaveSpecEnc refines the corresponding temporal feature map by spectrogram encoding in each encoder layer. Incorporating spectral information provides robust human hearing experience performance. However, it has a minor automatic speech recognition (ASR) improvement. Thus, we improve it for robust ASR by further utilizing spectrogram encoding information (WaveSpecEnc+) to both the SE front-end and ASR back-end. Experimental results using the CHiME-4 dataset show that ASR performance in real evaluation sets is consistently improved with the proposed method, which outperformed others, including DEMUCS and Conv-Tasnet. Refining in the shallow encoder layers is very effective, and the effect is confirmed even with a strong ASR baseline using WavLM.
+  legacy: Taslp2024shi
+- id: slt-2024-shi
+  title: Serialized Speech Information Guidance with Overlapped Encoding Separation for Multi-Speaker Automatic Speech Recognition
+  authors: Hao Shi, Yuan Gao, Zhaoheng Ni, Tatsuya Kawahara
+  venue: IEEE SLT
+  venue_full: Proc. IEEE SLT, pp. 193–199
+  year: 2024
+  type: conference
+  themes:
+  - attribution
+  figure: /assets/figures/slt-2024-shi.webp
+  links:
+    arxiv: https://arxiv.org/abs/2409.00815
+    doi: https://doi.org/10.1109/SLT61566.2024.10832330
+    code: https://github.com/hshi-speech/Multi-talker-ASR-with-LLMs
+    bibtex: /files/bib/slt-2024-shi.txt
+  details:
+  - label: Motivation
+    text: Serialized output training is convenient and flexible for multi-speaker ASR, but it is hard to train with attention loss alone.
+  - label: Method
+    text: EncSep inserts a separator after the encoder to extract multi-speaker information with CTC losses, exploiting the CTC-Attention hybrid loss. GEncSep concatenates the separated streams to give single-speaker guidance to attention during decoding.
+  - label: Results
+    text: On noisy Libri2Mix and Libri3Mix evaluation sets, EncSep gives relative improvements of more than 8% and 6%; GEncSep reaches more than 12% and 9%.
+  abstract: Serialized output training (SOT) attracts increasing attention due to its convenience and flexibility for multi-speaker automatic speech recognition (ASR). However, it is not easy to train with attention loss only. In this paper, we propose the overlapped encoding separation (EncSep) to fully utilize the benefits of the connectionist temporal classification (CTC) and attention (CTC-Attention) hybrid loss. This additional separator is inserted after the encoder to extract the multi-speaker information with CTC losses. Furthermore, we propose the serialized speech information guidance SOT (GEncSep) to further utilize the separated encodings. The separated streams are concatenated to provide single-speaker information to guide attention during decoding. The experimental results on Libri2Mix and Libri3Mix show that the single-speaker encoding can be separated from the overlapped encoding. The CTC loss helps to improve the encoder representation under complex scenarios (three-speaker and noisy conditions), which makes the EncSep have a relative improvement of more than 8% and 6% on the noisy Libri2Mix and Libri3Mix evaluation sets, respectively. GEncSep further improved performance, which was more than 12% and 9% relative improvement for the noisy Libri2Mix and Libri3Mix evaluation sets.
+  legacy: Slt2024shi
+- id: interspeech-2024-shi
+  title: Dual-path Adaptation of Pretrained Feature Extraction Module for Robust Automatic Speech Recognition
+  authors: Hao Shi, Tatsuya Kawahara
+  venue: INTERSPEECH
+  venue_full: Proc. INTERSPEECH, pp. 2850–2854
+  year: 2024
+  type: conference
+  themes:
+  - robust
+  figure: /assets/figures/interspeech-2024-shi.webp
+  links:
+    pdf: /files/publications/interspeech-2024-shi.pdf
+    doi: https://doi.org/10.21437/Interspeech.2024-270
+    bibtex: /files/bib/interspeech-2024-shi.txt
+  details:
+  - label: Motivation
+    text: The feature extraction (FE) module of SSL models is usually frozen for ASR finetuning, but a severe mismatch between simulated and real noisy data calls for finetuning it without losing what was pretrained.
+  - label: Method
+    text: Dual-path adaptation combines the frozen pretrained FE path with a finetuned, adapted FE path through convolutional fusion layers, with adapters inserted into the Transformer encoder.
+  - label: Results
+    text: On CHiME-4, the method exploits the complementarity between the two FE paths, achieving significant improvements even with noise-robust WavLM models.
+  abstract: Self-supervised learning (SSL)-based pretrained models have significantly improved automatic speech recognition (ASR) performance. As the feature extraction (FE) module has also been well-trained with a large amount of training data, freezing the FE during finetuning for downstream ASR tasks is common. When there is a severe mismatch between the simulated noisy data for pretraining and real noisy data, however, finetuning the FE with the real noisy data should be done without losing the effective information of the pretrained FE. In this paper, we propose a dual-path adaptation of the FE to address this problem. It combines the frozen pretrained FE path and the finetuned-adapted FE path with convolutional fusion layers. Moreover, adapters are inserted into the Transformer encoder. The experimental results using the CHiME–4 dataset show that using adapters for the FE or the Transformer encoder is effective, but achieving synergy of these two is challenging. Finetuning of the FE combined with adapters in the encoder realizes effective model adaptation. Moreover, the proposed method utilizes the complementarity between the pretrained and the finetuned FE paths, achieving significant improvements even with noise-robust WavLM models.
+  legacy: Interspeech2024shi
+- id: icassp-2024-shi
+  title: Diffusion-Based Speech Enhancement with Joint Generative and Predictive Decoders
+  authors: Hao Shi, Kazuki Shimada, Masato Hirano, Takashi Shibuya, Yuichiro Koyama, Zhi Zhong, Shusuke Takahashi, Tatsuya Kawahara, Yuki Mitsufuji
+  venue: IEEE ICASSP
+  venue_full: Proc. IEEE ICASSP, pp. 12951–12955
+  year: 2024
+  type: conference
+  themes:
+  - robust
+  figure: /assets/figures/icassp-2024-shi.webp
+  links:
+    pdf: /files/publications/icassp-2024-shi.pdf
+    arxiv: https://arxiv.org/abs/2305.10734
+    doi: https://doi.org/10.1109/ICASSP48485.2024.10448429
+    bibtex: /files/bib/icassp-2024-shi.txt
+  details:
+  - label: Motivation
+    text: Reverse diffusion is time-consuming, and pipelines that initialize it with predictive enhancement do not make combined use of generative and predictive decoders.
+  - label: Method
+    text: 'A unified system uses both decoders at two levels: a shared encoder holds generative and predictive information, and decoded features are fused at the initial diffusion step to improve convergence and at the final step to combine complementary outputs.'
+  - label: Results
+    text: On Voice-Bank, incorporating predictive information gives faster decoding and higher PESQ than the score-based diffusion systems StoRM and SGMSE+.
+  abstract: 'Diffusion-based generative speech enhancement (SE) has recently received attention, but reverse diffusion remains time-consuming. One solution is to initialize the reverse diffusion process with enhanced features estimated by a predictive SE system. However, the pipeline structure currently does not consider for a combined use of generative and predictive decoders. The predictive decoder allows us to use the further complementarity between predictive and diffusion-based generative SE. In this paper, we propose a unified system that use jointly generative and predictive decoders across two levels. The encoder encodes both generative and predictive information at the shared encoding level. At the decoded feature level, we fuse the two decoded features by generative and predictive decoders. Specifically, the two SE modules are fused in the initial and final diffusion steps: the initial fusion initializes the diffusion process with the predictive SE to improve convergence, and the final fusion combines the two complementary SE outputs to enhance SE performance. Experiments conducted on the Voice-Bank dataset demonstrate that incorporating predictive information leads to faster decoding and higher PESQ scores compared with other score-based diffusion SE (StoRM and SGMSE+).'
+  legacy: Icassp2024shi
+- id: hscma-2024-shi
+  title: Ensemble Inference for Diffusion Model-Based Speech Enhancement
+  authors: Hao Shi, Naoyuki Kamo, Marc Delcroix, Tomohiro Nakatani, Shoko Araki
+  venue: IEEE ICASSPW
+  venue_full: Proc. IEEE ICASSPW, pp. 735–739
+  year: 2024
+  type: conference
+  themes:
+  - robust
+  figure: /assets/figures/hscma-2024-shi.webp
+  links:
+    pdf: /files/publications/hscma-2024-shi.pdf
+    doi: https://doi.org/10.1109/ICASSPW62465.2024.10627051
+    bibtex: /files/bib/hscma-2024-shi.txt
+  abstract: 'Diffusion-based speech enhancement (SE) is a probabilistic model that provides distribution of enhanced speech. Based on this property, we previously proposed ensemble inference and showed that solving a reverse Stochastic Differential Equation (SDE) multiple times and performing an ensemble over the obtained samples significantly improves the performance. Unfortunately, we failed to sufficiently explore our proposed ensemble inference. First, we only tested it on target speech extraction (TSE) and not on such general SE tasks as denoising. Second, sample generation greatly increased the computational complexity. Finally, the method considered all samples equally without heeding potential outliers. This paper addresses these issues and proposes a computationally efficient sample generation technique called SplitTree and ensemble inference combined with outlier removal to improve the ensemble’s effectiveness. We conducted experiments using the WSJ-CHiME3 and LibriMix-2spk datasets for denoising and TSE tasks and confirmed the following: 1) Ensemble inference also helps denoising tasks; 2) SplitTree reduces the complexity of the ensemble inference by about 40% while maintaining a similar level of performance; and 3) Our proposed outlier removal improves the ensemble performance for TSE task.'
+  legacy: Icasspw2024shi
+- id: report-2023-shi
+  title: Exploration of Adapter for Noise Robust Automatic Speech Recognition
+  authors: Hao Shi, Tatsuya Kawahara
+  venue: arXiv
+  venue_full: arXiv preprint arXiv:2402.18275
+  year: 2024
+  type: preprint
+  themes:
+  - robust
+  figure: /assets/figures/report-2023-shi.webp
+  links:
+    arxiv: https://arxiv.org/abs/2402.18275
+    bibtex: /files/bib/report-2023-shi.txt
+  abstract: Adapting an automatic speech recognition (ASR) system to unseen noise environments is crucial. Integrating adapters into neural networks has emerged as a potent technique for transfer learning. This study thoroughly investigates adapter-based ASR adaptation in noisy environments. We conducted experiments using the CHiME--4 dataset. The results show that inserting the adapter in the shallow layer yields superior effectiveness, and there is no significant difference between adapting solely within the shallow layer and adapting across all layers. The simulated data helps the system to improve its performance under real noise conditions. Nonetheless, when the amount of data is the same, the real data is more effective than the simulated data. Multi-condition training is still useful for adapter training. Furthermore, integrating adapters into speech enhancement-based ASR systems yields substantial improvements.
+  legacy: Report2023shi
+- id: interspeech-2024-gao
+  title: Speech Emotion Recognition with Multi-level Acoustic and Semantic Information Extraction and Interaction
+  authors: Yuan Gao, Hao Shi, Chenhui Chu, Tatsuya Kawahara
+  venue: INTERSPEECH
+  venue_full: Proc. INTERSPEECH, pp. 1060–1064
+  year: 2024
+  type: conference
+  themes:
+  - other
+  figure: /assets/figures/interspeech-2024-gao.webp
+  links:
+    pdf: /files/publications/interspeech-2024-gao.pdf
+    doi: https://doi.org/10.21437/Interspeech.2024-2385
+    bibtex: /files/bib/interspeech-2024-gao.txt
+  abstract: Speech emotion recognition (SER) systems can learn linguistic information by integrating automatic speech recognition (ASR). However, existing SER systems fall short in explicitly learning semantic emotional information from ASR predictions. Our proposed system addresses this problem by incorporating a semantic feature extractor for explicit emotional information extraction. Furthermore, a cross attention-based information interaction module is proposed to learn the complementary emotional information in the embeddings from both feature extractors. Within the interaction module, a temporal-aware gate fusion network is incorporated to dynamically integrate the embeddings from acoustic and semantic feature extractors and mitigate the impact of ASR errors in SER. Experimental results on IEMOCAP show that our system outperforms the existing SER systems by improving the unweighted accuracy by 3.32%.
+  legacy: Interspeech2024gao
+- id: interspeech-2024-shu
+  title: Error Correction by Paying Attention to Both Acoustic and Confidence References for Automatic Speech Recognition
+  authors: Yuchun Shu, Bo Hu, Yifeng He, Hao Shi, Longbiao Wang, Jianwu Dang
+  venue: INTERSPEECH
+  venue_full: Proc. INTERSPEECH, pp. 3500–3504
+  year: 2024
+  type: conference
+  themes:
+  - other
+  figure: /assets/figures/interspeech-2024-shu.webp
+  links:
+    pdf: /files/publications/interspeech-2024-shu.pdf
+    arxiv: https://arxiv.org/abs/2407.12817
+    doi: https://doi.org/10.21437/Interspeech.2024-1605
+    bibtex: /files/bib/interspeech-2024-shu.txt
+  abstract: Accurately finding the wrong words in the automatic speech recognition (ASR) hypothesis and recovering them well-founded is the goal of speech error correction. In this paper, we propose a non-autoregressive speech error correction method. A Confidence Module measures the uncertainty of each word of the N-best ASR hypotheses as the reference to find the wrong word position. Besides, the acoustic feature from the ASR encoder is also used to provide the correct pronunciation references. N-best candidates from ASR are aligned using the edit path, to confirm each other and recover some missing character errors. Furthermore, the cross-attention mechanism fuses the information between error correction references and the ASR hypothesis. The experimental results show that both the acoustic and confidence references help with error correction. The proposed system reduces the error rate by 21% compared with the ASR model.
+  legacy: Interspeech2024shu
+- id: icassp-2024-gao
+  title: Enhancing Two-Stage Finetuning for Speech Emotion Recognition Using Adapters
+  authors: Yuan Gao, Hao Shi, Chenhui Chu, Tatsuya Kawahara
+  venue: IEEE ICASSP
+  venue_full: Proc. IEEE ICASSP, pp. 11316–11320
+  year: 2024
+  type: conference
+  themes:
+  - other
+  figure: /assets/figures/icassp-2024-gao.webp
+  links:
+    pdf: /files/publications/icassp-2024-gao.pdf
+    doi: https://doi.org/10.1109/ICASSP48485.2024.10446645
+    bibtex: /files/bib/icassp-2024-gao.txt
+  abstract: This study investigates the effective finetuning of a pretrained model using adapters for speech emotion recognition (SER). Since emotion is related with linguistic and prosodic information and also other attributes such as gender and speaking style, a framework of multi-task learning (MTL) has been shown to be effective for SER. However, the learning targets of automatic speech recognition (ASR) and other attribute recognition are apparently in conflict. Therefore, we propose to employ different adaptation methods for different tasks in multiple finetuning stages. Since ASR is the most challenging and also influential for SER, in the first stage, we finetune all parameters of the pretrained model for ASR and SER. In the second stage, we incorporate adapters to finetune the model for gender and style recognition in addition to SER by freezing the parameters of the main Transformer model tuned for ASR. Experimental evaluations which extensively compare different adaptation methods using the IEMOCAP dataset demonstrate that the proposed approach achieves a significant improvement from the simple MTL.
+  legacy: Icassp2024gao
+- id: icassp-2023-shi-tf
+  title: Time-Domain Speech Enhancement Assisted by Multi-Resolution Frequency Encoder and Decoder
+  authors: Hao Shi, Masato Mimura, Longbiao Wang, Jianwu Dang, Tatsuya Kawahara
+  venue: IEEE ICASSP
+  venue_full: Proc. IEEE ICASSP, pp. 1–5
+  year: 2023
+  type: conference
+  themes:
+  - robust
+  figure: /assets/figures/icassp-2023-shi-tf.webp
+  links:
+    pdf: /files/publications/icassp-2023-shi-tf.pdf
+    arxiv: https://arxiv.org/abs/2303.14593
+    doi: https://doi.org/10.1109/ICASSP49357.2023.10094718
+    bibtex: /files/bib/icassp-2023-shi-tf.txt
+  abstract: Time-domain speech enhancement (SE) has recently been intensively investigated. Among recent works, DEMUCS introduces multi-resolution STFT loss to enhance performance. However, some resolutions used for STFT contain non-stationary signals, and it is challenging to learn multi-resolution frequency losses simultaneously with only one output. For better use of multi-resolution frequency information, we supplement multiple spectrograms in different frame lengths into the time-domain encoders. They extract stationary frequency information in both narrowband and wideband. We also adopt multiple decoder outputs, each of which computes its corresponding resolution frequency loss. Experimental results show that (1) it is more effective to fuse stationary frequency features than non-stationary features in the encoder, and (2) the multiple outputs consistent with the frequency loss improve performance. Experiments on the Voice-Bank dataset show that the proposed method obtained a 0.14 PESQ improvement.
+  legacy: Icassp2023shi
+- id: waspaa-2023-zhong
+  title: Extending Audio Masked Autoencoders toward Audio Restoration
+  authors: Zhi Zhong, Hao Shi, Masato Hirano, Kazuki Shimada, Kazuya Tateishi, Takashi Shibuya, Shusuke Takahashi, Yuki Mitsufuji
+  venue: WASPAA
+  venue_full: Proc. IEEE WASPAA, pp. 1–5
+  year: 2023
+  type: conference
+  themes:
+  - robust
+  figure: /assets/figures/waspaa-2023-zhong.webp
+  links:
+    arxiv: https://arxiv.org/abs/2305.06701
+    doi: https://doi.org/10.1109/WASPAA58266.2023.10248171
+    bibtex: /files/bib/waspaa-2023-zhong.txt
+  abstract: Audio classification and restoration are among major downstream tasks in audio signal processing. However, restoration derives less of a benefit from pretrained models compared to the overwhelming success of pretrained models in classification tasks. Due to such unbalanced benefits, there has been rising interest in how to improve the performance of pretrained models for restoration tasks, e.g., speech enhancement (SE). Previous works have shown that the features extracted by pretrained audio encoders are effective for SE tasks, but these speech-specialized encoder-only models usually require extra decoders to become compatible with SE, and involve complicated pretraining procedures or complex data augmentation. Therefore, in pursuit of a universal audio model, the audio masked autoencoder (MAE) whose backbone is the autoencoder of Vision Transformers (ViT-AE), is extended from audio classification to SE, a representative restoration task with well-established evaluation standards. ViT-AE learns to restore masked audio signal via a mel-to-mel mapping during pretraining, which is similar to restoration tasks like SE. We propose variations of ViT-AE for a better SE performance, where the mel-to-mel variations yield high scores in non-intrusive metrics and the STFT-oriented variation is effective at intrusive metrics such as PESQ. Different variations can be used in accordance with the scenarios. Comprehensive evaluations reveal that MAE pretraining is beneficial to SE tasks and help the ViT-AE to better generalize to out-of-domain distortions. We further found that large-scale noisy data of general audio sources, rather than clean speech, is sufficiently effective for pretraining.
+  legacy: WASPAA2023zhong
+- id: interspeech-2022-shi
+  title: Monaural Speech Enhancement Based on Spectrogram Decomposition for Convolutional Neural Network-sensitive Feature Extraction
+  authors: Hao Shi, Longbiao Wang, Sheng Li, Jianwu Dang, Tatsuya Kawahara
+  venue: INTERSPEECH
+  venue_full: Proc. INTERSPEECH, pp. 221–225
+  year: 2022
+  type: conference
+  themes:
+  - robust
+  figure: /assets/figures/interspeech-2022-shi.webp
+  links:
+    pdf: /files/publications/interspeech-2022-shi.pdf
+    doi: https://doi.org/10.21437/Interspeech.2022-11268
+    bibtex: /files/bib/interspeech-2022-shi.txt
+  abstract: Many state-of-the-art speech enhancement (SE) systems have recently used convolutional neural networks (CNNs) to extract multi-scale feature maps. However, CNN relies more on local texture than global shape, which is more susceptible to degraded spectrogram and may fail to capture the detailed structure of speech. Although some two-stage systems feed the first-stage enhanced and original noisy spectrograms to the second stage simultaneously, this does not guarantee sufficient guidance for the second stage since the first-stage spectrogram can not provide precise spectral details. In order to allow CNNs to perceive clear speech component boundary information, we compose feature maps with spectrograms containing evident speech components according to the mask value from the first stage. The positions corresponding to the mask greater than certain thresholds are extracted as feature maps. These feature maps make the boundary information of speech components obvious by ignoring others, thus making CNNs sensitive to input features. Experiments on the VB dataset show that with a proper decomposition numbers, the proposed method can enhance SE performance, which can provide 0.15 PESQ improvement. Besides, the proposed method is more effective for spectral detail recovery.
+  legacy: Interspeech2022shi
+- id: apsipa-2022-shi-subband
+  title: Subband-Based Spectrogram Fusion for Speech Enhancement by Combining Mapping and Masking Approaches
+  authors: Hao Shi, Longbiao Wang, Sheng Li, Jianwu Dang, Tatsuya Kawahara
+  venue: APSIPA ASC
+  venue_full: Proc. APSIPA ASC, pp. 286–292
+  year: 2022
+  type: conference
+  themes:
+  - robust
+  figure: /assets/figures/apsipa-2022-shi-subband.webp
+  links:
+    pdf: /files/publications/apsipa-2022-shi-subband.pdf
+    doi: https://doi.org/10.23919/APSIPAASC55919.2022.9979930
+    bibtex: /files/bib/apsipa-2022-shi-subband.txt
+  abstract: Deep learning brings effective optimization and significant improvements to speech enhancement (SE). Mapping and masking are currently major approaches in single-channel frequency-domain SE with supervised learning. In this work, we first show that these two approaches are complementary in that mapping is more effective in low-frequency bands, while masking is more suitable in high-frequency bands. This is because the high-frequency bands typically have low energy, so estimating the enhanced spectrogram directly does not make sense. Moreover, learning on the low-energy parts is often annihilated by learning on the high-energy parts during the entire loss calculation. To exploit this complementarity, we propose subband-based spectrogram fusion (SBSF), which combines the spectrogram of low-frequency and high-frequency estimated by different SE models. Experimental evaluations show that the SBSF significantly improved the SE performance.
+  legacy: Apsipa2022shi-subband
+- id: apsipa-2022-shi-resolutions
+  title: Fusing Multiple Bandwidth Spectrograms for Improving Speech Enhancement
+  authors: Hao Shi, Yuchun Shu, Longbiao Wang, Jianwu Dang, Tatsuya Kawahara
+  venue: APSIPA ASC
+  venue_full: Proc. APSIPA ASC, pp. 1935–1940
+  year: 2022
+  type: conference
+  themes:
+  - robust
+  figure: /assets/figures/apsipa-2022-shi-resolutions.webp
+  links:
+    pdf: /files/publications/apsipa-2022-shi-resolutions.pdf
+    doi: https://doi.org/10.23919/APSIPAASC55919.2022.9980180
+    bibtex: /files/bib/apsipa-2022-shi-resolutions.txt
+  abstract: 'The spectrogram is a common feature of frequency domain speech enhancement (SE). It can be divided into wideband and narrowband according to the resolution of the spectrogram, which is controlled by the length of framing time. Although narrowband and wideband spectrograms have their own spectral characteristics, SE systems conventionally utilize single narrow bandwidth spectrograms. In this paper, we propose an SE system that simultaneously utilizes multiple bandwidth spectral information, more specifically, augments the wider bandwidth (16ms and 8ms) spectrograms as auxiliary information. Multiple bandwidth information fusion is implemented in the encoder in two ways: fusion only in the last layer (MI-F) and fusion layer by layer (MI-L). Experiments using the VB dataset show that different bandwidth spectrograms can provide supplementary information, which provides more than 0.1 PESQ improvement. The embedding dimension affects the position of the fusion position: MI-F requires less embedding dimension, while MI-L requires a larger dimension and more varied bandwidth. Moreover, the spectrogram which differs more from the main enhancement spectrogram provides better auxiliary information.'
+  legacy: Apsipa2022shi-resolution
+- id: iscslp-2022-yang
+  title: Adaptive Attention Network with Domain Adversarial Training for Multi-Accent Speech Recognition
+  authors: Yanbing Yang, Hao Shi, Yuqin Lin, Meng Ge, Longbiao Wang, Qingzhi Hou, Jianwu Dang
+  venue: ISCSLP
+  venue_full: Proc. ISCSLP, pp. 6–10
+  year: 2022
+  type: conference
+  themes:
+  - other
+  figure: /assets/figures/iscslp-2022-yang.webp
+  links:
+    pdf: /files/publications/iscslp-2022-yang.pdf
+    doi: https://doi.org/10.1109/ISCSLP57327.2022.10038197
+    bibtex: /files/bib/iscslp-2022-yang.txt
+  abstract: Spoken accents severely degrade the performance of automatic speech recognition (ASR) systems. Domain adversarial training (DAT) is widely adopted for generating domain-invariant features to reduce the influence of accents. However, the generated features trained by DAT are still maintaining some accent discrimination information, limiting the ASR performance. In addition, the features generated by DAT of each accent have different degrees of residual accent discriminant information. In this paper, we propose an adaptive attention network with DAT to further eliminate the influence of retaining accent information in features generated by DAT. We employ the adaptive attention module to transform the encoder output to a more general representation. Experiments on the AESRC2020 dataset show that the proposed method can achieve satisfactory performance improvements on seen and unseen accent when the correct accent information is still preserved in the output of the encoder.
+  legacy: Iscslp2022yang
+- id: interspeech-2022-song
+  title: Language-specific Characteristic Assistance for Code-switching Speech Recognition
+  authors: Tongtong Song, Qiang Xu, Meng Ge, Longbiao Wang, Hao Shi, Yongjie Lv, Yuqin Lin, Jianwu Dang
+  venue: INTERSPEECH
+  venue_full: Proc. INTERSPEECH, pp. 3924–3928
+  year: 2022
+  type: conference
+  themes:
+  - other
+  figure: /assets/figures/interspeech-2022-song.webp
+  links:
+    pdf: /files/publications/interspeech-2022-song.pdf
+    arxiv: https://arxiv.org/abs/2206.14580
+    doi: https://doi.org/10.21437/Interspeech.2022-11426
+    bibtex: /files/bib/interspeech-2022-song.txt
+  abstract: Dual-encoder structure successfully utilizes two languagespecific encoders (LSEs) for code-switching speech recognition. Because LSEs are initialized by two pre-trained languagespecific models (LSMs), the dual-encoder structure can exploit sufficient monolingual data and capture the individual language attributes. However, most existing methods have no language constraints on LSEs and underutilize language-specific knowledge of LSMs. In this paper, we propose a languagespecific characteristic assistance (LSCA) method to mitigate the above problems. Specifically, during training, we introduce two language-specific losses as language constraints and generate corresponding language-specific targets for them. During decoding, we take the decoding abilities of LSMs into account by combining the output probabilities of two LSMs and the mixture model to obtain the final predictions. Experiments show that either the training or decoding method of LSCA can improve the model’s performance. Furthermore, the best result can obtain up to 15.4% relative error reduction on the codeswitching test set by combining the training and decoding methods of LSCA. Moreover, the system can process code-switching speech recognition tasks well without extra shared parameters or even retraining based on two pre-trained LSMs by using our method.
+  legacy: Interspeech2022song
+- id: interspeech-2022-xu
+  title: Self-Distillation Based on High-level Information Supervision for Compressing End-to-End ASR Model
+  authors: Qiang Xu, Tongtong Song, Longbiao Wang, Hao Shi, Yuqin Lin, Yongjie Lv, Meng Ge, Qiang Yu, Jianwu Dang
+  venue: INTERSPEECH
+  venue_full: Proc. INTERSPEECH, pp. 1716–1720
+  year: 2022
+  type: conference
+  themes:
+  - other
+  figure: /assets/figures/interspeech-2022-xu.webp
+  links:
+    pdf: /files/publications/interspeech-2022-xu.pdf
+    doi: https://doi.org/10.21437/Interspeech.2022-11423
+    bibtex: /files/bib/interspeech-2022-xu.txt
+  abstract: Model compression of ASR aims to reduce the model parameters while bringing as little performance degradation as possible. Knowledge Distillation (KD) is an efficient model compression method that transfers the knowledge from a large teacher model to a smaller student model. However, most of the existing KD methods study how to fully utilize the teacher’s knowledge without paying attention to the student’s own knowledge. In this paper, we explore whether the high-level information of the model itself is helpful for low-level information. We first propose neighboring feature self-distillation (NFSD) approach to distill the knowledge from the adjacent deeper layer to the shallow one, which shows significant performance improvement. Therefore, we further propose attention-based feature self-distillation (AFSD) approach to exploit more high-level information. Specifically, AFSD fuses the knowledge from multiple deep layers with an attention mechanism and distills it to a shallow one. The experimental results on AISHELL-1 dataset show that 7.3% and 8.3% relative character error rate (CER) reduction can be achieved from NFSD and AFSD, respectively. Inaddition, our proposed two approaches can be easily combined with the general teacher-student knowledge distillation method to achieve 12.4% and 13.4% relative CER reduction compared with the baseline student model, respectively.
+  legacy: Interspeech2022xu
+- id: arxiv_song
+  title: Monolingual Recognizers Fusion for Code-switching Speech Recognition
+  authors: Tongtong Song, Qiang Xu, Haoyu Lu, Longbiao Wang, Hao Shi, Yuqin Lin, Yanbing Yang, Jianwu Dang
+  venue: arXiv
+  venue_full: arXiv preprint arXiv:2211.01046
+  year: 2022
+  type: preprint
+  themes:
+  - other
+  figure: /assets/figures/arxiv_song.webp
+  links:
+    arxiv: https://arxiv.org/abs/2211.01046
+    bibtex: /files/bib/arxiv_song.txt
+  abstract: 'The bi-encoder structure has been intensively investigated in code-switching (CS) automatic speech recognition (ASR). However, most existing methods require the structures of two monolingual ASR models (MAMs) should be the same and only use the encoder of MAMs. This leads to the problem that pre-trained MAMs cannot be timely and fully used for CS ASR. In this paper, we propose a monolingual recognizers fusion method for CS ASR. It has two stages: the speech awareness (SA) stage and the language fusion (LF) stage. In the SA stage, acoustic features are mapped to two language-specific predictions by two independent MAMs. To keep the MAMs focused on their own language, we further extend the language-aware training strategy for the MAMs. In the LF stage, the BELM fuses two language-specific predictions to get the final prediction. Moreover, we propose a text simulation strategy to simplify the training process of the BELM and reduce reliance on CS data. Experiments on a Mandarin-English corpus show the efficiency of the proposed method. The mix error rate is significantly reduced on the test set after using open-source pre-trained MAMs.'
+- id: apsipa-2021-shi
+  title: Spectrograms Fusion-based End-to-end Robust Automatic Speech Recognition
+  authors: Hao Shi, Longbiao Wang, Sheng Li, Cunhang Fan, Jianwu Dang, Tatsuya Kawahara
+  venue: APSIPA ASC
+  venue_full: Proc. APSIPA ASC, pp. 438–442
+  year: 2021
+  type: conference
+  themes:
+  - robust
+  figure: /assets/figures/apsipa-2021-shi.webp
+  links:
+    pdf: /files/publications/apsipa-2021-shi.pdf
+    bibtex: /files/bib/apsipa-2021-shi.txt
+  abstract: To improve the robustness of automatic speech recognition (ASR), speech enhancement (SE) is often used as a front-end noise-removal process. Although there is complementarity between the mapping-based and the mask-based SE system, one of the SE systems has been conventionally used as the front-end of ASR. We propose a spectrogram fusion (SF)-based end-to-end (E2E) robust ASR system, in which the mapping-based and masking-based SE are used as the front-end simultaneously. We adopt SF to combine the advantages of mapping-based and masking-based SE systems. SF and ASR modules are connected in an E2E manner, and joint training is conducted to finetune the front-end and the back-end. We compared the performance of different front-ends after joint training. From the experiments using Aishell and PNL 100 Nonspeech Sounds datasets, we found that the fusion of two SEs are beneficial for ASR, especially under low signal-to-noise ratio, where a relative improvement of more than 7% is achieved.
+  legacy: Apsipa2021shi
+- id: iconip-2021-qiang
+  title: Speech Dereverberation Based on Scale-Aware Mean Square Error Loss
+  authors: Luya Qiang, Hao Shi, Meng Ge, Haoran Yin, Nan Li, Longbiao Wang, Sheng Li, Jianwu Dang
+  venue: ICONIP
+  venue_full: Proc. ICONIP, pp. 55–63
+  year: 2021
+  type: conference
+  themes:
+  - robust
+  figure: /assets/figures/iconip-2021-qiang.webp
+  links:
+    pdf: /files/publications/iconip-2021-qiang.pdf
+    bibtex: /files/bib/iconip-2021-qiang.txt
+  abstract: Recently, deep learning-based speech dereverberation approaches have achieved remarkable performance by directly mapping the input spectrogram to a target spectrogram or time-frequency mask. However, these approaches are usually optimized under distance-related objective functions—the mean square error (MSE). The traditional MSE training criterion results in a strong inherent uniform variance statistical assumption on the target speech and noise during training, which cannot be satisfied in real-world scenarios. To alleviate such an assumption mismatch problem, we propose a speech dereverberation solution called Scale-aware Speech Dereverberation (SaSD) based on scaled-MSE. Specifically, we modify the MSE with different scales for each frequency band and progressively reduce the gap between the low- and high-frequency ranges to make the error follow the assumption of MSE assumption. Experiments demonstrated that SaSD achieved 1.0 SRMR and 0.8 PESQ improvements over the mapping baseline system.
+  legacy: Iconip2021qiang
+- id: iconip-2021-yin
+  title: Simultaneous Progressive Filtering-Based Monaural Speech Enhancement
+  authors: Haoran Yin, Hao Shi, Longbiao Wang, Luya Qiang, Sheng Li, Meng Ge, Gaoyan Zhang, Jianwu Dang
+  venue: ICONIP
+  venue_full: Proc. ICONIP, pp. 213–221
+  year: 2021
+  type: conference
+  themes:
+  - robust
+  figure: /assets/figures/iconip-2021-yin.webp
+  links:
+    pdf: /files/publications/iconip-2021-yin.pdf
+    bibtex: /files/bib/iconip-2021-yin.txt
+  abstract: Speech enhancement (SE) benefits from multi-stage stacking. However, this will introduce a lot of new parameters to the neural network. In this paper, we propose a simultaneous progressive filteringbased monaural SE model. Mapping-based and masking-based SE systems are simultaneously obtained with multi-target learning (MTL). Different from other MTL systems, our proposed model addresses different enhancement needs. The mapping-based SE system aims to recover speech signals from noisy features. While the masking-based SE system serves as a post-filtering to further reduce the noise that still exists after the mapping-based SE system. With the high signal-to-noise ratio inputs, noise reduction of the masking-based SE system is obvious with little speech signal loss. These two stages share one neural network which controls the parameters of the entire system with little or no increase. In addition, our approach is easy to integrate with existing methods and improve their performance significantly and stably. The experiments on Valentini-Botinhao data set show our proposed model achieves 0.12 PESQ improvement compared with directly mapping-based and masking-based SE systems both in single-target and multi-target learning. Furthermore, by comparing spectrograms, we find that our proposed models are able to recover better harmonic information.
+  legacy: Iconip2021yin
+- id: icassp-2020-shi
+  title: Spectrograms Fusion with Minimum Difference Masks Estimation for Monaural Speech Dereverberation
+  authors: Hao Shi, Longbiao Wang, Meng Ge, Sheng Li, Jianwu Dang
+  venue: IEEE ICASSP
+  venue_full: Proc. IEEE ICASSP, pp. 7544–7548
+  year: 2020
+  type: conference
+  themes:
+  - robust
+  figure: /assets/figures/icassp-2020-shi.webp
+  links:
+    pdf: /files/publications/icassp-2020-shi.pdf
+    doi: https://doi.org/10.1109/ICASSP40776.2020.9054661
+    bibtex: /files/bib/icassp-2020-shi.txt
+  abstract: Spectrograms fusion is an effective method for incorporating complementary speech dereverberation systems. Previous linear spectrograms fusion by averaging multiple spectrograms shows outstanding performance. However, various systems with different features cannot apply this simple method. In this study, we design the minimum difference masks (MDMs) to classify the time-frequency (T-F) bins in spectrograms according to the nearest distances from labels. Then, we propose a two-stage nonlinear spectrograms fusion system for speech dereverberation. First, we conduct a multitarget learning-based speech dereverberation front-end model to get spectrograms simultaneously. Then, MDMs are estimated to take the best parts of different spectrograms. We are using spectrograms in the first stage and MDMs in the second stage to recombine T-F bins. The experiments on the REVERB challenge show that a strong feature complementarity between spectrograms and MDMs. Moreover, the proposed framework can consistently and significantly improve PESQ and SRMR, both real and simulated data, e.g., an average PESQ gain of 0.1 in all simulated data and an average SRMR gain of 1.22 in all real data.
+  legacy: Icassp2020shi
+- id: interspeech-2020-shi
+  title: Singing Voice Extraction with Attention-Based Spectrograms Fusion
+  authors: Hao Shi, Longbiao Wang, Sheng Li, Chenchen Ding, Meng Ge, Nan Li, Jianwu Dang, Hiroshi Seki
+  venue: INTERSPEECH
+  venue_full: Proc. INTERSPEECH, pp. 2412–2416
+  year: 2020
+  type: conference
+  themes:
+  - robust
+  figure: /assets/figures/interspeech-2020-shi.webp
+  links:
+    pdf: /files/publications/interspeech-2020-shi.pdf
+    doi: https://doi.org/10.21437/Interspeech.2020-1043
+    bibtex: /files/bib/interspeech-2020-shi.txt
+  abstract: We propose a novel attention mechanism-based spectrograms fusion system with minimum difference masks (MDMs) estimation for singing voice extraction. Compared with previous works that use a fully connected neural network, our system takes advantage of the multi-head attention mechanism. Specifically, we 1) try a variety of embedding methods of multiple spectrograms as the input of attention mechanisms, which can provide multi-scale correlation information between adjacent frames in the spectrograms; 2) add a regular term to loss function to obtain better continuity of spectrogram; 3) use the phase of the linear fusion waveform to reconstruct the final waveform, which can reduce the impact of the inconsistent spectrogram. Experiments on the MIR-1K dataset show that our system consistently improves the quantitative evaluation by the perceptual evaluation of speech quality, signal-to-distortion ratio, signal-to-interference ratio, and signal-to-artifact ratio.
+  legacy: Interspeech2020shi
+- id: interspeech-2019-ge
+  title: Environment-Dependent Attention-Driven Recurrent Convolutional Neural Network for Robust Speech Enhancement
+  authors: Meng Ge, Longbiao Wang, Nan Li, Hao Shi, Jianwu Dang, Xiangang Li
+  venue: INTERSPEECH
+  venue_full: Proc. INTERSPEECH, pp. 3153–3157
+  year: 2019
+  type: conference
+  themes:
+  - robust
+  figure: /assets/figures/interspeech-2019-ge.webp
+  links:
+    pdf: /files/publications/interspeech-2019-ge.pdf
+    doi: https://doi.org/10.21437/Interspeech.2019-1477
+    bibtex: /files/bib/interspeech-2019-ge.txt
+  abstract: Speech enhancement aims to keep the real speech signal and reduce noise for building robust communication systems. Under the success of DNN, significant progress has been made. Nevertheless, accuracy of the speech enhancement system is not satisfactory due to insufficient consideration of varied environmental and contextual information in complex cases. To address these problems, this research proposes an end-to-end environment-dependent attention-driven approach. The local frequency-temporal pattern via convolutional neural network is fully employed without pooling operation. It then integrates an attention mechanism into bidirectional long short-term memory to acquire the weighted dynamic context between consecutive frames. Furthermore, dynamic environment estimation and phase correction further improve the generalization ability. Extensive experimental results on REVERB challenge demonstrated that the proposed approach outperformed existing methods, improving PESQ from 2.56 to 2.87 and SRMR from 4.95 to 5.50 compared with conventional DNN.
+  legacy: Interspeech19ge

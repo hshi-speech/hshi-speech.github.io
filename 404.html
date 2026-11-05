@@ -1,0 +1,24 @@
+---
+layout: default
+title: Page not found
+permalink: /404.html
+sitemap: false
+---
+<header class="page-head">
+  <h1>Page not found</h1>
+  <p class="lede">This page has moved or no longer exists. Try <a href="{{ '/publications/' | relative_url }}">Publications</a> or the <a href="{{ '/' | relative_url }}">home page</a>.</p>
+</header>
+<script>
+  // URLs from the previous version of this site.
+  (function () {
+    var legacy = {
+      {%- for p in site.data.publications %}{% if p.legacy %}
+      {{ p.legacy | jsonify }}: {{ p.id | jsonify }},{% endif %}{% endfor %}
+    };
+    var path = location.pathname.replace(/\/$/, '');
+    var m = path.match(/^\/publication\/(.+)$/);
+    if (m) { location.replace('/publications/' + (legacy[m[1]] ? '#' + legacy[m[1]] : '')); return; }
+    var moved = { '/about': '/', '/about.html': '/', '/cv': '/profile/', '/portfolio': '/projects/' };
+    if (moved[path]) location.replace(moved[path]);
+  })();
+</script>

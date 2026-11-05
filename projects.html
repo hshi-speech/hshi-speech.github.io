@@ -1,0 +1,20 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+description: "Open-source releases, community organizing, and learning resources by Hao Shi."
+---
+<header class="page-head">
+  <h1>Projects</h1>
+  <p class="lede">Open-source releases, community work, and learning resources. More on <a href="https://github.com/hshi-speech">GitHub</a>.</p>
+</header>
+{%- for g in site.data.projects %}
+<section>
+  <h2>{{ g.group }}</h2>
+  <div class="entries">
+    {%- for p in g.items %}
+    {% include project.html p=p %}
+    {%- endfor %}
+  </div>
+</section>
+{%- endfor %}

@@ -1,0 +1,59 @@
+---
+layout: default
+title: Home
+description: "Hao Shi is a Research Scientist at Shanda Group Corp, working on speech and language AI."
+---
+<section class="hero">
+  <div class="hero-text">
+    <h1>Hao Shi <span lang="zh">史 昊</span></h1>
+    <p class="position">Research Scientist, Shanda AI Research Tokyo</p>
+    <p>I am a Research Scientist at Shanda Group Corp, working on speech and language AI.</p>
+    <p>My research studies reliable speech intelligence in complex acoustic scenes, spanning robust speech processing, multi-talker speech understanding, and speech language models. I am particularly interested in how speech models can exploit increasingly powerful learned priors while remaining faithful to the underlying acoustic evidence.</p>
+    <p class="links hero-links">
+      <a href="mailto:hshi@ieee.org">Email</a><a href="{{ '/files/CV_hshi.pdf' | relative_url }}">CV</a><a href="{{ '/files/short_bio.txt' | relative_url }}">Bio</a><a href="https://scholar.google.com/citations?user=DclFbLwAAAAJ">Scholar</a><a href="https://github.com/hshi-speech">GitHub</a><a href="https://www.linkedin.com/in/hao-shi-29300b1b2/">LinkedIn</a>
+    </p>
+  </div>
+  <picture class="portrait">
+    <source srcset="{{ '/assets/img/hao-shi.webp' | relative_url }}" type="image/webp">
+    <img src="{{ '/assets/img/hao-shi.jpg' | relative_url }}" alt="Portrait of Hao Shi" width="240" height="240">
+  </picture>
+</section>
+
+<section>
+  <h2>News</h2>
+  <ul class="news">
+    {%- for n in site.data.news %}
+    <li><time>{{ n.date }}</time><span>{{ n.text }}</span></li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section>
+  <div class="section-head"><h2>Research</h2><a href="{{ '/research/' | relative_url }}">Research overview</a></div>
+  <ol class="themes">
+    {%- for t in site.data.research.themes %}
+    <li>
+      <span class="num">{{ t.number }}</span>
+      <div>
+        <p class="stage">{{ t.stage }}</p>
+        <h3><a href="{{ '/research/' | relative_url }}#{{ t.id }}">{{ t.title }}</a></h3>
+        <p>{{ t.tagline }}</p>
+      </div>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+
+<section>
+  <div class="section-head"><h2>Selected Publications</h2><a href="{{ '/publications/' | relative_url }}">All publications</a></div>
+  <div class="entries">
+    {%- assign selected = site.data.publications | where: "selected", true %}
+    {%- for p in selected %}
+    {% include paper.html p=p %}
+    {%- endfor %}
+  </div>
+</section>
+
+<div hidden>
+  <script async id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=n&d=mWphCyX22pe_P6KJ9gE87HPH3R3G0Mw9GPb6-s3jzU4&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff"></script>
+</div>

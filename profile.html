@@ -1,0 +1,59 @@
+---
+layout: default
+title: Profile
+permalink: /profile/
+description: "Experience, education, academic service, and honors of Hao Shi."
+---
+{%- assign pr = site.data.profile %}
+<header class="page-head">
+  <h1>Profile</h1>
+  <p class="lede"><a href="{{ '/files/CV_hshi.pdf' | relative_url }}">Download CV (PDF)</a> · <a href="{{ '/files/short_bio.txt' | relative_url }}">Short bio</a></p>
+</header>
+
+<section>
+  <h2>Experience</h2>
+  <dl class="timeline">
+    {%- for e in pr.experience %}
+    <dt>{{ e.date }}</dt>
+    <dd><strong>{{ e.title }}</strong><br>{{ e.org }}<br><span class="muted">{{ e.note }}</span></dd>
+    {%- endfor %}
+  </dl>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <dl class="timeline">
+    {%- for e in pr.education %}
+    <dt>{{ e.date }}</dt>
+    <dd><strong>{{ e.title }}</strong><br>{{ e.org }}{% if e.note %}, <a href="{{ e.org_url }}">{{ e.note }}</a>{% endif %}{% if e.thesis %}<br><span class="muted">Thesis: <a href="{{ e.thesis_url }}">{{ e.thesis }}</a></span>{% endif %}</dd>
+    {%- endfor %}
+  </dl>
+</section>
+
+<section>
+  <h2>Academic Service</h2>
+  <dl class="timeline">
+    {%- for s in pr.service %}
+    <dt>{{ s.label }}</dt>
+    <dd>{% for i in s.items %}{{ i }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}</dd>
+    {%- endfor %}
+  </dl>
+</section>
+
+<section>
+  <h2>Honors</h2>
+  <dl class="timeline">
+    {%- for h in pr.honors %}
+    <dt>{{ h.date }}</dt>
+    <dd>{{ h.text }}</dd>
+    {%- endfor %}
+  </dl>
+</section>
+
+<section>
+  <h2>Other</h2>
+  <dl class="timeline">
+    <dt>Languages</dt><dd>{{ pr.languages }}</dd>
+    <dt>Hobbies</dt><dd>{{ pr.hobbies }}</dd>
+  </dl>
+</section>

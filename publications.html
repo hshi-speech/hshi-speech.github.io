@@ -1,0 +1,42 @@
+---
+layout: default
+title: Publications
+permalink: /publications/
+description: "Complete publication archive of Hao Shi, by year, with figures, abstracts, and BibTeX."
+---
+{%- assign pubs = site.data.publications %}
+<header class="page-head">
+  <h1>Publications</h1>
+  <p class="lede">{{ pubs.size }} papers on speech enhancement, robust and multi-talker ASR, and speech language models. Also on <a href="https://scholar.google.com/citations?user=DclFbLwAAAAJ">Google Scholar</a>.</p>
+</header>
+
+<form class="filters" id="filters" role="search" onsubmit="return false" hidden>
+  <div class="chips" role="group" aria-label="Filter by theme">
+    <button type="button" data-theme="all" aria-pressed="true">All</button>
+    <button type="button" data-theme="robust" aria-pressed="false">Robust Speech</button>
+    <button type="button" data-theme="attribution" aria-pressed="false">Multi-Talker</button>
+    <button type="button" data-theme="grounded" aria-pressed="false">Speech LLMs</button>
+    <button type="button" data-theme="other" aria-pressed="false">Other</button>
+  </div>
+  <div class="filter-row">
+    <label><input type="checkbox" id="f-first"> First author</label>
+    <label><input type="checkbox" id="f-journal"> Journals</label>
+    <input type="search" id="f-text" placeholder="Search title, author, venue" aria-label="Search publications">
+  </div>
+  <p class="filter-status"><span id="f-count" aria-live="polite">{{ pubs.size }} papers</span> <button type="button" class="textbtn" id="f-toggle">Expand all years</button></p>
+</form>
+
+<div id="archive">
+  {%- assign years = pubs | group_by: "year" %}
+  {%- for y in years %}
+  <details class="year" data-year="{{ y.name }}"{% if forloop.index <= 2 %} open{% endif %}>
+    <summary><span class="year-label">{{ y.name }}</span> <span class="year-count">{{ y.items.size }} paper{% if y.items.size > 1 %}s{% endif %}</span></summary>
+    <div class="entries">
+      {%- for p in y.items %}
+      {% include paper.html p=p anchor=true %}
+      {%- endfor %}
+    </div>
+  </details>
+  {%- endfor %}
+</div>
+<p class="empty" id="f-empty" hidden>No papers match these filters.</p>

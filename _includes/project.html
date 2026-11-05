@@ -1,0 +1,24 @@
+{%- assign p = include.p -%}
+<article class="entry" id="{{ p.id }}">
+  {%- if p.figure %}
+  <button class="thumb" type="button" data-toggle="panel-{{ p.id }}" aria-label="Expand details: {{ p.title | escape }}">
+    <img src="{{ p.figure | relative_url }}" alt="" loading="lazy" decoding="async">
+  </button>
+  {%- endif %}
+  <div class="entry-body{% unless p.figure %} is-wide{% endunless %}">
+    <h3 class="entry-title">{{ p.title }}</h3>
+    <p class="venue"><em>{{ p.role }}</em></p>
+    <p class="summary">{{ p.summary }}</p>
+    <p class="links">{% include link-row.html links=p.links %}{% if p.details %}<button class="expand" type="button" data-toggle="panel-{{ p.id }}" aria-expanded="false" aria-controls="panel-{{ p.id }}">Expand</button>{% endif %}</p>
+  </div>
+  {%- if p.details %}
+  <div class="panel" id="panel-{{ p.id }}">
+    <dl class="notes">
+      {%- for d in p.details %}
+      <dt>{{ d.label }}</dt>
+      <dd>{{ d.text }}</dd>
+      {%- endfor %}
+    </dl>
+  </div>
+  {%- endif %}
+</article>
