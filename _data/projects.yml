@@ -1,12 +1,16 @@
 # Projects grouped by topic. Same row + Expand pattern as publications.
-# Item fields: id, title, role, summary, figure, panel_figure, links, details.
+# Item fields: id, title, kind (what is available), role, summary, example, figure, panel_figure, links, details.
+# `example` shows a task and a real output. Quote it from a released source; never write one by hand.
 
 - group: Multi-Talker ASR
   items:
   - id: multi-talker-llm
     title: Multi-Talker ASR with LLMs
-    role: Research code
+    kind: Open-source implementation
     summary: LLM-based multi-talker ASR with serialized output training on mixture speech.
+    example:
+    - label: Task
+      text: 'One mixture of N overlapping speakers in, all N transcriptions out as one serialized token sequence, separated by a <code>&lt;sc&gt;</code> token.'
     figure: /assets/figures/asru-2025-shi.webp
     links:
       code: https://github.com/hshi-speech/Multi-talker-ASR-with-LLMs
@@ -18,8 +22,16 @@
   items:
   - id: ruby-asr
     title: Ruby-ASR
+    kind: Research project · Released model
     role: Japanese ASR with reading-aware output
     summary: 'One model, two complementary outputs: actual-pronunciation kana morae and transcripts with inline bracket furigana.'
+    example:
+    - label: Mora reading
+      text: ナナネンカンデロスニモトモダチデキタシ
+      ja: true
+    - label: Ruby output
+      text: 七[なな]年間[ねんかん]でロスにも友達[ともだち]できたし、
+      ja: true
     figure: /assets/figures/2026-shi-ruby.webp
     links:
       code: https://github.com/hshi-speech/Ruby-ASR-1.7B
@@ -32,8 +44,13 @@
       text: The main model stays byte-compatible with stock Qwen3-ASR, so ruby transcription runs on unmodified vLLM and the official qwen-asr toolkit. Mora reading uses the auxiliary CTC branch through the small ruby_asr package.
   - id: kana-whisper
     title: Kana Whisper
+    kind: Released model
     role: Co-author · SB Intuitions
     summary: A fine-tuned Whisper large-v3-turbo that transcribes Japanese speech directly into katakana sequences.
+    example:
+    - label: Example output
+      text: キョーワイイテンキデスネ
+      ja: true
     figure: /assets/figures/kana-whisper.webp
     links:
       models: https://huggingface.co/sbintuitions/kana-whisper
@@ -46,7 +63,8 @@
   items:
   - id: iroha-tts
     title: Iroha-TTS
-    role: Iroha Studio · Open model
+    kind: Released model · Interactive demo
+    role: Iroha Studio
     summary: 'Expressive Japanese TTS for character dialogue: clone a voice, choose an emotion, adjust its intensity, and explore different takes on the same line.'
     figure: /assets/figures/iroha-tts.webp
     panel_figure: /assets/figures/iroha-tts-emotions.webp
@@ -63,11 +81,14 @@
       text: 'As reported on the model card: 85.6% emotion accuracy (emo2vec large) against 17.9% for the original Fish S2 Pro, and a subjective Japanese MOS of 3.85 against 3.47.'
   - id: sarashina-tts
     title: Sarashina2.2-TTS
+    kind: Research project · Released model · Audio samples
     role: Co-author · SB Intuitions
     summary: Japanese-centric LLM-based TTS tackling kanji polyphony, released with the Joyo Kanji Yomi Benchmark.
     figure: /assets/figures/report-2026-liu.webp
     links:
       code: https://github.com/sbintuitions/sarashina2.2-tts
+      models: https://huggingface.co/sbintuitions/sarashina2.2-tts
+      audio: https://huggingface.co/sbintuitions/sarashina2.2-tts#audio-samples
       benchmark: https://github.com/sbintuitions/JoyoKanji-Yomi-Benchmark
       paper: /publications/#report-2026-liu
     details:

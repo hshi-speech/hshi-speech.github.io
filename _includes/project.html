@@ -7,8 +7,16 @@
   {%- endif %}
   <div class="entry-body{% unless p.figure %} is-wide{% endunless %}">
     <h3 class="entry-title">{{ p.title }}</h3>
-    <p class="venue"><em>{{ p.role }}</em></p>
+    <p class="venue"><em>{{ p.kind }}</em>{% if p.role %} · {{ p.role }}{% endif %}</p>
     <p class="summary">{{ p.summary }}</p>
+    {%- if p.example %}
+    <dl class="io">
+      {%- for e in p.example %}
+      <dt>{{ e.label }}</dt>
+      <dd{% if e.ja %} lang="ja"{% endif %}>{{ e.text }}</dd>
+      {%- endfor %}
+    </dl>
+    {%- endif %}
     <p class="links">{% include link-row.html links=p.links %}{% if p.details %}<button class="expand" type="button" data-toggle="panel-{{ p.id }}" aria-expanded="false" aria-controls="panel-{{ p.id }}">Expand</button>{% endif %}</p>
   </div>
   {%- if p.details %}

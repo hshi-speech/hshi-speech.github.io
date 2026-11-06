@@ -1,4 +1,4 @@
-{%- comment -%} Params: p (publication entry), anchor (bool: emit the id used for deep links) {%- endcomment -%}
+{%- comment -%} Params: p (publication entry), anchor (bool: emit the id used for deep links), and for home page contributions: tag, lead (one sentence), project (id). {%- endcomment -%}
 {%- assign p = include.p -%}
 {%- assign lead = p.authors | slice: 0, 7 -%}
 <article class="entry{% if p.selected and include.anchor %} is-selected{% endif %}"{% if include.anchor %} id="{{ p.id }}"{% endif %}
@@ -12,10 +12,12 @@
   <div class="thumb thumb-empty" aria-hidden="true"><span>{{ p.venue }}</span></div>
   {%- endif %}
   <div class="entry-body">
+    {%- if include.tag %}<p class="stage">{{ include.tag }}</p>{% endif %}
     <h3 class="entry-title">{{ p.title }}</h3>
     <p class="authors">{{ p.authors | replace: "Hao Shi", "<strong>Hao Shi</strong>" }}</p>
     <p class="venue"><em>{{ p.venue }}</em>, {{ p.year }}{% if p.type == 'preprint' %} · Preprint{% endif %}</p>
-    <p class="links">{% include link-row.html links=p.links %}<button class="expand" type="button" data-toggle="panel-{{ p.id }}" aria-expanded="false" aria-controls="panel-{{ p.id }}">Expand</button></p>
+    {%- if include.lead %}<p class="summary">{{ include.lead }}</p>{% endif %}
+    <p class="links">{% include link-row.html links=p.links %}{% if include.project %}<a href="{{ '/projects/' | relative_url }}#{{ include.project }}">Project</a>{% endif %}<button class="expand" type="button" data-toggle="panel-{{ p.id }}" aria-expanded="false" aria-controls="panel-{{ p.id }}">Expand</button></p>
   </div>
   <div class="panel" id="panel-{{ p.id }}">
     {%- if p.figure %}

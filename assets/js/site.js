@@ -21,7 +21,7 @@
     setPanel(id, !document.getElementById(id).classList.contains('open'));
   });
 
-  // Deep links open whatever hides their target: a year, a research section, or a paper panel.
+  // Deep links open whatever hides their target: a year or a paper panel.
   function openHash() {
     if (!location.hash) return;
     var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
@@ -92,24 +92,6 @@
   }
   openHash(); // after the mobile menu has collapsed, so the target does not shift
 
-  // Research: open or close every section at once.
-  var partsToggle = document.getElementById('parts-toggle');
-  if (partsToggle) {
-    var parts = Array.prototype.slice.call(document.querySelectorAll('details.part'));
-    var syncParts = function () {
-      var allOpen = parts.every(function (p) { return p.open; });
-      partsToggle.textContent = allOpen ? 'Collapse all sections' : 'Expand all sections';
-    };
-    partsToggle.hidden = false;
-    partsToggle.addEventListener('click', function () {
-      var open = partsToggle.textContent.indexOf('Expand') === 0;
-      parts.forEach(function (p) { p.open = open; });
-      syncParts();
-    });
-    parts.forEach(function (p) { p.addEventListener('toggle', syncParts); });
-    syncParts();
-  }
-
   // Publications filters.
   var form = document.getElementById('filters');
   if (!form) return;
@@ -123,19 +105,26 @@
   var empty = document.getElementById('f-empty');
   var years = Array.prototype.slice.call(document.querySelectorAll('details.year'));
   var defaultOpen = years.map(function (y) { return y.open; });
+  var reset = document.getElementById('f-reset');
   var theme = 'all';
 
   function apply() {
     var q = text.value.trim().toLowerCase();
     var active = theme !== 'all' || first.checked || journal.checked || q;
     var total = 0;
+    var perTopic = { all: 0 }; // what each topic link would show under the other filters
     years.forEach(function (y, i) {
       var n = 0;
       y.querySelectorAll('.entry').forEach(function (a) {
-        var ok = (theme === 'all' || a.dataset.themes.split(' ').indexOf(theme) >= 0) &&
-          (!first.checked || a.dataset.first === '1') &&
+        var themes = a.dataset.themes.split(' ');
+        var match = (!first.checked || a.dataset.first === '1') &&
           (!journal.checked || a.dataset.type === 'journal') &&
           (!q || a.dataset.text.indexOf(q) >= 0);
+        var ok = match && (theme === 'all' || themes.indexOf(theme) >= 0);
+        if (match) {
+          perTopic.all++;
+          themes.forEach(function (t) { perTopic[t] = (perTopic[t] || 0) + 1; });
+        }
         a.hidden = !ok;
         if (ok) n++;
       });
@@ -147,8 +136,10 @@
       link.parentElement.hidden = n === 0;
       total += n;
     });
+    topics.forEach(function (t) { t.querySelector('.count').textContent = perTopic[t.dataset.theme] || 0; });
     count.textContent = total + (total === 1 ? ' paper' : ' papers');
     empty.hidden = total > 0;
+    reset.hidden = !active;
     syncToggle();
   }
   function selectTheme(name) {
@@ -173,6 +164,12 @@
     });
   });
   [first, journal].forEach(function (el) { el.addEventListener('change', apply); });
+  reset.addEventListener('click', function () {
+    first.checked = journal.checked = false;
+    text.value = '';
+    selectTheme('all');
+    history.replaceState(null, '', location.pathname);
+  });
   text.addEventListener('input', apply);
   toggle.addEventListener('click', function () {
     var open = toggle.textContent.indexOf('Expand') === 0;

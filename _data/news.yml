@@ -1,9 +1,24 @@
-# Newest first.
+# Newest first. `papers` link to Publications; `label` is a short description of each paper.
 - date: "2026.10"
-  text: "One paper accepted to IEEE Trans. on ASLP."
+  text: "Accepted to IEEE TASLP"
+  papers:
+    - label: "Persistent access to serialized acoustic memory for LLM-based multi-talker ASR"
+      id: 2026-taslp-shi
 - date: "2026.06"
-  text: "Three papers accepted to INTERSPEECH 2026."
+  text: "Three papers accepted to INTERSPEECH 2026"
+  papers:
+    - label: "Distilling LLM semantic priors into encoder-only multi-talker ASR"
+      id: 2026_interspeech_shi
+    - label: "Speech-worthy alignment for Japanese SpeechLLMs"
+      id: 2026_interspeech_mengjie
+    - label: "Training-free observation addition for noisy ASR"
+      id: 2026_interspeech_haoyang
 - date: "2026.04"
   text: "Joined Shanda AI Research Tokyo as a Research Scientist."
 - date: "2025.12"
-  text: "Two papers accepted to ASRU 2025."
+  text: "Two papers accepted to IEEE ASRU 2025"
+  papers:
+    - label: "Serialized output prompting for LLM-based multi-talker ASR"
+      id: asru-2025-shi
+    - label: "Japanese dialect robustness across speech and text LLMs"
+      id: asru_2025_mizumoto

@@ -11,6 +11,8 @@ description: "Complete publication archive of Hao Shi, by year and research topi
 <header class="page-head">
   <h1>Publications</h1>
   <p class="lede">{{ pubs.size }} papers on speech enhancement, robust and multi-talker ASR, and speech language models. Also on <a href="https://scholar.google.com/citations?user=DclFbLwAAAAJ">Google Scholar</a>.</p>
+  {%- assign multi = pubs | where_exp: "p", "p.themes.size > 1" %}
+  <p class="note">Topics are not mutually exclusive: {{ multi.size }} papers belong to two topics, so the topic counts add up to more than {{ pubs.size }}.</p>
 </header>
 
 <form class="filters" id="filters" role="search" onsubmit="return false" hidden>
@@ -19,14 +21,14 @@ description: "Complete publication archive of Hao Shi, by year and research topi
     <label><input type="checkbox" id="f-journal"> Journals</label>
     <input type="search" id="f-text" placeholder="Search title, author, venue" aria-label="Search publications">
   </div>
-  <p class="filter-status"><span id="f-count" aria-live="polite">{{ pubs.size }} papers</span> <button type="button" class="textbtn" id="f-toggle">Expand all years</button></p>
+  <p class="filter-status"><span id="f-count" aria-live="polite">{{ pubs.size }} papers</span> <button type="button" class="textbtn" id="f-toggle">Expand all years</button> <button type="button" class="textbtn" id="f-reset" hidden>Reset filters</button></p>
 </form>
 
 <div id="archive">
   {%- assign years = pubs | group_by: "year" %}
   {%- for y in years %}
   <details class="year" id="y{{ y.name }}"{% if forloop.index <= 2 %} open{% endif %}>
-    <summary><span class="year-label">{{ y.name }}</span> <span class="year-count">{{ y.items.size }} paper{% if y.items.size > 1 %}s{% endif %}</span></summary>
+    <summary><h2 class="year-label">{{ y.name }}</h2> <span class="year-count">{{ y.items.size }} paper{% if y.items.size > 1 %}s{% endif %}</span></summary>
     <div class="entries">
       {%- for p in y.items %}
       {% include paper.html p=p anchor=true %}
@@ -35,6 +37,6 @@ description: "Complete publication archive of Hao Shi, by year and research topi
   </details>
   {%- endfor %}
 </div>
-<p class="empty" id="f-empty" hidden>No papers match these filters.</p>
+<p class="empty" id="f-empty" hidden>No papers match these filters. Use Reset filters to show all papers.</p>
 </div>
 </div>

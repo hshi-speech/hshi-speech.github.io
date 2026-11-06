@@ -2,87 +2,46 @@
 layout: default
 title: Research
 permalink: /research/
-description: "Research directions of Hao Shi: robust speech processing, multi-talker and speaker-grounded speech, and speech LLMs."
+description: "Research directions of Hao Shi: robust speech processing, multi-talker and speaker-grounded speech, and speech-language modeling."
 ---
+<script>
+  // Section links from when all directions shared this page.
+  (function () {
+    var m = location.hash.match(/^#(robust|attribution|grounded)-(\w+)$/);
+    if (!m) return;
+    var moved = { motivation: 'overview', approach: 'evolution', contributions: 'insights', ongoing: 'open' };
+    location.replace(location.pathname + m[1] + '/#' + m[1] + '-' + (moved[m[2]] || m[2]));
+  })();
+</script>
 <div class="with-subnav">
 {% include subnav.html kind="research" %}
 <div class="page-main">
 <header class="page-head">
   <h1>Research</h1>
   <p class="lede">{{ site.data.research.intro }}</p>
-  <ol class="challenges">
-    {%- for t in site.data.research.themes %}
-    <li><a href="#{{ t.id }}">{{ t.stage }}</a> <span>{{ t.challenge }}</span></li>
+</header>
+
+{%- for t in site.data.research.themes %}
+<section id="{{ t.id }}" class="topic">
+  <p class="stage"><span class="num">{{ t.number }}</span> {{ t.stage }}</p>
+  <h2><a href="{{ '/research/' | relative_url }}{{ t.id }}/">{{ t.title }}</a></h2>
+  <p>{{ t.tagline }}</p>
+  <p class="tagline">{{ t.challenge }}</p>
+  <ul class="highlights">
+    {%- for h in t.highlights %}
+    <li>{{ h.text }} <span class="refs">{% include paper-refs.html ids=h.papers %}</span></li>
     {%- endfor %}
-  </ol>
+  </ul>
+  <p class="more"><a href="{{ '/research/' | relative_url }}{{ t.id }}/">Explore this direction</a></p>
+</section>
+{%- endfor %}
+
+<details class="part" id="connection">
+  <summary>How the directions connect</summary>
   {%- for para in site.data.research.connection %}
   <p>{{ para }}</p>
   {%- endfor %}
   <p>{{ site.data.research.goal }}</p>
-  <p><button type="button" class="textbtn" id="parts-toggle" hidden>Expand all sections</button></p>
-</header>
-
-{%- for t in site.data.research.themes %}
-{%- assign theme_papers = site.data.publications | where_exp: "p", "p.themes contains t.id" %}
-<section id="{{ t.id }}" class="topic">
-  <p class="stage"><span class="num">{{ t.number }}</span> {{ t.stage }}</p>
-  <h2>{{ t.title }}</h2>
-  <p class="keywords">{{ t.keywords | join: " · " }}</p>
-  <p class="tagline">{{ t.challenge }}</p>
-  <p>{{ t.overview }}</p>
-  <p>{{ t.brief }}</p>
-
-  <div class="questions" id="{{ t.id }}-questions">
-    <h3>Research Questions</h3>
-    <ol>{% for q in t.questions %}<li>{{ q }}</li>{% endfor %}</ol>
-  </div>
-
-  <details class="part" id="{{ t.id }}-evolution">
-    <summary>Research Evolution</summary>
-    <ol class="evolution">
-      {%- for e in t.evolution %}
-      <li>
-        <span class="when">{{ e.when }}</span>
-        <div>
-          <h4>{{ e.title }}</h4>
-          <p>{{ e.text }}</p>
-          <p class="refs">{% include paper-refs.html ids=e.papers %}</p>
-        </div>
-      </li>
-      {%- endfor %}
-    </ol>
-    {%- if t.evolution_note %}
-    <p class="note">{{ t.evolution_note }}</p>
-    {%- endif %}
-  </details>
-  <details class="part" id="{{ t.id }}-contributions">
-    <summary>Key Contributions</summary>
-    <h4>Proposed methods</h4>
-    <ul>{% for c in t.contributions.methods %}<li>{{ c.text }} <span class="refs">{% include paper-refs.html ids=c.papers %}</span></li>{% endfor %}</ul>
-    <h4>Experimental findings</h4>
-    <ul>{% for c in t.contributions.findings %}<li>{{ c.text }} <span class="refs">{% include paper-refs.html ids=c.papers %}</span></li>{% endfor %}</ul>
-    <h4>Interpretation</h4>
-    <p>{{ t.contributions.interpretation }}</p>
-  </details>
-  <details class="part" id="{{ t.id }}-open">
-    <summary>Open Questions</summary>
-    <ul>{% for q in t.open_questions %}<li>{{ q }}</li>{% endfor %}</ul>
-    {%- if t.ongoing %}
-    <p>{{ t.ongoing }}</p>
-    {%- endif %}
-  </details>
-
-  <div class="related" id="{{ t.id }}-publications">
-    <h3>Representative Publications</h3>
-    <ul class="paperlist">
-      {%- for id in t.papers %}
-      {%- assign p = site.data.publications | where: "id", id | first %}
-      <li><a href="{{ '/publications/' | relative_url }}#{{ p.id }}">{{ p.title }}</a> <span class="muted">{{ p.venue }}, {{ p.year }}</span> <span class="links">{% include link-row.html links=p.links %}</span></li>
-      {%- endfor %}
-    </ul>
-    <p class="more"><a href="{{ '/publications/' | relative_url }}?theme={{ t.id }}">All {{ theme_papers.size }} papers on this topic</a></p>
-  </div>
-</section>
-{%- endfor %}
+</details>
 </div>
 </div>

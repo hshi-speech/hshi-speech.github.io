@@ -1,0 +1,2 @@
+{%- assign n = include.n -%}
+<li><time>{{ n.date }}</time><span>{{ n.text }}{% if n.papers %}: {% for q in n.papers %}<a href="{{ '/publications/' | relative_url }}#{{ q.id }}">{{ q.label }}</a>{% unless forloop.last %}; {% endunless %}{% endfor %}.{% endif %}</span></li>

@@ -2,22 +2,27 @@
 {%- assign pubs = site.data.publications -%}
 <nav class="subnav" aria-label="Sections on this page">
   <details class="subnav-box" open>
-    <summary>On this page</summary>
+    <summary>{% if include.kind == "research" %}Research directions{% else %}On this page{% endif %}</summary>
     <div class="subnav-body">
       {%- if include.kind == "research" %}
-      {%- for t in site.data.research.themes %}
-      <details class="nav-group"{% if forloop.first %} open{% endif %}>
-        <summary>{{ t.short }}</summary>
-        <ul>
-          <li><a href="#{{ t.id }}">Overview</a></li>
-          <li><a href="#{{ t.id }}-questions">Research Questions</a></li>
-          <li><a href="#{{ t.id }}-evolution">Research Evolution</a></li>
-          <li><a href="#{{ t.id }}-contributions">Key Contributions</a></li>
-          <li><a href="#{{ t.id }}-open">Open Questions</a></li>
-          <li><a href="#{{ t.id }}-publications">Publications</a></li>
-        </ul>
-      </details>
-      {%- endfor %}
+      <ul>
+        <li><a href="{{ '/research/' | relative_url }}"{% if page.url == '/research/' %} aria-current="page"{% endif %}>Research overview</a></li>
+        {%- for t in site.data.research.themes %}
+        <li>
+          <a href="{{ '/research/' | relative_url }}{{ t.id }}/"{% if page.theme == t.id %} aria-current="page"{% endif %}>{{ t.short }}</a>
+          {%- if page.theme == t.id %}
+          <ul>
+            <li><a href="#{{ t.id }}-overview">Overview</a></li>
+            <li><a href="#{{ t.id }}-questions">Research Questions</a></li>
+            <li><a href="#{{ t.id }}-evolution">Research Evolution</a></li>
+            <li><a href="#{{ t.id }}-insights">Key Insights</a></li>
+            <li><a href="#{{ t.id }}-open">Open Questions</a></li>
+            <li><a href="#{{ t.id }}-publications">Publications</a></li>
+          </ul>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ul>
       {%- elsif include.kind == "publications" %}
       <details class="nav-group" open>
         <summary>By topic</summary>
