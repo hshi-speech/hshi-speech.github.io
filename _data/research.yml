@@ -1,6 +1,7 @@
 # Research content and the shared taxonomy. /research/ shows the overview; /research/<id>/ each direction.
-# Taxonomy: `name` is the canonical name of a direction and `subtitle` its field, used in that order on
-# every page. `id` is only a stable key for URLs and for `themes` in publications.yml.
+# Taxonomy: `name` and `subtitle` are the full direction, used in headings and page titles.
+# `short` is the label for navigation and topic filters only. `id` is a stable key for URLs and for
+# `themes` in publications.yml.
 # The Publications page stays the single source for paper metadata: papers are referenced by id only.
 #
 # Writing rules:
@@ -24,6 +25,7 @@ themes:
   - id: robust
     number: "01"
     name: "Reliable Perception"
+    short: "Robust Speech"
     subtitle: "Robust Speech Processing"
     tagline: "Recover reliable speech evidence from noisy, reverberant, and otherwise degraded observations."
     challenge: "How can reliable acoustic evidence be recovered from noisy, reverberant, and degraded speech?"
@@ -78,6 +80,7 @@ themes:
   - id: attribution
     number: "02"
     name: "Evidence Attribution"
+    short: "Multi-Talker"
     subtitle: "Multi-Talker & Speaker-Grounded Speech"
     tagline: "Understand what was said, who said it, and which acoustic evidence belongs to which source in overlapping speech scenes."
     challenge: "How can speech models distinguish, attribute, and preserve acoustic evidence from overlapping speakers?"
@@ -131,6 +134,7 @@ themes:
   - id: grounded
     number: "03"
     name: "Speech–Language Alignment & Grounding"
+    short: "Speech-Language"
     subtitle: "Speech-Language Modeling"
     tagline: "Use linguistic knowledge in speech and language models while preserving pronunciation, spoken-language properties, and acoustic fidelity."
     challenge: "How can speech and language models exploit linguistic knowledge while preserving pronunciation, spoken-language properties, and acoustic fidelity?"

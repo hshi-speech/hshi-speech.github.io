@@ -9,7 +9,7 @@
         <li><a href="{{ '/research/' | relative_url }}"{% if page.url == '/research/' %} aria-current="page"{% endif %}>Research overview</a></li>
         {%- for t in site.data.research.themes %}
         <li>
-          <a href="{{ '/research/' | relative_url }}{{ t.id }}/"{% if page.theme == t.id %} aria-current="page"{% endif %}>{{ t.name }}</a>
+          <a href="{{ '/research/' | relative_url }}{{ t.id }}/"{% if page.theme == t.id %} aria-current="page"{% endif %}>{{ t.short }}</a>
           {%- if page.theme == t.id %}
           <ul>
             <li><a href="#{{ t.id }}-overview">Overview</a></li>
@@ -30,7 +30,7 @@
           <li><a href="{{ '/publications/' | relative_url }}" data-theme="all" aria-current="true">All <span class="count">{{ pubs.size }}</span></a></li>
           {%- for t in site.data.research.themes %}
           {%- assign tp = pubs | where_exp: "p", "p.themes contains t.id" %}
-          <li><a href="?theme={{ t.id }}" data-theme="{{ t.id }}">{{ t.name }} <span class="count">{{ tp.size }}</span></a></li>
+          <li><a href="?theme={{ t.id }}" data-theme="{{ t.id }}">{{ t.short }} <span class="count">{{ tp.size }}</span></a></li>
           {%- endfor %}
           {%- assign op = pubs | where_exp: "p", "p.themes contains 'other'" %}
           <li><a href="?theme=other" data-theme="other">Other <span class="count">{{ op.size }}</span></a></li>
