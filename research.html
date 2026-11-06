@@ -23,8 +23,9 @@ description: "Research directions of Hao Shi: robust speech processing, multi-ta
 
 {%- for t in site.data.research.themes %}
 <section id="{{ t.id }}" class="topic">
-  <p class="stage"><span class="num">{{ t.number }}</span> {{ t.stage }}</p>
-  <h2><a href="{{ '/research/' | relative_url }}{{ t.id }}/">{{ t.title }}</a></h2>
+  <p class="stage"><span class="num">{{ t.number }}</span></p>
+  <h2><a href="{{ '/research/' | relative_url }}{{ t.id }}/">{{ t.name }}</a></h2>
+  <p class="subtitle">{{ t.subtitle }}</p>
   <p>{{ t.tagline }}</p>
   <p class="tagline">{{ t.challenge }}</p>
   <ul class="highlights">

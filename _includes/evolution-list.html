@@ -1,0 +1,13 @@
+{%- comment -%} Params: items (when, relation, title, text, papers), level (heading level of each item). {%- endcomment -%}
+<ol class="evolution">
+  {%- for e in include.items %}
+  <li>
+    <span class="when">{{ e.when }}{% if e.relation %}<br>{{ e.relation }}{% endif %}</span>
+    <div>
+      <h{{ include.level }}>{{ e.title }}</h{{ include.level }}>
+      <p>{{ e.text }}</p>
+      <p class="refs">{% include paper-refs.html ids=e.papers %}</p>
+    </div>
+  </li>
+  {%- endfor %}
+</ol>

@@ -1,2 +1,2 @@
 {%- assign n = include.n -%}
-<li><time>{{ n.date }}</time><span>{{ n.text }}{% if n.papers %}: {% for q in n.papers %}<a href="{{ '/publications/' | relative_url }}#{{ q.id }}">{{ q.label }}</a>{% unless forloop.last %}; {% endunless %}{% endfor %}.{% endif %}</span></li>
+<li><time datetime="{{ n.date | replace: '.', '-' }}">{{ n.date }}</time><span>{{ n.text }}{% if n.papers %}{% assign tail = n.text | slice: -2, 2 %}{% if tail == "on" %} {% else %}: {% endif %}{% for q in n.papers %}<a href="{{ '/publications/' | relative_url }}#{{ q.id }}">{{ q.label }}</a>{% if forloop.rindex == 2 %} and {% elsif forloop.rindex > 2 %}, {% endif %}{% endfor %}.{% endif %}</span></li>

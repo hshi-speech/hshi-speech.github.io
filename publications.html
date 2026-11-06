@@ -12,7 +12,7 @@ description: "Complete publication archive of Hao Shi, by year and research topi
   <h1>Publications</h1>
   <p class="lede">{{ pubs.size }} papers on speech enhancement, robust and multi-talker ASR, and speech language models. Also on <a href="https://scholar.google.com/citations?user=DclFbLwAAAAJ">Google Scholar</a>.</p>
   {%- assign multi = pubs | where_exp: "p", "p.themes.size > 1" %}
-  <p class="note">Topics are not mutually exclusive: {{ multi.size }} papers belong to two topics, so the topic counts add up to more than {{ pubs.size }}.</p>
+  <p class="note">Topics follow the <a href="{{ '/research/' | relative_url }}">research directions</a> and are not mutually exclusive: {{ multi.size }} papers belong to two topics, so the topic counts add up to more than {{ pubs.size }}.</p>
 </header>
 
 <form class="filters" id="filters" role="search" onsubmit="return false" hidden>

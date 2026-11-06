@@ -7,8 +7,9 @@ layout: default
 {% include subnav.html kind="research" %}
 <div class="page-main research-detail">
 <header class="page-head" id="{{ t.id }}-overview">
-  <p class="stage"><span class="num">{{ t.number }}</span> {{ t.stage }}</p>
-  <h1>{{ t.title }}</h1>
+  <p class="stage"><span class="num">{{ t.number }}</span></p>
+  <h1>{{ t.name }}</h1>
+  <p class="subtitle">{{ t.subtitle }}</p>
   <p class="keywords">{{ t.keywords | join: " · " }}</p>
   <p class="tagline">{{ t.challenge }}</p>
   <p>{{ t.overview }}</p>
@@ -20,19 +21,16 @@ layout: default
 </section>
 
 <section id="{{ t.id }}-evolution">
-  <h2>Research Evolution</h2>
-  <ol class="evolution">
-    {%- for e in t.evolution %}
-    <li>
-      <span class="when">{{ e.when }}</span>
-      <div>
-        <h3>{{ e.title }}</h3>
-        <p>{{ e.text }}</p>
-        <p class="refs">{% include paper-refs.html ids=e.papers %}</p>
-      </div>
-    </li>
-    {%- endfor %}
-  </ol>
+  <h2>{{ t.evolution_title | default: "Research Evolution" }}</h2>
+  {%- if t.strands %}
+  {%- for st in t.strands %}
+  <h3 class="strand">{{ st.title }}</h3>
+  <p>{{ st.intro }}</p>
+  {% include evolution-list.html items=st.items level=4 %}
+  {%- endfor %}
+  {%- else %}
+  {% include evolution-list.html items=t.evolution level=3 %}
+  {%- endif %}
   {%- if t.evolution_note %}
   <p class="note">{{ t.evolution_note }}</p>
   {%- endif %}

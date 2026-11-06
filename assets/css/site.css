@@ -32,6 +32,10 @@ body {
 }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 2px; }
+/* Links inside running text need more than colour to stand out. */
+.news span a, .lede a, .note a, .refs a, .research-detail > section > p a {
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px;
+}
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 img { max-width: 100%; height: auto; display: block; }
 p { margin: 0 0 .8em; }
@@ -162,6 +166,9 @@ main > section.hero {
 @media (max-width: 640px) {
   .evolution li { grid-template-columns: 1fr; }
 }
+.subtitle { color: var(--muted); font-size: .95rem; margin: 0 0 .3em; }
+.strand { font: 600 1rem var(--serif); margin: .9em 0 .2em; }
+.evolution h4 { font: 600 .95rem var(--sans); margin: 0 0 2px; }
 .also { font: 600 .95rem var(--sans); margin: 18px 0 6px; }
 .io { display: grid; grid-template-columns: max-content 1fr; gap: 1px 10px; margin: .3em 0 0; font-size: .9rem; }
 .io dt { color: var(--muted); }

@@ -40,11 +40,11 @@ education:
 service:
   - label: "Organizing"
     items:
-      - 'Special Session Organizer, ICASSP 2027: <a href="https://hshi-speech.github.io/ICASSP-2027-Special-Session/">“Speaker Grounding in Speech LLMs: Recognition, Attribution, and Understanding in Multi-Talker Scenes”</a>'
-      - 'Challenge Organizer, ICASSP 2026: <a href="https://aslp-lab.github.io/Automatic-Song-Aesthetics-Evaluation-Challenge/">“Automatic Song Aesthetics Evaluation Challenge”</a>'
+      - 'Special Session Organizer, ICASSP 2027: <a href="https://hshi-speech.github.io/ICASSP-2027-Special-Session/">“Speaker Grounding in Speech LLMs: Recognition, Attribution, and Understanding in Multi-Talker Scenes”</a> <span class="muted">(upcoming)</span>'
+      - 'Challenge Organizer, ICASSP 2026: <a href="https://aslp-lab.github.io/Automatic-Song-Aesthetics-Evaluation-Challenge/">“Automatic Song Aesthetics Evaluation Challenge”</a> <span class="muted">(completed)</span>'
   - label: "Chairing"
     items:
-      - "Session Chair, ICASSP 2026"
+      - 'Session Chair, ICASSP 2026 <span class="muted">(completed)</span>'
   - label: "Reviewing"
     items:
       - "Journals: IEEE Trans. ASLP, Speech Communication, IEEE Signal Processing Letters"

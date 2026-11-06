@@ -481,7 +481,7 @@
 - id: waspaa-2023-zhong
   title: Extending Audio Masked Autoencoders toward Audio Restoration
   authors: Zhi Zhong, Hao Shi, Masato Hirano, Kazuki Shimada, Kazuya Tateishi, Takashi Shibuya, Shusuke Takahashi, Yuki Mitsufuji
-  venue: WASPAA
+  venue: IEEE WASPAA
   venue_full: Proc. IEEE WASPAA, pp. 1–5
   year: 2023
   type: conference

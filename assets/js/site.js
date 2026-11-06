@@ -9,9 +9,9 @@
     var panel = document.getElementById(id);
     if (!panel) return;
     panel.classList.toggle('open', open);
-    document.querySelectorAll('.expand[data-toggle="' + id + '"]').forEach(function (b) {
+    document.querySelectorAll('[data-toggle="' + id + '"]').forEach(function (b) {
       b.setAttribute('aria-expanded', String(open));
-      b.textContent = open ? 'Collapse' : 'Expand';
+      if (b.classList.contains('expand')) b.textContent = open ? 'Collapse' : 'Expand';
     });
   }
   document.addEventListener('click', function (e) {

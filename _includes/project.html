@@ -1,7 +1,7 @@
 {%- assign p = include.p -%}
 <article class="entry" id="{{ p.id }}">
   {%- if p.figure %}
-  <button class="thumb" type="button" data-toggle="panel-{{ p.id }}" aria-label="Expand details: {{ p.title | escape }}">
+  <button class="thumb" type="button" data-toggle="panel-{{ p.id }}" aria-expanded="false" aria-controls="panel-{{ p.id }}" aria-label="Details: {{ p.title | escape }}">
     <img src="{{ p.figure | relative_url }}" alt="" loading="lazy" decoding="async">
   </button>
   {%- endif %}
