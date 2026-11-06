@@ -1,12 +1,21 @@
-{%- comment -%} Params: items (when, relation, title, text, papers), level (heading level of each item). {%- endcomment -%}
+{%- comment -%} Params: items (when, relation, title, finding, text, papers), level (heading level of each item). {%- endcomment -%}
 <ol class="evolution">
   {%- for e in include.items %}
   <li>
     <span class="when">{{ e.when }}{% if e.relation %}<br>{{ e.relation }}{% endif %}</span>
     <div>
       <h{{ include.level }}>{{ e.title }}</h{{ include.level }}>
+      {%- if e.finding %}
+      <p>{{ e.finding }}</p>
+      <details class="evo-more">
+        <summary aria-label="Details: {{ e.title | escape }}">Details</summary>
+        <p>{{ e.text }}</p>
+        <p class="refs">{% include paper-refs.html ids=e.papers %}</p>
+      </details>
+      {%- else %}
       <p>{{ e.text }}</p>
       <p class="refs">{% include paper-refs.html ids=e.papers %}</p>
+      {%- endif %}
     </div>
   </li>
   {%- endfor %}

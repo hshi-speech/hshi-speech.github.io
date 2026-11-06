@@ -161,6 +161,11 @@ main > section.hero {
 .evolution .when { color: var(--muted); font-size: .88rem; font-variant-numeric: tabular-nums; padding-top: 1px; }
 .evolution h3 { font: 600 .95rem var(--sans); margin: 0 0 2px; }
 .evolution p { margin: 0 0 2px; }
+.evo-more > summary { color: var(--accent); font-size: .88rem; cursor: pointer; list-style: none; }
+.evo-more > summary::-webkit-details-marker { display: none; }
+.evo-more > summary::before { content: "▸"; display: inline-block; width: 13px; color: var(--muted); }
+.evo-more[open] > summary::before { content: "▾"; }
+.evo-more > p:first-of-type { margin-top: 4px; }
 .note { color: var(--muted); font-size: .9rem; margin: .4em 0 0; }
 .paperlist .links { font-size: .86rem; margin-top: 0; }
 @media (max-width: 640px) {

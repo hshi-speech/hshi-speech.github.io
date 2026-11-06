@@ -5,7 +5,8 @@
 # The Publications page stays the single source for paper metadata: papers are referenced by id only.
 #
 # Writing rules:
-# - evolution (or strands): what each study did, what limitation it addressed, what it showed. Each
+# - evolution (or strands): what each study did, what limitation it addressed, what it showed. An
+#   optional one-sentence `finding` is shown by default, with `text` and papers behind a disclosure. Each
 #   paper's result appears here once. Do not imply that one paper builds on another unless a paper
 #   says so; mark approaches that run alongside the others with `relation`.
 #   `evolution_title` renames the section. Use `strands` when the work is not chronological.
@@ -47,22 +48,27 @@ themes:
     evolution:
       - when: "2020–2022"
         title: "Fusing complementary estimates"
+        finding: "Mapping and masking have complementary strengths across frequency bands, and fusing their estimates improved enhancement."
         text: "Spectrogram fusion combined complementary systems, first for dereverberation with minimum difference masks, then as a jointly trained front-end for end-to-end ASR. Subband fusion located the complementarity: mapping suited low-frequency bands and masking suited high-frequency bands."
         papers: [icassp-2020-shi, apsipa-2021-shi, apsipa-2022-shi-subband]
       - when: "2022–2024"
         title: "Spectral information in enhancement models"
+        finding: "Spectral information improved perceived quality in waveform models, but recognition gains required passing it to the ASR back-end as well."
         text: "Multiple-bandwidth spectrograms supplied complementary information, and multi-resolution spectrograms were added to time-domain encoders. WaveSpecEnc refined each waveform encoder layer with spectrogram encoding, which helped perceived quality but gave only a minor ASR improvement. WaveSpecEnc+ therefore also passed this information to the ASR back-end, and the gains on real CHiME-4 data held even with a strong WavLM baseline."
         papers: [apsipa-2022-shi-resolutions, icassp-2023-shi-tf, taslp-2024-shi]
       - when: "2024"
         title: "Adapting pretrained models to real noise"
+        finding: "Real noisy data was more effective than the same amount of simulated data, and a frozen pretrained path complemented a finetuned one."
         text: "An adapter study on CHiME-4 found that shallow layers were the most effective place to adapt, and that real data was more effective than the same amount of simulated data. Dual-path adaptation addressed the feature extraction module, which is usually frozen, by keeping a frozen pretrained path beside a finetuned one, with significant improvements even for noise-robust WavLM models."
         papers: [report-2023-shi, interspeech-2024-shi]
       - when: "2024–2025"
         title: "Diffusion-based enhancement"
+        finding: "Predictive information gave faster decoding, and deterministic conditions gave more stable performance than other diffusion-based models."
         text: "Generative enhancement brought its own problems: slow reverse diffusion and unreliable conditioning on noisy features. Joint generative and predictive decoders gave faster decoding and higher PESQ than StoRM and SGMSE+ on Voice-Bank. Ensemble inference exploited the sampling behavior of diffusion, with SplitTree reducing its complexity by about 40% at a similar level of performance. DERDM-SE then used deterministic features as conditions, despite the distortion those models introduce, and gave more stable performance than other diffusion-based models on CHiME-4."
         papers: [icassp-2024-shi, hscma-2024-shi, trans2025_shi]
       - when: "2025–2026"
         title: "Observation addition between enhancement and ASR"
+        finding: "Noisy and enhanced speech can be balanced for recognition without changing either model, or training a predictor for the balance."
         text: "Observation addition balances noisy and enhanced speech without changing the enhancement or ASR models. Collaborative work trained the module that sets this balance on real noisy speech, and later derived the fusion weights from intelligibility estimates of the ASR back-end, which removes the need for a trained predictor."
         papers: [icassp-2025-cui, 2026_interspeech_haoyang]
     insights:
