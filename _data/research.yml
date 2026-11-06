@@ -1,7 +1,19 @@
-# Research page content. `papers` lists related publications by id; the Publications page stays the
-# authoritative list. Contributions must come from published work; `ongoing` is optional and public-only.
-intro: "My research progresses from recovering reliable speech evidence, to understanding and attributing that evidence in complex acoustic scenes, and ultimately to grounding speech language models and generative systems in the observed speech."
+# Research page content. The page explains problems, evolution, and contributions; the Publications
+# page stays the single source for paper metadata, so papers are referenced here by id only.
+#
+# Writing rules for this file:
+# - Every method and finding names the paper that supports it (`papers`).
+# - `findings` state what was shown, on which data. `interpretation` is a reading across results and
+#   must be worded as one. `open_questions` are questions, not results or claims about unpublished work.
+# - `evolution` must not imply that one paper builds on another unless a paper says so.
+# - `papers` under a theme is the short representative list (two to four papers).
+# Fields used by the home page: number, stage, title, tagline.
+intro: "I work on a recurring problem in speech systems: the information a model needs is in the signal, but it can be lost or overridden on the way to the output. Noise and reverberation corrupt it, overlapping talkers entangle it, and learned priors can replace it with something plausible."
 goal: "A common goal runs through this work: maintaining reliable correspondence between acoustic observations and model outputs as speech scenes and model priors become increasingly complex."
+connection:
+  - "Enhancement work showed that a cleaner signal is not automatically a better input: front-ends add distortion that can harm recognition. Most of that work treats the interference as noise. When the interference is other speech, the question becomes which evidence belongs to which talker."
+  - "Multi-talker work raised a further issue. LLM decoders bring strong linguistic priors, yet recognition degrades as talkers are added, and richer acoustic prompts alone did not solve this. Keeping a model connected to the evidence while it generates is the concern of Grounded Modeling."
+  - "These limitations link the directions, but the work was not strictly sequential: enhancement papers continue through 2026, and the Japanese speech work runs alongside the multi-talker work."
 themes:
   - id: robust
     number: "01"
@@ -9,27 +21,62 @@ themes:
     title: "Robust Speech Processing"
     short: "Robust Speech"
     tagline: "Recover reliable speech evidence from noisy, reverberant, and otherwise degraded observations."
+    challenge: "How can reliable acoustic information be recovered from noisy, reverberant, or otherwise degraded speech?"
     keywords: [Speech Enhancement, Noise-Robust ASR, Dereverberation]
-    overview: "This direction studies how to recover usable speech from degraded recordings, both for human listening and as input to speech recognition."
-    motivation: "ASR degrades severely in noisy environments. Enhancement front-ends can suppress noise, but the artifacts, distortion, and information loss they introduce can themselves harm recognition. Models trained on simulated noise also face a mismatch with real noisy speech."
+    overview: "Enhancement can make a recording sound cleaner and still harm recognition, through the artifacts it adds and the information it removes, and models trained on simulated noise face a mismatch with real recordings. This direction studies how to recover usable speech for both listeners and ASR."
+    brief: "Much of this work shows that enhancement approaches are complementary, and that combining them or designing them with the recognizer can improve results, including on the real CHiME-4 evaluation sets."
     questions:
-      - "How can complementary enhancement approaches, such as mapping and masking, waveform and spectrogram, or predictive and generative models, be combined?"
-      - "How should enhancement be designed so that it benefits recognition, not only perceived quality?"
-      - "How can pretrained models adapt to real noise without losing what they learned in pretraining?"
-    approach:
-      - "Spectrogram fusion that combines mapping-based and masking-based enhancement."
-      - "Waveform-spectrogram hybrid encoding, extended to both the enhancement front-end and the ASR back-end."
-      - "Diffusion-based enhancement with predictive decoders, deterministic conditions, and ensemble inference."
-      - "Adapters and dual-path adaptation of pretrained feature extraction modules."
+      - "Where are mapping and masking, waveform and spectrogram, and predictive and generative models complementary, and how should they be combined?"
+      - "Why does better-sounding enhancement not always improve recognition, and how should a front-end be designed for ASR?"
+      - "How can a pretrained model adapt to real noise without losing what it learned in pretraining?"
+      - "What can a diffusion-based enhancement model use as a reliable condition when the noisy input is itself unreliable?"
+    evolution:
+      - when: "2020–2022"
+        title: "Fusing complementary estimates"
+        text: "Early work fused spectrograms from complementary systems, first for dereverberation with minimum difference masks, then as a jointly trained front-end for end-to-end ASR. A later subband study showed the form of the complementarity: mapping was more effective in low-frequency bands and masking in high-frequency bands."
+        papers: [icassp-2020-shi, apsipa-2021-shi, apsipa-2022-shi-subband]
+      - when: "2022–2024"
+        title: "Spectral information in enhancement models"
+        text: "Multiple-bandwidth spectrograms were found to supply complementary information, and multi-resolution spectrograms were then added to time-domain encoders. WaveSpecEnc refined each waveform encoder layer with spectrogram encoding. This helped perceived quality but gave only a minor ASR improvement, so WaveSpecEnc+ also passed the spectrogram information to the ASR back-end."
+        papers: [apsipa-2022-shi-resolutions, icassp-2023-shi-tf, taslp-2024-shi]
+      - when: "2024"
+        title: "Adapting pretrained models to real noise"
+        text: "An adapter study on CHiME-4 found that shallow layers were the most effective place to adapt, and that real data was more effective than the same amount of simulated data. Dual-path adaptation addressed the feature extraction module, which is usually frozen, by keeping a frozen pretrained path beside a finetuned one."
+        papers: [report-2023-shi, interspeech-2024-shi]
+      - when: "2024–2025"
+        title: "Diffusion-based enhancement"
+        text: "Generative enhancement brought its own problems: slow reverse diffusion and unreliable conditioning on noisy features. Joint generative and predictive decoders targeted decoding time and quality, ensemble inference exploited the sampling behavior of diffusion, and DERDM-SE examined features from deterministic models as conditions, despite the distortion those models introduce."
+        papers: [icassp-2024-shi, hscma-2024-shi, trans2025_shi]
+      - when: "2025–2026"
+        title: "Observation addition between enhancement and ASR"
+        text: "Observation addition balances noisy and enhanced speech without changing the enhancement or ASR models. Collaborative work trained the module that sets this balance on real noisy speech, and later derived the fusion weights from intelligibility estimates of the ASR back-end, which removes the need for a trained predictor."
+        papers: [icassp-2025-cui, 2026_interspeech_haoyang]
     contributions:
-      - text: "Spectrogram encoding consistently improved ASR on the real CHiME-4 evaluation sets, outperforming methods including DEMUCS and Conv-TasNet."
-        paper: taslp-2024-shi
-      - text: "A dual-streaming Repair-Diffusion model achieved better enhancement scores and more stable performance than other diffusion-based models on CHiME-4."
-        paper: trans2025_shi
-      - text: "Joint generative and predictive decoders gave faster decoding and higher PESQ than StoRM and SGMSE+ on Voice-Bank."
-        paper: icassp-2024-shi
-      - text: "Dual-path adaptation achieved significant improvements on CHiME-4, even with noise-robust WavLM models."
-        paper: interspeech-2024-shi
+      methods:
+        - text: "Spectrogram fusion for dereverberation and end-to-end robust ASR, including minimum difference masks and subband fusion."
+          papers: [icassp-2020-shi, apsipa-2021-shi, apsipa-2022-shi-subband]
+        - text: "WaveSpecEnc and WaveSpecEnc+, which bring spectrogram encoding into waveform-domain enhancement and the ASR back-end."
+          papers: [taslp-2024-shi]
+        - text: "Dual-path adaptation of the pretrained feature extraction module."
+          papers: [interspeech-2024-shi]
+        - text: "DERDM-SE, a dual-streaming Repair-Diffusion model that uses deterministic and noisy conditions."
+          papers: [trans2025_shi]
+      findings:
+        - text: "Mapping was more effective in low-frequency bands and masking in high-frequency bands, and fusing the two significantly improved enhancement."
+          papers: [apsipa-2022-shi-subband]
+        - text: "On the real CHiME-4 evaluation sets, the method consistently improved ASR and outperformed others including DEMUCS and Conv-TasNet. The effect held with a strong WavLM baseline."
+          papers: [taslp-2024-shi]
+        - text: "Dual-path adaptation achieved significant improvements on CHiME-4, even with noise-robust WavLM models."
+          papers: [interspeech-2024-shi]
+        - text: "Predictive information gave faster decoding and higher PESQ than StoRM and SGMSE+ on Voice-Bank."
+          papers: [icassp-2024-shi]
+        - text: "On CHiME-4, DERDM-SE gave better enhancement scores and more stable performance than other diffusion-based models."
+          papers: [trans2025_shi]
+      interpretation: "Taken together, these results suggest that enhancement quality and recognition accuracy are related but separate targets, and that a front-end should be judged partly by what it preserves for the back-end, not only by how much noise it removes."
+    open_questions:
+      - "When perceptual metrics and recognition accuracy disagree, how should an enhancement system be evaluated for a given downstream use?"
+      - "Can generative enhancement be prevented from producing speech detail that the recording does not support, and how would this be measured?"
+      - "How well do results on benchmarks such as CHiME-4 and Voice-Bank carry over to other real recording conditions?"
     papers: [trans2025_shi, taslp-2024-shi, interspeech-2024-shi, icassp-2024-shi]
   - id: attribution
     number: "02"
@@ -37,27 +84,56 @@ themes:
     title: "Multi-Talker & Speaker-Grounded Speech"
     short: "Multi-Talker"
     tagline: "Understand what was said, who said it, and which acoustic evidence belongs to which source in overlapping speech scenes."
+    challenge: "How can speech systems distinguish and attribute acoustic evidence when multiple speakers overlap?"
     keywords: [Multi-Talker ASR, Speaker Grounding, Separation / TSE]
-    overview: "This direction studies recognition and understanding when several people speak at once, and how each output can be tied to the right speaker."
-    motivation: "In meetings and multi-party dialogue, failures go beyond transcription errors: a system may produce fluent output while mixing content across speakers, missing a weak target speaker, or hallucinating who said what. Because LLMs carry strong textual priors, they may generate plausible text that speaker-specific acoustic evidence does not support."
+    overview: "In meetings and multi-party dialogue, a system can produce fluent text and still mix content across speakers, miss a weak target speaker, or hallucinate who said what. This work uses serialized output training (SOT) and asks how each part of the output can stay tied to the right talker's evidence."
+    brief: "On LibriMix, the results indicate that LLM-based systems depend on how acoustic evidence is exposed, not only on how rich it is: persistent access to serialized acoustic memory improved on static-prefix prompting."
     questions:
-      - "How should speaker-specific evidence be represented at the speech-LLM interface?"
-      - "How can an LLM decoder keep access to acoustic evidence throughout generation, rather than only through an initial prefix?"
+      - "How should talker-specific evidence be extracted from a mixture and organized so that it matches a serialized output?"
+      - "Is richer acoustic content in the prompt enough, or does the decoder need access to evidence throughout generation?"
       - "Can the semantic priors of LLMs be retained without the cost and fragility of autoregressive decoding?"
-    approach:
-      - "Overlapped encoding separation with serialized CTC, guiding serialized output training."
-      - "Serialized output prompts that give an LLM structured, talker-ordered content."
-      - "Serialized acoustic memory, queried by LLM layers through gated residual cross-attention."
-      - "Distilling LLM semantic guidance into an encoder-only model with talker-count routing."
+    evolution:
+      - when: "2024"
+        title: "Separating speaker information after the encoder"
+        text: "SOT is not easy to train with attention loss alone. EncSep inserted a separator after the encoder, trained with CTC losses, and GEncSep concatenated the separated streams to guide attention during decoding. CTC supervision improved the encoder representation under three-speaker and noisy conditions."
+        papers: [slt-2024-shi]
+      - when: "2025"
+        title: "Giving an LLM structured speech content"
+        text: "With an LLM decoder, SOT worked well for two talkers but did not fully use the LLM for three. Serialized output prompts used a separator with serialized CTC to extract each talker's content in speaking order, then gave the decoded text to the LLM as a structured prompt. This improved both conditions, although the evidence is still supplied before generation begins."
+        papers: [asru-2025-shi]
+      - when: "2026"
+        title: "Keeping evidence available during generation"
+        text: "This study first tested whether a static prefix could be enriched with CTC tokens, hybrid prompts, or continuous talker representations. The results suggested that acoustic content alone does not fully address the conditioning bottleneck. Talker-specific representations were therefore kept as serialized acoustic memory in onset order, and LLM layers query this memory throughout generation."
+        papers: [2026-taslp-shi]
+      - when: "2026"
+        title: "Removing the LLM from inference"
+        text: "This work takes a different route from acoustic memory, addressing the cost and fragility of an autoregressive LLM decoder. An adapted LLM acts as a teacher signal during training and distills semantic guidance into the encoder, while inference keeps fast CTC-style decoding. A Talker-Count Head selects the decoding branch for variable numbers of talkers."
+        papers: [2026_interspeech_shi]
+    evolution_note: "These are separate studies. They share a benchmark, and the separator design recurs across them, but later papers are not simple extensions of earlier ones."
     contributions:
-      - text: "Persistent access to serialized acoustic memory gave consistent improvements over static-prefix prompting on LibriMix."
-        paper: 2026-taslp-shi
-      - text: "An encoder-only model matched LLM-based systems with two talkers and was significantly better with three, at a much smaller real-time factor."
-        paper: 2026_interspeech_shi
-      - text: "Serialized output prompts significantly improved LLM-based recognition in both two- and three-talker conditions."
-        paper: asru-2025-shi
-      - text: "Separated-encoding guidance gave more than 12% and 9% relative improvement on the noisy Libri2Mix and Libri3Mix evaluation sets."
-        paper: slt-2024-shi
+      methods:
+        - text: "EncSep and GEncSep, which separate overlapped encodings with CTC supervision and use them to guide SOT decoding."
+          papers: [slt-2024-shi]
+        - text: "Serialized output prompts for LLM-based multi-talker ASR, with a three-stage training strategy."
+          papers: [asru-2025-shi]
+        - text: "Serialized acoustic memory, queried by LLM layers through gated residual cross-attention."
+          papers: [2026-taslp-shi]
+        - text: "An encoder-only framework that distills LLM guidance during training, with a Talker-Count Head for variable numbers of talkers."
+          papers: [2026_interspeech_shi]
+      findings:
+        - text: "GEncSep gave more than 12% and 9% relative improvement on the noisy Libri2Mix and Libri3Mix evaluation sets."
+          papers: [slt-2024-shi]
+        - text: "On LibriMix, an LLM-based SOT model did well with two talkers but did not fully leverage the LLM with three. Serialized output prompts significantly improved both conditions."
+          papers: [asru-2025-shi]
+        - text: "On LibriMix, persistent access to serialized acoustic memory gave consistent improvements over static-prefix prompting."
+          papers: [2026-taslp-shi]
+        - text: "On LibriMix, the encoder-only model was comparable to LLM-based systems with two talkers and significantly better with three, at a much smaller real-time factor."
+          papers: [2026_interspeech_shi]
+      interpretation: "These results indicate that effective LLM-based multi-talker ASR depends not only on richer acoustic representations but also on persistent access to evidence structured according to the serialized output. The experiments use LibriMix, so this has yet to be shown on real conversations."
+    open_questions:
+      - "How do these approaches behave on real conversations rather than on mixtures such as LibriMix?"
+      - "How should the binding between speakers and content be evaluated beyond WER and DER?"
+      - "Can a speech LLM represent who said what explicitly, so that a wrong attribution can be detected?"
     ongoing: 'I am co-organizing the ICASSP 2027 special session <a href="https://hshi-speech.github.io/ICASSP-2027-Special-Session/">Speaker Grounding in Speech LLMs</a>, which covers recognition, attribution, and understanding in multi-talker scenes, and how speaker-content binding should be evaluated beyond WER and DER.'
     papers: [2026-taslp-shi, 2026_interspeech_shi, asru-2025-shi, slt-2024-shi]
   - id: grounded
@@ -66,26 +142,57 @@ themes:
     title: "Speech LLMs & Spoken Interaction"
     short: "Speech LLMs"
     tagline: "Leverage language-model and generative priors while keeping model decisions grounded in the observed speech."
+    challenge: "How can language models use linguistic knowledge while remaining faithful to observed acoustic evidence?"
     keywords: [Speech LLMs, Grounded Generation, Speech-to-Speech]
-    overview: "This direction studies language-model-based recognition, generation, and spoken dialogue, with much of the work on Japanese speech."
-    motivation: "Speech systems built on text LLMs inherit properties of written language. SpeechLLMs tend toward written-style output that is unsuitable for speech synthesis, orthographic transcripts cannot express how a word was actually read, and dialectal speech remains a challenge."
+    overview: "Speech systems built on text LLMs or supervised with written text inherit assumptions from written language. The shared question here is where those assumptions conflict with speech, mostly in Japanese. The work has three strands: reading and pronunciation, spoken style and context, and dialect robustness. Only the first concerns fidelity to the acoustic signal directly; the others address the written-spoken mismatch more broadly."
+    brief: "Ruby-ASR showed that refining the recognition target can improve lexical-reading recovery across five Japanese benchmarks without sacrificing readable transcription. Collaborative work covers kanji reading in TTS and the other two strands."
     questions:
-      - "How should supervision preserve speech evidence that orthographic text does not capture?"
-      - "How can SpeechLLM outputs be aligned to spoken rather than written style?"
-      - "How does the robustness of a text LLM carry over to the speech language model built on it?"
-      - "How can pronunciation correctness be measured directly?"
-    approach:
-      - "Span-bound targets that bind each written span to its realized reading."
-      - "Data scaling and targeted data synthesis for Japanese LLM-based TTS."
-      - "Preference-based alignment of SpeechLLMs for speech-worthy output."
-      - "Robustness evaluation across speech and text-based LLMs using Japanese dialects."
+      - "How should supervision preserve what was actually said when orthographic text does not encode it?"
+      - "How can pronunciation correctness be measured directly, independently of orthographic variation?"
+      - "How can SpeechLLM output be aligned to spoken style while preserving performance on written-style tasks?"
+      - "How does the robustness of a text LLM relate to that of the speech language model built on it?"
+    evolution:
+      - when: "2026"
+        title: "Reading and pronunciation"
+        text: "One written form can correspond to different readings. Ruby-ASR addresses this in recognition by binding each written span to its realized reading in the target, since the distinction cannot be recovered reliably by text-only conversion afterwards. Sarashina2.2-TTS faces the same ambiguity in generation, with targeted data covering all 2,136 Joyo kanji, a benchmark, and the Kana-CER metric."
+        papers: [2026-shi-ruby, report-2026-liu]
+      - when: "2025–2026"
+        title: "Spoken style and context"
+        text: "Two collaborative studies use preference optimization: one for speech-worthy SpeechLLM output, evaluated on the new SpokenElyza benchmark, and one for contextually appropriate emotional expression in conversational TTS."
+        papers: [2026_interspeech_mengjie, apsipa-2025-kojima]
+      - when: "2025"
+        title: "Dialect robustness"
+        text: "This evaluation compares LLMs and speech language models on Japanese dialects, defining robustness as the ratio of performance on dialectal versus standard inputs, which allows a fair comparison between the two."
+        papers: [asru_2025_mizumoto]
+      - when: "2025–2026"
+        title: "LLM priors in multi-talker recognition"
+        text: "The LLM-based multi-talker papers also belong here, because they test the tension between linguistic priors and acoustic evidence most directly. They are described under Multi-Talker."
+        papers: [asru-2025-shi, 2026-taslp-shi, 2026_interspeech_shi]
+    evolution_note: "These strands developed in parallel rather than as a sequence."
     contributions:
-      - text: "Refining the recognition target improved lexical-reading recovery across five Japanese benchmarks without sacrificing readable transcription."
-        paper: 2026-shi-ruby
-      - text: "Sarashina2.2-TTS reached state-of-the-art kanji-level reading accuracy, evaluated with a new benchmark covering all 2,136 Joyo kanji."
-        paper: report-2026-liu
-      - text: "Preference-based alignment substantially improved results on SpokenElyza while largely preserving written-style performance."
-        paper: 2026_interspeech_mengjie
-      - text: "The robustness of speech language models to dialects correlated with that of their text-based counterparts."
-        paper: asru_2025_mizumoto
+      methods:
+        - text: "A span-bound orthographic and lexical-reading target for Japanese ASR, from which both views can be recovered deterministically."
+          papers: [2026-shi-ruby]
+        - text: "The Joyo Kanji Yomi Benchmark (2,136 kanji, 4,378 readings) and the Kana-CER metric for pronunciation correctness."
+          papers: [report-2026-liu]
+        - text: "Preference-based alignment for speech-worthy output, with the SpokenElyza benchmark."
+          papers: [2026_interspeech_mengjie]
+        - text: "Direct preference optimization over discrete units for conversational TTS."
+          papers: [apsipa-2025-kojima]
+      findings:
+        - text: "Across five Japanese benchmarks, refining the recognition target improved lexical-reading recovery without sacrificing readable orthographic transcription."
+          papers: [2026-shi-ruby]
+        - text: "Targeted data augmentation significantly improved reading accuracy, and the paper reports state-of-the-art kanji-level reading accuracy."
+          papers: [report-2026-liu]
+        - text: "Preference-based alignment gave substantial improvement on SpokenElyza while largely preserving performance on the original written-style evaluation."
+          papers: [2026_interspeech_mengjie]
+        - text: "Emotion recognition accuracy on STUDIES rose from 48.45% with cross-entropy alone to 67.14% with added preference optimization."
+          papers: [apsipa-2025-kojima]
+        - text: "The dialect robustness of speech language models correlated with that of their text-based counterparts. Training with dialectal data and fine-tuning the speech encoder each improved it."
+          papers: [asru_2025_mizumoto]
+      interpretation: "Several of these results point the same way: what a written target leaves out may not be recoverable from text afterwards, so it has to be represented in the supervision or measured directly. This is a reading across separate studies, not an established general rule."
+    open_questions:
+      - "Could span-bound supervision extend to other properties of speech that orthography omits, and to languages other than Japanese?"
+      - "The dialect result is a correlation. How much of a speech language model's robustness comes from the base LLM, and how much from the speech components?"
+      - "How can output that is plausible but unsupported by the acoustics be detected in speech LLMs?"
     papers: [2026-shi-ruby, report-2026-liu, 2026_interspeech_mengjie, asru_2025_mizumoto]

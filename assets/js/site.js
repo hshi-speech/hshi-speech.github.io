@@ -31,7 +31,6 @@
     el.scrollIntoView();
   }
   window.addEventListener('hashchange', openHash);
-  openHash();
 
   // Contextual navigation: a sidebar on desktop, a collapsible bar on mobile.
   if (box) {
@@ -91,6 +90,7 @@
     document.addEventListener('toggle', queue, true);
     update();
   }
+  openHash(); // after the mobile menu has collapsed, so the target does not shift
 
   // Research: open or close every section at once.
   var partsToggle = document.getElementById('parts-toggle');

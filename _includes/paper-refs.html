@@ -1,0 +1,7 @@
+{%- comment -%} Short citations for the Research page: venue and year linked to Publications, marking co-authored work. Param: ids. {%- endcomment -%}
+{%- for ref_id in include.ids -%}
+  {%- assign ref = site.data.publications | where: "id", ref_id | first -%}
+  {%- assign ref_lead = ref.authors | split: ", " | first -%}
+  {%- unless forloop.first %}; {% endunless -%}
+  <a href="{{ '/publications/' | relative_url }}#{{ ref.id }}">{{ ref.venue }} {{ ref.year }}</a>{% if ref_lead != "Hao Shi" %} (co-author){% endif %}
+{%- endfor -%}

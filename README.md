@@ -10,7 +10,7 @@
 | --- | --- |
 | 论文 | `_data/publications.yml` |
 | News（首页显示最新 5 条，超过后出现 `/news/` 入口） | `_data/news.yml` |
-| 研究方向（Motivation、Research Questions 等）及相关论文 | `_data/research.yml` |
+| 研究方向（Research Questions、Evolution、Contributions、Open Questions）及代表论文 | `_data/research.yml` |
 | 项目 | `_data/projects.yml` |
 | 履历、服务、荣誉 | `_data/profile.yml` |
 
